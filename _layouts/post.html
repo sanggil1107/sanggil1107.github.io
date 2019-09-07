@@ -54,10 +54,12 @@ Description: Awesome dude, awesome life
                         <li class="notepad-mobile-close-btn show-for-small text-right">
                             <a href="#"><i class="fa fa-times"></i></a>
                         </li>
+                        
                         {% for link in site.links %}
 
-
-                        <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+                        <li>
+                            <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+                        </li>
                         {% endfor %}
                     </ul>
 
