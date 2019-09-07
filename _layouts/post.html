@@ -54,13 +54,13 @@ Description: Awesome dude, awesome life
                         <li class="notepad-mobile-close-btn show-for-small text-right">
                             <a href="#"><i class="fa fa-times"></i></a>
                         </li>
-                        
                         {% for link in site.links %}
-
-                        <li>
-                            <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
-                        </li>
-                        {% endfor %}
+                        <li>{% if link.external %}
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                            {% else %}
+                                <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+                            {% endif %} </li>
+            {% endfor %}    
                     </ul>
 
                 </div>
