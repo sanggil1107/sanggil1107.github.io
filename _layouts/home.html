@@ -26,6 +26,7 @@ Description: Awesome dude, awesome life
             <a href="{{ link.url }}">{{ link.title }}</a>
             {% endif %}
         </li>
+        {% endfor %}
         
         <div class="notepad-blog-menu">      
     <div class="notepad-mobile-menu show-for-small">
@@ -39,7 +40,7 @@ Description: Awesome dude, awesome life
 
             
             <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
-           
+           {% endfor %}
     </ul>
 </div>
         <div class="clearfix"></div>
