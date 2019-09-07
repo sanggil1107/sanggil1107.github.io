@@ -25,7 +25,7 @@ Description: Awesome dude, awesome life
     
         <header class="notepad-page-header">
             <div class="notepad-page-menu-header">
-                
+                {% for link in site.links %}
                 <li>{% if link.external %}
                     <a href="{{ link.url }}">{{ link.title }}</a>
                     {% endif %}
