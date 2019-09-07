@@ -7,7 +7,6 @@ title: Sanggil Yang
 chart: true
 ---
 <figure>
-  <img src="{{ site.url }}/images/hossain-faysal.jpg" alt="Hossain Mohammad Faysal">
   <figcaption>Sanggil Yang</figcaption>
 </figure>
 
