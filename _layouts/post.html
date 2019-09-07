@@ -31,9 +31,10 @@ Description: Awesome dude, awesome life
             <header class="notepad-post-header-simple">
                 <div class="notepad-post-menu-header-simple">
 {% endif %}
-                    <a class="notepad-blog-logo" href="{{ site.url }}">
-                        Home
-                    </a>
+                    
+                        <li>{% if link.external %}
+                            <a href="{{ link.url }}">{{ link.title }}</a>
+                    
 
                 <div class="notepad-blog-menu">      
     <div class="notepad-mobile-menu show-for-small">
