@@ -1,157 +1,97 @@
-title:            Develop Story
-description:      Blog start!!
-logo:             logo.png
-disqus_shortname: hmfaysal
-share:            true
-dropcap:			true
-# Change url to your domain. Leave localhost server or blank when working locally.
-# or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
-# whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
-url:        	 "https://sanggil1107.github.io"
+# SITE CONFIGURATION
+baseurl:
+url: "https://devYurim.github.io"
 
-# Owner/author information
-owner:
-  name:           Yang Sang Gil
-#  avatar:         hmfaysal.jpg
-  email:          yangpang1107@gmail.com
-  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Awesome Dude, Awesome Life
-  # Social networking links used in footer. Update and remove as you like.
-  #twitter:        hmfaysal
-  #facebook:       hmfaysal
-  github:         sanggil1107      
-  #instagram:      hmfaysal
-  # For Google Authorship https://plus.google.com/authorship
-  #google_plus:    https://plus.google.com/u/0/102602916593522619858
+# THEME-SPECIFIC CONFIGURATION
+theme_settings:
+  # Meta
+  title: devYurim
+  avatar: assets/img/blogmark.png
+  favicon: assets/favicon.ico
+  gravatar: # Email MD5 hash
+  description: "developer blog" # used by search engines
 
-# Analytics and webmaster tools stuff goes here
-#google_analytics:   UA-39365944-7
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+  # Header and footer text
+  header_text: >
+     <p>Intelligent System Lab Researcher</p>
 
-# Links to include in footer navigation
-# For external links add external: true
-links:
-  - title: Home
-    url: /
-    external: false
-    icon: home
-  - title: Featured Posts
-    url: /featured
-  - title: Categories
-    url: /categories
-  - title: About
-    url: /about
+  header_text_feature_image:
+  footer_text: >
+   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-#timezone:    Asia/Dhaka
-future:      true
-highlighter: pygments
-markdown:    kramdown
-paginate:    5
-paginate_path: "page:num"
+  # Icons
+  rss: true
+  email_address: "soaka94@naver.com" # Full email address, e.g. "sam@example.com"
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  gitlab:
+  github: "devYurim"
+  google_plus:
+  instagram:
+  linkedin:  # Full URL
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:  # Full URL
+  steam:
+  tumblr:
+  twitter:
+  wordpress:
+  youtube:
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
+  # Scripts
+  google_analytics: UA-111748939-1 # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname: devYurim
+  katex: true # Enable if using math markup
+  search: true # Enable the search feature
 
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_email: "Email"
+  str_next_post: "Next post"
+  str_previous_post: "Previous post"
+  str_next_page: "Next"
+  str_previous_page: "Prev"
+  str_continue_reading: "Continue reading"
+  str_javascript_required_disqus: "Please enable JavaScript to view comments."
+  str_search_no_results: "No results found."
 
-  coderay:
-    coderay_line_numbers: 
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
+  # Colours, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+  google_fonts: "Nanum+Gothic:400,700"
 
-prose:
-  rooturl: '_posts'
-  siteurl: 'http://sanggil1107.github.io'
-#  relativeLinks: 'http://hmfaysal.github.io/Notepad/links.jsonp'
-  media: 'images'
-  metadata:
-    _posts:
-      - name: "published"
-        field:
-          label: "Published"
-          element: "checkbox"
-          value: "true"
-      - name: "layout"
-        field:
-          element: "hidden"
-          label: "Layout"
-          value: "post"
-      - name: "title"
-        field:
-          label: "Title"
-          element: "text"
-          value: "An Awesome Headline!"
-      - name: "description"
-        field:
-          element: "text"
-          label: "Description"
-          placeholder: "Enter Post Description"
-      - name: "headline"
-        field:
-          element: "text"
-          label: "beadline"
-          placeholder: "Enter Post Headline"
-      - name: "modified"
-        field:
-          element: "text"
-          label: "Has this page been modified?"
-          placeholder: "YYYY-MM-DD"
-      - name: "categories"
-        field:
-          element: "multiselect"
-          label: "Add categories"
-          placeholder: "Choose categories"
-          value: personal
-          options:
-            - name: "Personal"
-              value: personal
-            - name: "Engineering"
-              value: engineering
-            - name: "Physics"
-              value: physics
-            - name: "Psychology"
-              value: psychology
-            - name: "Interesting"
-              value: interesting
-            - name: "Web-Development"
-              value: webdevelopment
-          alterable: true
-      - name: "tags"
-        field:
-          element: "text"
-          label: "Tags"
-          placeholder: "Enter tags, separated by spaces"
-      - name: "imagefeature"
-        field:
-          element: "text"
-          label: "Featured Image"
-          placeholder: "somefile.jpg"
-      - name: "mathjax"
-        field:
-          element: "checkbox"
-          label: "MathJax"
-          value: false
-      - name: "featured"
-        field:
-          element: "checkbox"
-          label: "Featured?"
-          value: false
-      - name: "comments"
-        field:
-          element: "checkbox"
-          label: "Comments"
-          value: false
+  # Post navigation
+  post_navigation: true
 
+encoding: 'utf-8'
+# Configure the plugin here
+category_path: "category" # <- default value
+category_layout: "category.html" # <- default value
 
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+# PAGINATION
+paginate: 5
+paginate_path: "blog/page:num"
+
+animation: true
+
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: :compressed
+plugins:
+  - jekyll-paginate
+  - jekyll-category-pages
+gem:
+    - jekyll-sitemap
+    - jekyll-feed
+    - wdm
+theme: jekyll-theme-type
+exclude:
+  - Gemfile
+  - Gemfile.lock

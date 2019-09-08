@@ -1,91 +1,28 @@
-<!DOCTYPE html>
-<html>
-<!--
-====================================================
-    __  ____  ______________  _______ ___    __ 
-   / / / /  |/  / ____/   \ \/ / ___//   |  / / 
-  / /_/ / /|_/ / /_  / /| |\  /\__ \/ /| | / /  
- / __  / /  / / __/ / ___ |/ /___/ / ___ |/ /___
-/_/ /_/_/  /_/_/   /_/  |_/_//____/_/  |_/_____/
-                                                     
-====================================================
-Author: Hossain Mohammad Faysal
-Profile: https://www.facebook.com/hmfaysal
-Version: 1.0
-Description: Awesome dude, awesome life
-====================================================
--->
+---
+layout: default
+---
 
-<head>
-    {% include head.html %}
-    {% if site.dropcap %}<style type="text/css">
-        @media only screen and (min-width:43.75em) {
-            .notepad-post-content div>p:first-child:first-letter {
-                float: left;
-                font-size: 4.688rem;
-                line-height: 4.375rem;
-                padding-top: .25rem;
-                padding-right: .5rem;
-                padding-left: .188rem;
-                font-family: serif
-            }
-        }
-    </style>{% endif %}
-</head>
+<article {% if page.feature-img %}class="feature-image"{% endif %}>
+  <header style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
+    <h1 class="title">{{ page.title }}</h1>
+    {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+    <p class="meta">
+      {{ page.date | date: "%B %-d, %Y" }}
+      {% if page.author %} - {{ page.author }}{% endif %}
+    </p>
+  </header>
+  <section class="post-content">{{ content }}</section>
+  {% include tags_list.html tags=page.tags tag_count=page.tags.size %}
+</article>
+<!-- Disqus -->
+{% if page.comments %}<a href="https://devYurim.github.io{{ page.url }}#disqus_thread"></a>{% endif %}
+{% if site.theme_settings.disqus_shortname %}
+<div class="comments">
+  {% include disqus.html %}
+</div>
+{% endif %}
 
-<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
-
-    <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
-        <header class="notepad-post-header-simple">
-            <div class="notepad-post-menu-header-simple">
-                <div class="notepad-blog-menu">
-                    <div class="notepad-mobile-menu show-for-small">
-                        <a href="#"><i class="fa fa-bars"></i></a>
-                    </div>
-                    <ul class="notepad-menu">
-                        <li class="notepad-mobile-close-btn show-for-small text-right">
-                            <a href="#"><i class="fa fa-times"></i></a>
-                        </li>
-                        {% for link in site.links %}
-                        <li>{% if link.external %}
-                            <a href="{{ link.url }}">{{ link.title }}</a>
-                            {% else %}
-                            <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
-                            {% endif %} </li>
-                        {% endfor %}
-                    </ul>
-
-                </div>
-            </div>
-            <div class="bg-img"></div>
-        </header>
-
-        <div class="notepad-post-title-simple row">
-            <div class="small-12 columns">
-                <div class="notepad-post-meta-simple">
-                    <h1>{{ page.title }}</h1>
-                    <p>
-                       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-        <article class="notepad-post-content post tag-simple">
-            <div>{{ content }}
-            </div>
-        </article>
-        <div class="cf"></div>
-        <div class="cf"></div>
-
-
-        <div class="cf"></div>
-
-        <section class="notepad-disqus row">
-        </section>
-    </main>
-
-</body>
-
-</html>
+<!-- Post navigation -->
+{% if site.theme_settings.post_navigation %}
+  {% include post_nav.html %}
+{% endif %}

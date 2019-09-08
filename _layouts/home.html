@@ -1,63 +1,65 @@
-<!DOCTYPE html>
-<html>
-<!--
-====================================================
-    __  ____  ______________  _______ ___    __ 
-   / / / /  |/  / ____/   \ \/ / ___//   |  / / 
-  / /_/ / /|_/ / /_  / /| |\  /\__ \/ /| | / /  
- / __  / /  / / __/ / ___ |/ /___/ / ___ |/ /___
-/_/ /_/_/  /_/_/   /_/  |_/_//____/_/  |_/_____/
-                                                     
-====================================================
-Owner Name: Hossain Mohammad Faysal
-Profile: https://www.facebook.com/hmfaysal
-Version: 1.1
-Description: Awesome dude, awesome life
-====================================================
--->
-<head>
-{% include head.html %}
-</head>
-<body class="home-template" itemscope itemtype="http://schema.org/WebPage">
-<header class="notepad-site-head">
-    <div class="notepad-site-head-menu">       
-        <div class="notepad-blog-menu">      
-    <div class="notepad-mobile-menu show-for-small">
-        <a href="#"><i class="fa fa-bars"></i></a>
+---
+layout: default
+---
+
+<div class="home">
+  <div class="selfie">
+  	<a href="https://devYurim.github.io/about">
+  		<img src="https://devYurim.github.io/assets/img/profile.PNG">
+  	</a>
+  </div>
+
+  {% if site.theme_settings.header_text %}
+  <div class="call-out"
+  style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
+    {{ site.theme_settings.header_text }}
+  </div>
+  {% endif %}
+
+  <!-- Social icons from Font Awesome, if enabled  -->
+  {% include icons.html %}
+
+  <hr>
+  <div class="posts">
+  	<h2 class="post-title">Recent Post</h2>
+
+    {% for post in paginator.posts %}
+    <div class="post-teaser">
+      <header>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title }}
+          </a>
+        </h2>
+        <p class="meta">
+          {{ post.date | date: "%B %-d, %Y" }}
+        </p>
+        <div class="excerpt">
+          <!--{{ post.excerpt }}
+          <a class="button" href="{{ post.url | relative_url }}">
+            {{ site.theme_settings.str_continue_reading }}
+          </a>-->
+        </div>
+      </header>
     </div>
-    <ul class="notepad-menu">
-        <li class="notepad-mobile-close-btn show-for-small text-right">
-            <a href="#"><i class="fa fa-times"></i></a>
-        </li>
-        {% for link in site.links %}
-        <li>{% if link.external %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-            {% else %}
-            <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
-            {% endif %} </li>
-        {% endfor %}
-    </ul>
+    {% endfor %}
+
+  </div>
+
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url | replace: '//', '/' }}" class="button" >
+      <i class="fa fa-chevron-left"></i>
+      {{ site.theme_settings.str_previous_page }}
+    </a>
+    {% endif %}
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url | replace: '//', '/' }}" class="button" >
+      {{ site.theme_settings.str_next_page }}
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
 </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="notepad-site-head-content" >
-        <div class="notepad-site-head-bg"></div>
-        <h1 class="notepad-blog-title">
-            <span class="notepad-site-head-title-bg">
-                {{ site.title }}
-            </span>
-        </h1>
-        <h2 class="notepad-blog-description">{{ site.description }}</h2>
-    </div>
-</header>
-
-
-<main class="notepad-content" role="main">
-
-            {{ content }}
-</main>
-    {% include footer.html %}
-
-{% include scripts.html %}  
-</body>
-</html>
