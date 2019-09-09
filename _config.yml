@@ -1,97 +1,60 @@
-# SITE CONFIGURATION
-baseurl:
-url: "https://sanggil1107.github.io"
+# Site Info
+title:        Ringsterz Log # 블로그 제목
+tagline:      'Log for everything' # 페이지 제목 옆에 나타나는 설명 글
+description:  '하루를 정리하는 데일리 로그 ' # 블로그 설명
+baseurl:      ''
+url:          https://minyoungjung.github.io/
+logo:         '/public/logo.png'
 
-# THEME-SPECIFIC CONFIGURATION
-theme_settings:
-  # Meta
-  title: sanggil
-  #avatar: assets/img/blogmark.png
-  #favicon: assets/favicon.ico
-  gravatar: # Email MD5 hash
-  description: "developer blog" # used by search engines
-
-  # Header and footer text
-  header_text: >
-     <p>SoftWare Developer</p>
-
-  header_text_feature_image:
-  footer_text: >
-   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
-
-  # Icons
-  rss: true
-  email_address: "yangpang1107@naver.com" # Full email address, e.g. "sam@example.com"
-  behance:
-  bitbucket:
-  dribbble:
-  facebook:
-  flickr:
-  gitlab:
-  github: "sanggil1107"
-  google_plus:
-  instagram:
-  linkedin:  # Full URL
-  pinterest:
-  reddit:
-  soundcloud:
-  stack_exchange:  # Full URL
-  steam:
-  tumblr:
-  twitter:
-  wordpress:
-  youtube:
-
-  # Scripts
-  ##google_analytics: UA-111748939-1 # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname: sanggil
-  katex: true # Enable if using math markup
-  search: true # Enable the search feature
-
-  # Localization strings
-  str_follow_on: "Follow on"
-  str_rss_follow: "Follow RSS feed"
-  str_email: "Email"
-  str_next_post: "Next post"
-  str_previous_post: "Previous post"
-  str_next_page: "Next"
-  str_previous_page: "Prev"
-  str_continue_reading: "Continue reading"
-  str_javascript_required_disqus: "Please enable JavaScript to view comments."
-  str_search_no_results: "No results found."
-
-  # Colours, typography and padding
-  # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "Nanum+Gothic:400,700"
-
-  # Post navigation
-  post_navigation: true
-
-encoding: 'utf-8'
-# Configure the plugin here
-category_path: "category" # <- default value
-category_layout: "category.html" # <- default value
-
-# PAGINATION
-paginate: 5
-paginate_path: "blog/page:num"
-
-animation: true
-
-# BUILD SETTINGS
-markdown: kramdown
-highlighter: rouge
-sass:
-  sass_dir: _sass
-  style: :compressed
-plugins:
+# Site configurations
+gems:
   - jekyll-paginate
-  - jekyll-category-pages
-gem:
-    - jekyll-sitemap
-    - jekyll-feed
-    - wdm
-theme: jekyll-theme-type
-exclude:
-  - Gemfile
-  - Gemfile.lock
+  - jekyll-seo-tag
+markdown: kramdown
+kramdown:
+  input: GFM
+excerpt_separator: "<!-- more -->"
+sass:
+  style: compressed
+  sass_dir: _scss
+paginate: 5
+paginate_path: '/blog/page:num'
+permalink: pretty
+
+# Custom vars
+version: 1.0.0
+
+# About/contact
+author:
+  name: Minyoung Jung
+  description: '원리를 파악하고 만들고 배우는 것을 좋아합니다. 수영과 클라이밍을 즐깁니다.' # 저자 설명
+  gravatar: 78abf09c8af4042796ff9379143da32f # md5 hash of your email address
+  contact:
+    #linkedin:  https://www.linkedin.com/in/lizhihao
+    github:    https://github.com/minyoungjung
+    # facebook:  <hide>
+    #twitter:   https://twitter.com/Li_Zhihao
+    #weibo:     http://weibo.com/41173780
+    email:    minyoungjung84@gmail.com
+
+# Navigation (2nd level links supported)
+nav:
+  Home:
+    - '/'
+  Blog:
+    - '/blog/'
+    - { Categories: '/blog/categories/' }
+    - { Tags: '/blog/tags/' }
+
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
+
+hero:
+  image: /public/img/we_will_be_giants_by_yalestewart.jpg
+  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
+
+# Puglins
+mathjax: true # whether support mathjax
+google_analytics_token: 'UA-67856795-3' # leave blank if you don't want google analytics
+disqus_short_name: 'ringsterz' # leave blank if you don't want disqus
