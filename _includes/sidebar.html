@@ -20,6 +20,7 @@
         <a class="sidebar-nav-item {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}">
           {{ nav[0] }}
         </a>
+    {% endfor %}  
         {% for tag in site.categories %}
 
        
@@ -30,7 +31,7 @@
         {% endfor %}
       </span>
 
-    {% endfor %}
+    
   </nav>
 
   <div class="sidebar-item">
