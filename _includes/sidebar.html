@@ -24,7 +24,7 @@
         {% for tag in site.categories %}
 
        
-              <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == sub_nav[1] %}active{% endif %}" href="{{ sub_url }}">
+              <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="{{ site.baseurl }}{{ post.url }}">
                 {{ tag[0] }}
               </a>
 
