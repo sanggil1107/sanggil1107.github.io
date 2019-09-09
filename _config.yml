@@ -1,9 +1,9 @@
 # Site Info
-title:        Developer Log # 블로그 제목
-tagline:      'Log for Sanggil' # 페이지 제목 옆에 나타나는 설명 글
-description:  '개발 기록 ' # 블로그 설명
+title:        Ringsterz Log # 블로그 제목
+tagline:      'Log for everything' # 페이지 제목 옆에 나타나는 설명 글
+description:  '하루를 정리하는 데일리 로그 ' # 블로그 설명
 baseurl:      ''
-url:          https://sanggil1107.github.io/
+url:          https://minyoungjung.github.io/
 logo:         '/public/logo.png'
 
 # Site configurations
@@ -26,29 +26,29 @@ version: 1.0.0
 
 # About/contact
 author:
-  name: Sanggil Yang
-  description: '배우고 기록하는 것을 좋아하는 초보 개발자' # 저자 설명
-#  gravatar: 78abf09c8af4042796ff9379143da32f # md5 hash of your email address
+  name: Minyoung Jung
+  description: '원리를 파악하고 만들고 배우는 것을 좋아합니다. 수영과 클라이밍을 즐깁니다.' # 저자 설명
+  gravatar: 78abf09c8af4042796ff9379143da32f # md5 hash of your email address
   contact:
     #linkedin:  https://www.linkedin.com/in/lizhihao
     github:    https://github.com/minyoungjung
     # facebook:  <hide>
     #twitter:   https://twitter.com/Li_Zhihao
     #weibo:     http://weibo.com/41173780
-    email:    yangpang1107@gmail.com
+    email:    minyoungjung84@gmail.com
 
 # Navigation (2nd level links supported)
 nav:
   Home:
     - '/'
-  Programing:
-    - '/programing/'
-    - { 알고리즘: '/programing/알고리즘/' }
-    - { java: '/programing/java/' }
+  Blog:
+    - '/blog/'
+    - { Categories: '/blog/categories/' }
+    - { Tags: '/blog/tags/' }
 
 # Where are tags and categories displayed
-tag_page: '/programing/java/'
-category_page: '/programing/알고리즘/'
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
 
 hero:
   image: /public/img/we_will_be_giants_by_yalestewart.jpg
@@ -56,5 +56,5 @@ hero:
 
 # Puglins
 mathjax: true # whether support mathjax
-#google_analytics_token: 'UA-67856795-3' # leave blank if you don't want google analytics
-#disqus_short_name: 'ringsterz' # leave blank if you don't want disqus
+google_analytics_token: 'UA-67856795-3' # leave blank if you don't want google analytics
+disqus_short_name: 'ringsterz' # leave blank if you don't want disqus
