@@ -9,7 +9,7 @@ title: Categories
   <div class="tags-expo-section">
     {% assign category = page.category | default : page.title %}
     {% for tag in site.categories %}
-    {% if tag = category %}
+    {% if tag == category %}
       <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
       <ul class="tags-expo-posts">
         {% for post in tag[1] %}
