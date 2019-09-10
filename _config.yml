@@ -39,8 +39,8 @@ author:
 
 # Navigation (2nd level links supported)
 nav:
-#  Home:
-#    - '/'
+  Home:
+    - '/'
   Blog:
     - '/blog/'
     - { Categories: '/blog/categories/' }
