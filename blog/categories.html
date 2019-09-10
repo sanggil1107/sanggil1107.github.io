@@ -7,7 +7,7 @@ title: Categories
 
   <hr/>
   <div class="tags-expo-section">
-    {% assign category = page.category | default : page.title %}
+    {% assign category = page.category %}
     {% for tag in site.categories %}
     <p>{{ category }}</p>
     <p>{{ category[0] }}</p>
