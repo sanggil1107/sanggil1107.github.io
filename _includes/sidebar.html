@@ -20,18 +20,29 @@
         <a class="sidebar-nav-item {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}">
           {{ nav[0] }}
         </a>
-    {% endfor %}  
-        {% for tag in site.categories %}
+        
+        {% for i in (1..sub_len) %}
+          {% for sub_nav in nav[1][i] %} 
+            {% assign sub_is_relative = sub_nav[1] | slice: 0 %} 
+            {% assign sub_url = sub_nav[1] %} 
+            {% if sub_is_relative == '/' %} 
+              {% assign sub_url = sub_nav[1] | prepend: site.baseurl %} 
+            {% endif %} 
+             
+
+            {% for tag in site.categories %}
 
        
-              <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="{{ site.baseurl }}{{ post.url }}">
+              <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="{{ sub_url }}">
                 {{ tag[0] }}
               </a>
 
-        {% endfor %}
+            {% endfor %}
+          {% endfor %}  
+        {% endfor %}  
       </span>
 
-    
+      {% endfor %}  
   </nav>
 
   <div class="sidebar-item">
