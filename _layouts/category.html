@@ -7,13 +7,10 @@ title: Categories
 
   <hr/>
   <div class="tags-expo-section">
-    {% for tag in site.categories %}
-      {{ tag[0] }}
-    {% endfor %}
+
     {% assign title = page.title %}
     {% for tag in site.categories %}
     {% if tag[0] == title %}
-      <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
       <ul class="tags-expo-posts">
         {% for post in tag[1] %}
           <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
