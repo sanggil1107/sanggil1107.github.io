@@ -7,6 +7,8 @@ title: Categories
 
   <hr/>
   <div class="tags-expo-section">
+    {% for tag in site.categories %}
+      {{ tag[0] }}
     {% assign title = page.title %}
     {% for tag in site.categories %}
     {% if tag[0] == title %}
