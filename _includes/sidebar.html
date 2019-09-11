@@ -28,16 +28,22 @@
             {% if sub_is_relative == '/' %} 
               {% assign sub_url = sub_nav[1] | prepend: site.baseurl %} 
             {% endif %} 
-             
 
             {% for tag in site.categories %}
-
-        
-              <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="{{ nav[0] }}/{{ tag[0] }}">
-                {{ site.categories }}
+            {% if nav[0] == 'Programming' %}
+              {% if tag[0] == 'Docker' %}
+                <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Programing/{{ tag[0] }}">                 
+                  {{ tag[0] }}
+                </a>
+              {% endif %}
+            {% endif %}
+            {% if nav[0] == 'Blog' %}
+              {% if tag[0] == '환경설정' %}
+                <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Blog/{{ tag[0] }}">
                 {{ tag[0] }}
-              </a>
-
+                </a>
+              {% endif %}
+            {% endif %}
             {% endfor %}
           {% endfor %}  
         {% endfor %}  
