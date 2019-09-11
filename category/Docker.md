@@ -1,7 +1,7 @@
 ---
 layout: category
-title: 환경설정
-permalink: 'Blog/환경설정'
+title: Docker
+permalink: 'Programming/Docker'
 ---
 
 Another sample category page.

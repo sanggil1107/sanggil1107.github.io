@@ -33,7 +33,7 @@
             {% for tag in site.categories %}
 
        
-              <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/{{ tag[0] }}">
+              <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="{{ nav[0] }}/{{ tag[0] }}">
                 {{ tag[0] }}
               </a>
 

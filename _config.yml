@@ -45,6 +45,9 @@ nav:
     - '/blog/'
     - { Categories: '/blog/categories/' }
     - { Tags: '/blog/tags/' }
+  Programming:
+    - '/blog/'
+    - { Categories: '/blog/categories/' }
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
