@@ -30,20 +30,20 @@
             {% endif %} 
 
             {% for tag in site.categories %}
-            {% if nav[0] == 'Programming' %}
-              {% if tag[0] == 'Docker' %}
-                <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Programing/{{ tag[0] }}">                 
-                  {{ tag[0] }}
-                </a>
+              {% if nav[0] == 'Programming' %}
+                {% if tag[0] == 'Docker' %}
+                  <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Programing/{{ tag[0] }}">                 
+                    {{ tag[0] }}
+                  </a>
+                {% endif %}
               {% endif %}
-            {% endif %}
-            {% if nav[0] == 'Blog' %}
-              {% if tag[0] == '환경설정' %}
-                <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Blog/{{ tag[0] }}">
-                  {{ tag[0] }}
-                </a>
+              {% if nav[0] == 'Blog' %}
+                {% if tag[0] == '환경설정' %}
+                  <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Blog/{{ tag[0] }}">
+                    {{ tag[0] }}
+                  </a>
+                {% endif %}
               {% endif %}
-            {% endif %}
             {% endfor %}
           {% endfor %}  
         {% endfor %}  

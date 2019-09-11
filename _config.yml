@@ -44,7 +44,6 @@ nav:
   Blog:
     - '/blog/'
     - { Categories: '/blog/categories/' }
-    - { Tags: '/blog/tags/' }
   Programming:
     - '/blog/'
     - { Categories: '/blog/categories/' }
