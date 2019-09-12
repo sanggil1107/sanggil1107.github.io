@@ -20,7 +20,8 @@ sass:
 paginate: 10
 paginate_path: '/blog/page:num'
 permalink: pretty
-
+plugins:
+  - jekyll-paginate
 # Custom vars
 version: 1.0.0
 
