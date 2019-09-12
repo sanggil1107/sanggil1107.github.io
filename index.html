@@ -6,7 +6,7 @@ title: Home
 <div class="tags-expo">
   <div class="tags-expo-section">
     <ul class="tags-expo-posts">
-      {% for post in site.posts %}
+      {% for post in paginator.posts %}
         <big class="post-date">{{ post.date | date_to_string }}</big>
         <li>
             <a class="post-title" href="{{ post.url }}">{{ post.title }} </a>
