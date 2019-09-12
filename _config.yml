@@ -17,7 +17,7 @@ excerpt_separator: "<!-- more -->"
 sass:
   style: compressed
   sass_dir: _scss
-paginate: 5
+paginate: 10
 paginate_path: '/blog/page:num'
 permalink: pretty
 
@@ -60,3 +60,7 @@ hero:
 mathjax: true # whether support mathjax
 google_analytics_token: 'UA-67856795-3' # leave blank if you don't want google analytics
 disqus_short_name: 'ringsterz' # leave blank if you don't want disqus
+
+theme_settings:
+  str_next_page: "Next"
+  str_previous_page: "Prev"
