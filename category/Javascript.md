@@ -1,7 +1,7 @@
 ---
 layout: category
-title: Docker
-permalink: '/Could/Docker'
+title: Javacript
+permalink: '/Programming/Javacript'
 ---
 
 Another sample category page.

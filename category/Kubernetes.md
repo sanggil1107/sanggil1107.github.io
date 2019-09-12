@@ -1,7 +1,7 @@
 ---
 layout: category
-title: Docker
-permalink: '/Could/Docker'
+title: Kubernetes
+permalink: '/Could/Kubernetes'
 ---
 
 Another sample category page.

@@ -42,10 +42,13 @@ author:
 nav:
   Home:
     - '/'
-  Blog:
+  Programming:
     - '/blog/'
     - { Categories: '/blog/categories/' }
-  Programming:
+  Could:
+    - '/blog/'
+    - { Categories: '/blog/categories/' }
+  Blog:
     - '/blog/'
     - { Categories: '/blog/categories/' }
 

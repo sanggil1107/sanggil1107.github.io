@@ -1,7 +1,7 @@
 ---
 layout: category
-title: Docker
-permalink: '/Could/Docker'
+title: Python
+permalink: '/Programming/Python'
 ---
 
 Another sample category page.
