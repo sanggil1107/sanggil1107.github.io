@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Kubernetes
-permalink: '/Could/Kubernetes'
+permalink: '/Cloud/Kubernetes'
 ---
 
 Another sample category page.

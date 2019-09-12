@@ -45,7 +45,7 @@ nav:
   Programming:
     - '/blog/'
     - { Categories: '/blog/categories/' }
-  Could:
+  Cloud:
     - '/blog/'
     - { Categories: '/blog/categories/' }
   Blog:
