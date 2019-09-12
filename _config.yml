@@ -64,3 +64,4 @@ disqus_short_name: 'ringsterz' # leave blank if you don't want disqus
 theme_settings:
   str_next_page: "Next"
   str_previous_page: "Prev"
+  post_navigation: true
