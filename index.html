@@ -16,6 +16,9 @@ title: Home
     </ul>
   </div>
 </div>
+{% for tag in site.categories %}
+ {{ tag[0] }}
+{% endfor %}
 
 {% if paginator.total_pages > 1 %}
   <div class="pagination">
