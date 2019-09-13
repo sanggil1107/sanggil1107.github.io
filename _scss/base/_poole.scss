@@ -329,6 +329,35 @@ tbody tr:nth-child(odd) th {
  * Each post is wrapped in `.post` and is used on default and post layouts. Each
  * page is wrapped in `.page` and is only used on the page layout.
  */
+ .site-nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1.5;
+    float: right;
+    text-align: right;
+    padding-bottom: 3%*1.5;
+  }
+  li {
+    display: inline;
+    float: left;
+    margin-right: 0.4em;
+  }
+  a {
+  color: #DF0174;;
+  font-weight:800;
+  }
+  @media (max-width: 1100px) {
+    ul {
+      display: inline-block;
+      float: left;
+      padding-top: 3%;
+      text-align: left;
+      width: 100%;
+    }
+  }
+}
 
 .page,
 .post {

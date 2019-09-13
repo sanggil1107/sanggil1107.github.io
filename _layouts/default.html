@@ -22,8 +22,19 @@
           </h3>
         </div>
       </div>
-
-
+      <nav class="site-nav">
+				<ul>
+					{% for page in site.pages %}
+						{% if (page.title == 'About' or page.title =='tags') and page.hide != true %}
+							<li>
+								<a class="page-link" href="{{ page.url | relative_url }}">
+									{{ page.title }}
+								</a>
+							</li>
+						{% endif %}
+					{% endfor %}
+        </ul>
+      </nav>      
 
       <div class="container content">
         {{ content }}
