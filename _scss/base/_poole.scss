@@ -322,22 +322,15 @@ tbody tr:nth-child(odd) th {
   letter-spacing: 0;
 }
 
-
-/*
- * Posts and pages
- *
- * Each post is wrapped in `.post` and is used on default and post layouts. Each
- * page is wrapped in `.page` and is only used on the page layout.
- */
- .site-nav {
+.site-nav {
   ul {
-    margin: 0;
-    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #505050;
     list-style: none;
     line-height: 1.5;
     float: right;
     text-align: right;
-    padding-bottom: 3%*1.5;
   }
   li {
     display: inline;
@@ -358,6 +351,14 @@ tbody tr:nth-child(odd) th {
     }
   }
 }
+
+/*
+ * Posts and pages
+ *
+ * Each post is wrapped in `.post` and is used on default and post layouts. Each
+ * page is wrapped in `.page` and is only used on the page layout.
+ */
+ 
 
 .page,
 .post {
