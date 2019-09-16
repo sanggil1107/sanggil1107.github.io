@@ -9,7 +9,17 @@ layout: default
   <span class="post-date">{{ page.date | date_to_string }}</span>
 
   {% for category in page.category %}
+  <p>{{ category }}</p>
+  <p>{{ category[0] }}</p>
     <a href="/Category/{{ category }}" class="post-tag">{{ category }}</a>
+    <a href="/Category/{{ category[0] }}" class="post-tag">{{ category[0] }}</a>
+  {% endfor %}
+
+  {% for categories in page.categories %}
+  <p>{{ categories }}</p>
+  <p>{{ categories[0] }}</p>
+    <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
+    <a href="/Category/{{ categories[0] }}" class="post-tag">{{ categories[0] }}</a>
   {% endfor %}
 
   <article>
