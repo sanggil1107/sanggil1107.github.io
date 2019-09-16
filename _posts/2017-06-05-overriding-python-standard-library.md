@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 파이썬 오브젝트 소스코드 간단히 보기 및 스탠다드 라이브러리 메소드 오버라이딩
-category: [파이썬]
+category: [Python]
 tags: [Python, Python Calendar]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Django를 이용한 스케쥴러 제작 (2) - 구현
-category: [파이썬, Django, 웹서비스]
+category: [Django]
 tags: [Django, Web service, Python, Scheduler, Material Design]
 ---
 

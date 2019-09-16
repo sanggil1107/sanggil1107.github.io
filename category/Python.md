@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Python
-permalink: '/Programming/Python'
+permalink: '/Category/Python'
 ---
 
 Another sample category page.

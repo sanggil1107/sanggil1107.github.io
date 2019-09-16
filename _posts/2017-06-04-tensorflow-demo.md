@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google의 머신러닝 라이브러리, 텐서플로 알아보기 - 환경설정 및 설치
-category: [환경설정, 머신러닝]
+category: [환경설정]
 tags: [Machine Learning, AI, Tensorflow]
 ---
 

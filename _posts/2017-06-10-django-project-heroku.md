@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Django 프로젝트 Heroku에 릴리즈하기
-category: [파이썬, Django, 웹서비스]
+category: [Python, Django]
 tags: [Django, Web service, Python, Heroku, whitenoise]
 ---
 

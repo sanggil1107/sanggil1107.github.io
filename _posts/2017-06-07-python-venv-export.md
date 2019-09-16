@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python 가상환경 옮기기
-category: [파이썬, 환경설정]
+category: [환경설정]
 tags: [Virtualenv, Python, Matplotlib]
 ---
 
