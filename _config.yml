@@ -18,7 +18,7 @@ sass:
   style: compressed
   sass_dir: _scss
 paginate: 10
-paginate_path: 'category/page:num'
+paginate_path: 'Category/환경설정/page:num'
 permalink: /:year/:month/:title.html
 plugins:
   - jekyll-paginate
