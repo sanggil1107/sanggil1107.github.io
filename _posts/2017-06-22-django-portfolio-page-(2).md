@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Django를 이용한 포트폴리오 사이트 제작 (2) - 사이트 형태 잡기, User Model 확장
-category: [파이썬, Django, 웹서비스]
+category: [환경설정]
 tags: [Django, Web service, Python, Portfolio, Bootstrap]
 ---
 # 공동 프로젝트 진행상황  

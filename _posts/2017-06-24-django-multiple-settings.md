@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Django 설정 개발/운영환경 나누기, PostgreSQL 사용하기
-category: [파이썬, Django, 웹서비스]
+category: [환경설정]
 tags: [Django, Web service, Python, PostgreSQL, Pycharm, pgAdmin4]
 ---
 

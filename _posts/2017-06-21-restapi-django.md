@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Django에 Rest API 추가하기
-category: [파이썬, Django, 웹서비스]
+category: [환경설정]
 tags: [Django, Python, Web service, REST API]
 ---
 

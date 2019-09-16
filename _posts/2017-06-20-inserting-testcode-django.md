@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Django 서비스 테스트하기
-category: [파이썬, Django, 웹서비스, 테스트]
+category: [환경설정]
 tags: [Django, Python, Web service, Test]
 ---
 

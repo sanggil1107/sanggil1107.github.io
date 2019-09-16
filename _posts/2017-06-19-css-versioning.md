@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 브라우저 CSS 캐쉬 무력화하기 및 Mac에서 Localhost 지정하기
-category: [파이썬, Django, CSS, 웹서비스, Mac 사용팁]
+category: [환경설정]
 tags: [CSS, Django, Python, Web service, Chrome, Cache, Localhost, Mac]
 ---
 

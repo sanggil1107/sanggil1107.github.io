@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 흐름에 따른 사고
-category: [독서, 단상]
+category: [환경설정]
 tags: [Reading, Thinking, 수학의 언어로 세상을 본다면]
 ---
 
