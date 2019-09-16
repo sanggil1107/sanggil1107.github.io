@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Java
-permalink: '/Programming/Java'
+permalink: '/Category/Java'
 ---
 
 Another sample category page.

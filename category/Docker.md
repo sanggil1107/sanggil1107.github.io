@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Docker
-permalink: '/Cloud/Docker'
+permalink: '/Category/Docker'
 ---
 
 Another sample category page.

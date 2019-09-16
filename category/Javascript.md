@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Javacript
-permalink: '/Programming/Javacript'
+permalink: '/Category/Javacript'
 ---
 
 Another sample category page.

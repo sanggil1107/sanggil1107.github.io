@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Django
-permalink: '/Programming/Django'
+permalink: '/Category/Django'
 ---
 
 Another sample category page.
