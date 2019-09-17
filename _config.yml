@@ -70,3 +70,5 @@ theme_settings:
   str_next_page: "Next"
   str_previous_page: "Prev"
   post_navigation: true
+
+excertp_separator: <!--more-->
