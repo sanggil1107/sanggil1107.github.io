@@ -17,10 +17,8 @@ excerpt_separator: "<!-- more -->"
 sass:
   style: compressed
   sass_dir: _scss
-pagination:
-  enabled: true
-  per_page: 10
-  sort_reverse: true
+paginate: 10
+paginate_path: "page:num"
 
 permalink: /:year/:month/:title.html
 plugins:
