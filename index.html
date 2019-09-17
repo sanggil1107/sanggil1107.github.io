@@ -30,7 +30,7 @@ title: Home
       {{ site.theme_settings.str_previous_page }}
     </a>
     {% endif %}
-    &nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
     {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | relative_url | replace: '//', '/' }}" class="button" >
       {{ site.theme_settings.str_next_page }}

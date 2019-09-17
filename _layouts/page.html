@@ -6,26 +6,3 @@ layout: default
   <h1 class="post-head-title">{{ page.title }}</h1>
   {{ content }}
 </div>
-
-<div class="tags-expo">
-
-  <hr/>
-  <div class="tags-expo-section">
-
-    {% assign title = page.title %}
-    {% for tag in site.categories %}
-    {% if tag[0] == title %}
-      <ul class="tags-expo-posts">
-        {% for post in tag[1] %}
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-        <li>
-          {{ post.title }}
-        <small class="post-date">{{ post.date | date_to_string }}</small>
-        </li>
-        </a>
-        {% endfor %}
-      </ul>
-    {% endif %}
-    {% endfor %}
-  </div>
-</div>
