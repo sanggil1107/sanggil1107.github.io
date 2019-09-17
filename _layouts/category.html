@@ -15,10 +15,11 @@ title: Categories
         <li>
           <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
             {{ post.title }}
+          </a>
         </li>
           <small class="post-date">{{ post.date | date_to_string }}</small>
             {{ post.excerpt }}
-        </a>
+        
         <hr/>
         {% endfor %}
       </ul>
