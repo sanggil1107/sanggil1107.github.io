@@ -13,11 +13,13 @@ title: Categories
       <ul class="tags-expo-posts">
         {% for post in tag[1] %}
           <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
         <li>
-          {{ post.excerpt }}
-        <small class="post-date">{{ post.date | date_to_string }}</small>
+          <small class="post-date">{{ post.date | date_to_string }}</small>
+            {{ post.excerpt }}
         </li>
         </a>
+        </hr>
         {% endfor %}
       </ul>
     {% endif %}
