@@ -8,7 +8,7 @@ tags: [CSS, Django, Python, Web service, Chrome, Cache, Localhost, Mac]
 # 브라우저 CSS 캐쉬 무력화하기
 웹서비스를 제작하며 CSS 를 수정하다보면 분명 수정했는데도 불구하고 브라우저에 적용되지 않을때가 있다.  
 이는 브라우저가 기존의 CSS 파일을 캐쉬로 저장하고 있기 때문인데 간단하게 해결할 수 있다.  
-
+<!--more-->
 ## 해결방법
 HTML에서 css 파일을 로딩하는 부분에 아래와 같이 버전번호를 인자로 추가하면 된다.
 ```

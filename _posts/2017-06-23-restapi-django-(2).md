@@ -9,7 +9,7 @@ tags: [Django, Python, Web service, REST API, Auth]
 지난번에는 Django REST Framework의 `generics.RetrieveUpdateDestroyAPIView`를 이용하여,  
 GET/PUT/PATHCH/DELETE에 반응하는 API를 제작했다.  
 [Django에 Rest API 추가하기 - 링크](https://minyoungjung.github.io/%ED%8C%8C%EC%9D%B4%EC%8D%AC/django/%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/2017/06/21/restapi-django/)  
-
+<!--more-->
 하지만 지금 상태로는 누구나 정보를 수정/삭제가 가능하므로 인증 기능을 추가해야 한다.
 
 # API에 인증 추가

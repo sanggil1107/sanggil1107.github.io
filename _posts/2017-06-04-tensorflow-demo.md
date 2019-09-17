@@ -14,7 +14,7 @@ tags: [Machine Learning, AI, Tensorflow]
 3. 텐서플로 설치  
 `$ pip3 install --upgrade tensorflow` # CPU 버전, GPU 버전은 tensorflow-gpu로 설치  
 4. 데모파일 작성 (`demo.py`)
-
+<!--more-->
 ```python
 import tensorflow as tf
 

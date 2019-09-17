@@ -8,7 +8,7 @@ tags: [Python, Python Calendar]
 # 파이썬 오브젝트 소스 코드 보기
 1. `inspect` 모듈 임포트
 `import inspect`  
-
+<!--more-->
 2. 살펴볼 오브젝트 임포트
 `from calendar import HTMLCalendar`  
 

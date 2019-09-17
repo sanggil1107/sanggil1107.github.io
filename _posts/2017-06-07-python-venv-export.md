@@ -7,7 +7,7 @@ tags: [Virtualenv, Python, Matplotlib]
 
 # 발단
 가상환경을 이용한 로컬 프로젝트에서 matplotlib을 임포트 하려니 임포트 에러가 발생했다.
-
+<!--more-->
 ```
 (tensorflow_venv) My-MacBook-Pro:tensorflow_demo mymacpro$ python3 linearregression.py 
 Traceback (most recent call last):

@@ -9,7 +9,7 @@ tags: [Django, Python, Web service, REST API]
 기존에 만든 [Django를 이용한 건물주 평판 조회 서비스](https://minyoungjung.github.io/%ED%8C%8C%EC%9D%B4%EC%8D%AC/django/%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C/2017/06/16/django-landlord-reputation-(4)/)에 Rest API를 추가하려 한다.  
 API endpoint로 `/api/위도+경도`의 URL을 날리면 해당 좌표에 맞는 정보가 날아오는 형태이다.
 
-
+<!--more-->
 
 # Django REST Framework 설치
 `pip3 install djangorestframework`  

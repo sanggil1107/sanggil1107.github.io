@@ -8,7 +8,7 @@ tags: [Django, Python, Web service, Test]
 # Coverage 설치
 파이썬 코드의 테스트 커버리지를 나타내 주는 라이브러리인 coverage를 설치한다.
 `pip3 install coverage`
-
+<!--more-->
 # Coverage 설정
 ## .coveragerc 파일 생성
 ``` shell

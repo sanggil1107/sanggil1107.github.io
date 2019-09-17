@@ -6,7 +6,7 @@ tags: [Github, Blog, Jekyll, Tag, Plugin]
 ---
 
 # 발단
-<p class="message"> Jekyll로 구성한 블로그 디자인을 수정하며 조금씩 구색을 맞추기 시작했다.<br> 
+<p class="message"> Jekyll로 구성한 블로그 디자인을 수정하며 조금씩 구색을 맞추기 시작했다.<br> <!--more-->
 사이트맵을 추가해 구글에서 검색되지 않는 부분도 수정하고, &nbsp;<a href="http://tech.kakao.com/2016/07/07/tech-blog-story/" target="_blank">Kakao Tech 참고자료</a><br>
 어날리틱스 & 서치콘솔 연동과 같은 소소한 부분도 처리했다. <br> 
 "블로그 자체에 큰 노력을 들이지 않고 컨텐츠에 집중해 매일 무엇인가 정리해보자"는 취지도 이때까지는<br> 맞는듯 했다... </p>

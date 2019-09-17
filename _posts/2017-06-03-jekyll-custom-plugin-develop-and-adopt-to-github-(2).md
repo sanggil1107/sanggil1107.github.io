@@ -8,7 +8,7 @@ tags: [Github, Blog, Jekyll, Tag]
 # 지난 포스팅 
 
 [Jekyll 커스텀 플러그인 개발 및 적용, Github 페이지에 적용하기](/환경설정/블로그/2017/06/02/jekyll-custom-plugin-develop-and-adopt-to-github/)
-
+<!--more-->
 # 발단
 다시 하루가 지나고 Github page에 접속하자, 어제 만든 플러그인이 동작하지 않았다.  
 `total_blogging_date` 태그가 동작하지 않아 하루가 지났음에도 총 일수가 더해지지 않은 것.  

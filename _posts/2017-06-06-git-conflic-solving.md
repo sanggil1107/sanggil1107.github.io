@@ -19,7 +19,7 @@ hint: 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 메시지를 보니 Github 브랜치 내용이 로컬의 브랜치 내용보다 최신이란다.  
-
+<!--more-->
 # 해결 방안
 1. `git push -f`를 통해 강제로 푸쉬한다.  
 사실 혼자 로컬에서 작업하는 프로젝트다보니 Github 내용이 더 최신이 된 것 자체가 이상한 상황이고,  
