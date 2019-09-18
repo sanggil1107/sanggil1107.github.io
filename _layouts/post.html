@@ -15,11 +15,11 @@ layout: default
     {% for post in tag[1] %}
       {% if page.category == post.category %}
         {% if page.title == post.title %}
-          {% assign current = forloop.index %}
-          {% assign prev = forloop.index | minus:1 %}
-          {% assign next = forloop.index | plus:1 %}
+          {% assign current = forloop.index | minus:1 %}
+          {% assign prev = forloop.index | minus:2 %}
+          {% assign next = forloop.index %}
           이전 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][prev].url }}">
-              {{ tag[1][prev].title }}
+              {{ tag[1][prev].title }} 
           </a>
           <br>
           현재 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][current].url }}">
