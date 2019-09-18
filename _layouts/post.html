@@ -24,11 +24,7 @@ layout: default
     <p>{{category}}</p>  
     <p>{{category[0]}}</p>  
     <p>{{category[1]}}</p>  
-      {% if category[0] == page.category %}
-        {% for post in category[1] %}
-          index is : {{ forloop.index }} {{post.title}}<br />
-        {% endfor %}
-      {% endif %}
+
     {% endfor %}
     <hr/>
       <li>
