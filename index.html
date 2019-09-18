@@ -12,7 +12,7 @@ title: Home
         <li>
             <a class="post-title" href="{{ post.url }}">{{ post.title }} </a>
         </li>
-        {% for categories in page.categories %}
+        {% for categories in post.categories %}
           <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
         {% endfor %}
       <br>
