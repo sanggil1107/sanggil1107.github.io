@@ -19,6 +19,7 @@ layout: default
   <h2>Related Posts</h2>
   <ul class="related-posts">
   
+    {{ page.category.post }}
     {% for category in site.categories %}
     <p>{{category}}</p>  
     <p>{{category[0]}}</p>  
