@@ -9,17 +9,13 @@ layout: default
   {% for categories in page.categories %}
     <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
   {% endfor %}
-  <p>{{ page.category }}</p>
 
-  {% for category in site.categories %}
-  <p>{{category}}</p>  
-  <p>{{category[0]}}</p>  
-  <p>{{category[1]}}</p>  
-    {% if category[0] == page.category %}
-      {% for post in category[1] %}
-        index is : {{ forloop.index }} {{post.title}}<br />
-      {% endfor %}
-    {% endif %}
+
+  {% for categories in page.categories %}
+
+  {{ categories }}
+  {{ categories[0] }}
+  {{ categories[1] }}
   {% endfor %}
   <article>
     {{ content }}
