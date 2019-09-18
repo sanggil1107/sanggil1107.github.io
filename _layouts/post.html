@@ -16,18 +16,18 @@ layout: default
       {% if page.category == post.category %}
         {% if page.title == post.title %}
           {% assign current = forloop.index | minus:1 %}
-          {% assign prev = forloop.index | minus:2 %}
-          {% assign next = forloop.index %}
+          {% assign prev = forloop.index %}
+          {% assign next = forloop.index | minus:2 %}
           이전 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][prev].url }}">
-              {{ tag[1][prev].title }} 
+              {{ tag[1][prev].title }} {{ prev }}
           </a>
           <br>
           현재 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][current].url }}">
-              {{ tag[1][current].title }}
+              {{ tag[1][current].title }} {{ current }}
           </a>
           <br>
           다음 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][next].url }}">
-              {{ tag[1][next].title }}
+              {{ tag[1][next].title }} {{ next }}
           </a>
           <br>
         {% endif %}
