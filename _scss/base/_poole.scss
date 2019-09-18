@@ -301,7 +301,9 @@ tbody tr:nth-child(odd) th {
  *
  * Super small header above the content for site name and short description.
  */
-
+.mastfooter {
+  position:fixed;
+}
 .masthead {
   padding-top:    1rem;
   padding-bottom: 1rem;
