@@ -15,13 +15,21 @@ layout: default
     {% for post in tag[1] %}
       {% if page.category == post.category %}
         {% if page.title == post.title %}
+          {% assign current = forloop.index %}
           {% assign prev = forloop.index | minus:1 %}
-          <a class="post-title" href="{{ site.baseurl }}{{ tag[1][forloop.index].url }}">
-              {{ post.title }}
-          </a>
-          index : {{ forloop.index }} {{ post.title }} <br>
           {% assign next = forloop.index | plus:1 %}
-
+          이전 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][prev].url }}">
+              {{ tag[1][prev].title }}
+          </a>
+          <br>
+          현재 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][current].url }}">
+              {{ tag[1][current].title }}
+          </a>
+          <br>
+          다음 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][next].url }}">
+              {{ tag[1][next].title }}
+          </a>
+          <br>
         {% endif %}
       {% endif %}
     {% endfor %}
