@@ -8,10 +8,11 @@ title: Home
   <div class="tags-expo-section">
     <ul class="tags-expo-posts">
       {% for post in paginator.posts %}
+        
+        <a class="post-title" href="{{ post.url }}">
+          {{ post.title }} 
+        </a>
         <big class="post-date">{{ post.date | date_to_string }}</big>
-
-          <a class="post-title" href="{{ post.url }}">{{ post.title }} </a>
-
         {% for categories in post.categories %}
           <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
         {% endfor %}
@@ -31,7 +32,7 @@ title: Home
     {{ site.theme_settings.str_previous_page }}
   </a>
   {% endif %}
-  &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   {% if paginator.next_page %}
   <a href="{{ paginator.next_page_path | relative_url | replace: '//', '/' }}" class="button" >
     {{ site.theme_settings.str_next_page }}
