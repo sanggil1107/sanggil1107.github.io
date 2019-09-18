@@ -9,7 +9,7 @@ layout: default
   {% for categories in page.categories %}
     <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
   {% endfor %}
-
+  <p>{{ page.category }}</p>
   <article>
     {{ content }}
   </article>
@@ -18,6 +18,7 @@ layout: default
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    <!--
     {% for post in site.related_posts limit:11 %}
     index is : {{ forloop.index }} {{post.title}}<br />
     {{ site.related_posts[forloop.index].url }}
@@ -26,6 +27,14 @@ layout: default
     {% assign next = forloop.index | plus:1 %}
     prev : {{ prev }}
     next : {{ next }}
+    -->
+    {% for category in site.categories %}
+      {% if category[0] == page.category %}
+        {% for post in category[1] %}
+          index is : {{ forloop.index }} {{post.title}}<br />
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
     <hr/>
       <li>
         <h3>
