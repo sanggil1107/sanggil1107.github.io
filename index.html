@@ -12,6 +12,7 @@ title: Home
         <a class="post-title" href="{{ post.url }}">
           {{ post.title }} 
         </a>
+        <br>
         <big class="post-date">{{ post.date | date_to_string }}</big>
         {% for categories in post.categories %}
           <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
