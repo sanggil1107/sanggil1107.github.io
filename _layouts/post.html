@@ -12,10 +12,9 @@ layout: default
 
 
   {% for categories in page.categories %}
-
-  {{ categories }}
-  {{ categories[0] }}
-  {{ categories[1] }}
+    {% for post in categories %}
+      index : {{ forloop.index }} {{ post.title }}
+    {% endfor %}
   {% endfor %}
   <article>
     {{ content }}
