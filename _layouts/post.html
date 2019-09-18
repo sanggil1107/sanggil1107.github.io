@@ -15,7 +15,13 @@ layout: default
     {% for post in tag[1] %}
       {% if page.category == post.category %}
         {% if page.title == post.title %}
-          index : {{ forloop.index }} {{ post.title }} {{ post.category }} <br>
+          {% assign prev = forloop.index | minus:1 %}
+          <a class="post-title" href="{{ site.baseurl }}{{ tag[1][forloop.index].url }}">
+              {{ post.title }}
+          </a>
+          index : {{ forloop.index }} {{ post.title }} <br>
+          {% assign next = forloop.index | plus:1 %}
+
         {% endif %}
       {% endif %}
     {% endfor %}
