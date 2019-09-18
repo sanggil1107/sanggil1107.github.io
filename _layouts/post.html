@@ -14,7 +14,9 @@ layout: default
   {% for tag in site.categories %}
     {% for post in tag[1] %}
       {% if page.category == post.category %}
-        index : {{ forloop.index }} {{ post.title }} {{ post.category }} <br>
+        {% if page.title == post.title %}
+          index : {{ forloop.index }} {{ post.title }} {{ post.category }} <br>
+        {% endif %}
       {% endif %}
     {% endfor %}
   {% endfor %}
