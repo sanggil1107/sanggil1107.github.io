@@ -12,14 +12,14 @@ title: Categories
     {% if tag[0] == title %}
       <ul class="tags-expo-posts">
         {% for post in tag[1] %}
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
-          </a>
-        </li>
-          <small class="post-date">{{ post.date | date_to_string }}</small>
-            {{ post.excerpt }}
-        
+
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+          {{ post.title }}
+        </a>
+
+        <small class="post-date">{{ post.date | date_to_string }}</small>
+          {{ post.excerpt }}
+      
         <hr/>
         {% endfor %}
       </ul>

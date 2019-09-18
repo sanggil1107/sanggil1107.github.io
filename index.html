@@ -9,9 +9,9 @@ title: Home
     <ul class="tags-expo-posts">
       {% for post in paginator.posts %}
         <big class="post-date">{{ post.date | date_to_string }}</big>
-        <li>
-            <a class="post-title" href="{{ post.url }}">{{ post.title }} </a>
-        </li>
+
+          <a class="post-title" href="{{ post.url }}">{{ post.title }} </a>
+
         {% for categories in post.categories %}
           <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
         {% endfor %}
