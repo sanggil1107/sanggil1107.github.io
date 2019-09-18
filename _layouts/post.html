@@ -11,11 +11,12 @@ layout: default
   {% endfor %}
 
 
-  {% for categories in page.categories %}
-    {% for post in categories %}
+  {% for tag in site.categories %}
+  {   % for post in tag[1] %}
       index : {{ forloop.index }} {{ post.title }}
     {% endfor %}
   {% endfor %}
+ 
   <article>
     {{ content }}
   </article>
