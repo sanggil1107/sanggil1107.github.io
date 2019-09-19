@@ -57,6 +57,32 @@ layout: default
     
   </ul>
 </div>
+<div class="more-post">
+  <div class="more-category">
+    {% for categories in page.categories %}
+    <h4>{{ categories }}카테고리의 다른 글</h4>   
+      <a href="/Category/{{ categories }}" class="more-button">더보기</a>
+    {% endfor %}
+  </div>
+  <table>
+    <tbody>
+      {% assign count=0 %}
+      {% for post in site.posts %}
+        {% if post.categories == page.categories %}
+          {% assign count = count | plus:1 %}
+          {% if count < 5 %}
+            <tr>
+              <th class="more-posts-title">
+                <a href="{{site.url}}{{post.url}}"></a>
+              </th>
+              <td class="more-posts-date">{{ post.date | date:'%Y. %m. %d' }}</td>
+            </tr>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
 {% if site.disqus_short_name %}
 <div class="comments">
