@@ -43,24 +43,11 @@ layout: default
   </article>
 </div>
 
-<div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-  
- 
-    <hr/>
-      <li>
-        <h3>
-         
-        </h3>
-      </li>
-    
-  </ul>
-</div>
+<hr/>
 <div class="more-posts">
   <div class="more-category">
     {% for categories in page.categories %}
-    <h4>{{ categories }}카테고리의 다른 글</h4>   
+    <h4><b>'{{ categories }}'</b> 카테고리의 다른 글</h4>   
       <a href="/Category/{{ categories }}" class="more-button">더보기</a>
     {% endfor %}
   </div>
@@ -70,7 +57,7 @@ layout: default
       {% for post in site.posts %}
         {% if post.categories == page.categories %}
           {% assign count = count | plus:1 %}
-          {% if count < 5 %}
+          {% if count < 8 %}
             <tr>
               <th class="more-posts-title">
                 <a href="{{site.url}}{{post.url}}"> {{ post.title }}</a>
@@ -83,6 +70,7 @@ layout: default
     </tbody>
   </table>
 </div>
+
 
 {% if site.disqus_short_name %}
 <div class="comments">
