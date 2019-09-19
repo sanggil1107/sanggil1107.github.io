@@ -243,7 +243,10 @@ table {
   border: 1px solid #e5e5e5;
   border-collapse: collapse;
 }
-td,
+td {
+
+  border: 1px solid #e5e5e5;
+}
 th {
   padding: .25rem .5rem;
   border: 1px solid #e5e5e5;
@@ -353,7 +356,7 @@ th {
 }
 
 .more-posts-date {
-  text-align: left;
+  text-align: center;
   width: 80px;
   font-size: 11px;
   padding: 0 0 4px;
