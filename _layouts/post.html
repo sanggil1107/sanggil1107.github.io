@@ -19,6 +19,9 @@ layout: default
           {% assign current = forloop.index | minus:1 %}
           {% assign prev = forloop.index %}
           {% assign next = forloop.index | minus:2 %}
+          {{ tag | last | size }}
+          {{ tag[0] | last | size }}
+          {{ tag[1] | last | size }}
           count : {{ count }}
           이전 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][prev].url }}">
               {{ tag[1][prev].title }} {{ prev }} </a>
