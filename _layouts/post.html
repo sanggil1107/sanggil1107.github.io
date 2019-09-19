@@ -19,21 +19,19 @@ layout: default
           {% assign current = forloop.index | minus:1 %}
           {% assign prev = forloop.index %}
           {% assign next = forloop.index | minus:2 %}
-          {{ tag | last | size }}
-          {{ tag[0] | last | size }}
-          {{ tag[1] | last | size }}
-          count : {{ count }}
-          이전 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][prev].url }}">
-              {{ tag[1][prev].title }} {{ prev }} </a>
-          
+          {% if count > prev %}
+            이전 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][prev].url }}">
+                {{ tag[1][prev].title }} {{ prev }} </a>
+          {% endif %}
           <br>
           현재 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][current].url }}">
               {{ tag[1][current].title }} {{ current }} </a>
           
           <br>
-          다음 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][next].url }}">
-              {{ tag[1][next].title }} {{ next }} </a>
-          
+          {% if next > -1 %}
+            다음 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][next].url }}">
+                {{ tag[1][next].title }} {{ next }} </a>
+          {% endif %}
           <br>
         {% endif %}
       {% endif %}
