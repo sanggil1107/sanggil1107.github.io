@@ -15,7 +15,7 @@ layout: default
     {% for post in tag[1] %}
       {% if page.category == post.category %}
         {% if page.title == post.title %}
-          {% assign count = {{ tag | last | size }} %}
+          {% assign count = tag | last | size %}
           {% assign current = forloop.index | minus:1 %}
           {% assign prev = forloop.index %}
           {% assign next = forloop.index | minus:2 %}
