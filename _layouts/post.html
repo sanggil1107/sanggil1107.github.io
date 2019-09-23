@@ -61,7 +61,7 @@ layout: default
               {% assign cnt = cnt | plus:1 %}
               {% assign count = tag | last | size %}
               {% assign f = count | minus:1 %}
-              {% assign f1 = count | minus:2 %}
+              {% assign a = count | minus:2 %}
               {% assign current = forloop.index | minus:1 %}
               {% assign prev1 = forloop.index %}
               {% assign next1 = forloop.index | minus:2 %}
@@ -223,7 +223,7 @@ layout: default
                   <td class="more-posts-date">{{ tag[1][current].date | date:'%Y. %m. %d' }}</td>
                 </tr>
                 {% endif %}
-                {% if current == f1 %}
+                {% if current == a %}
                 <tr>
                   <th class="more-posts-title">
                     <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next5].title }} {{ next5 }}</a>
