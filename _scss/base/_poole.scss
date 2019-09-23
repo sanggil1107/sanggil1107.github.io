@@ -311,6 +311,10 @@ th {
   position: absolute;
   bottom: 0;
   height: 20px;
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  border-top: 1px solid $lightgrey;
 }
 .masthead {
   padding-top:    1rem;
