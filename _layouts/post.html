@@ -87,7 +87,8 @@ layout: default
                     <td class="more-posts-date">{{ post.date | date:'%Y. %m. %d' }}</td>
                   </tr>
                 {% endif %}
-              {% elseif %}
+              {% endif %}
+              {% if count > 7 %}
                 {% if current == 0 %}
                 <tr>
                   <th class="more-posts-title">
