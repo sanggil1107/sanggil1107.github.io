@@ -14,6 +14,7 @@ title: Home
         </a>
         <br>
         <big class="post-date">{{ post.date | date_to_string }}</big>
+        <br>
         {% for categories in post.categories %}
           <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
         {% endfor %}
