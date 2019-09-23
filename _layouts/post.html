@@ -53,10 +53,12 @@ layout: default
   </div>
   <table>
     <tbody>
+      {% assign cnt=0 %}
       {% for tag in site.categories %}
         {% for post in tag[1] %}
           {% if page.category == post.category %}
             {% if page.title == post.title %}
+              {% assign cnt = cnt | plus:1 %}
               {% assign count = tag | last | size %}
               {% assign current = forloop.index | minus:1 %}
               {% assign prev1 = forloop.index %}
@@ -68,49 +70,201 @@ layout: default
               {% assign prev3 = forloop.index | plus:2 %}
               {% assign next3 = forloop.index | minus:4 %}
 
-              <tr>
-                <th class="more-posts-title">
-                  <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next3].title }} {{ next3 }}</a>
-                </th>
-                <td class="more-posts-date">{{ tag[1][next3].date | date:'%Y. %m. %d' }}</td>
-              </tr>
-              <tr>
-                <th class="more-posts-title">
-                  <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next2].title }} {{ next2 }}</a>
-                </th>
-                <td class="more-posts-date">{{ tag[1][next2].date | date:'%Y. %m. %d' }}</td>
-              </tr>
-              <tr>
-                <th class="more-posts-title">
-                  <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next1].title }} {{ next1 }}</a>
-                </th>
-                <td class="more-posts-date">{{ tag[1][next1].date | date:'%Y. %m. %d' }}</td>
-              </tr>
-              <tr>
-                <th class="more-posts-title">
-                  <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][current].title }} {{ current }}</a>
-                </th>
-                <td class="more-posts-date">{{ tag[1][current].date | date:'%Y. %m. %d' }}</td>
-              </tr>
-              <tr>
-                <th class="more-posts-title">
-                  <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev1].title }} {{ prev1 }}</a>
-                </th>
-                <td class="more-posts-date">{{ tag[1][prev1].date | date:'%Y. %m. %d' }}</td>
-              </tr>
-              <tr>
-                <th class="more-posts-title">
-                  <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev2].title }} {{ prev2 }}</a>
-                </th>
-                <td class="more-posts-date">{{ tag[1][prev2].date | date:'%Y. %m. %d' }}</td>
-              </tr>
-              <tr>
-                <th class="more-posts-title">
-                  <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev3].title }} {{ prev3 }}</a>
-                </th>
-                <td class="more-posts-date">{{ tag[1][prev3].date | date:'%Y. %m. %d' }}</td>
-              </tr>
-            
+              {% assign prev4 = forloop.index | plus:3 %}
+              {% assign next4 = forloop.index | minus:5 %}
+
+              {% assign prev5 = forloop.index | plus:4 %}
+              {% assign next5 = forloop.index | minus:6 %}
+
+              {% assign prev6 = forloop.index | plus:5 %}
+              {% assign next6 = forloop.index | minus:7 %}
+              {% if count < 8 %}
+                {% if cnt < 8 %}
+                <tr>
+                    <th class="more-posts-title">
+                      <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ post.title }} </a>
+                    </th>
+                    <td class="more-posts-date">{{ post.date | date:'%Y. %m. %d' }}</td>
+                  </tr>
+                {% endif %}
+              {% elseif %}
+                {% if current == 0 %}
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][current].title }} {{ current }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][current].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev1].title }} {{ prev1 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev1].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev2].title }} {{ prev2 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev2].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev3].title }} {{ prev3 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev3].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev4].title }} {{ prev4 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev4].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev5].title }} {{ prev5 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev5].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev6].title }} {{ prev6 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev6].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                {% endif %}
+                {% if current == 1 %}
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next1].title }} {{ next1 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next1].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][current].title }} {{ current }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][current].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev1].title }} {{ prev1 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev1].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev2].title }} {{ prev2 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev2].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev3].title }} {{ prev3 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev3].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev4].title }} {{ prev4 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev4].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev5].title }} {{ prev5 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev5].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                {% endif %}
+                {% if current == count %}
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next6].title }} {{ next6 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next6].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next5].title }} {{ next5 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next5].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next4].title }} {{ next4 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next4].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next3].title }} {{ next3 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next3].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next2].title }} {{ next2 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next2].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next1].title }} {{ next1 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next1].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][current].title }} {{ current }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][current].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                {% endif %}
+                {% if current == count-1 %}
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next5].title }} {{ next5 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next5].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next4].title }} {{ next4 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next4].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next3].title }} {{ next3 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next3].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next2].title }} {{ next2 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next2].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next1].title }} {{ next1 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][next1].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][current].title }} {{ current }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][current].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                <tr>
+                  <th class="more-posts-title">
+                    <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][prev1].title }} {{ prev1 }}</a>
+                  </th>
+                  <td class="more-posts-date">{{ tag[1][prev1].date | date:'%Y. %m. %d' }}</td>
+                </tr>
+                {% endif %}
+              {% endif %}
             {% endif %}
           {% endif %}
         {% endfor %}
