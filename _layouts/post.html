@@ -356,7 +356,7 @@ layout: default
                   <td class="more-posts-date">{{ tag[1][prev2].date | date:'%Y. %m. %d' }}</td>
                 </tr>
                 {% endif %}
-                {% if count > 2 or count < t %}
+                {% if count > 2 and count < t %}
                 <tr>
                   <th class="more-posts-title">
                     <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next3].title }} {{ next3 }}</a>
