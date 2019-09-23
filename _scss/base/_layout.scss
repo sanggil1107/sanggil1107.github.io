@@ -41,7 +41,8 @@
 }
 
 .container_body {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
+  padding-top: 40px;
   max-width: 28rem;
   a {
     @if $theme-color != $default { color: $theme-color; }
