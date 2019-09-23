@@ -21,7 +21,6 @@
  */
 
 .container {
-  padding-bottom: 20px;
   max-width: 28rem;
   a {
     @if $theme-color != $default { color: $theme-color; }
