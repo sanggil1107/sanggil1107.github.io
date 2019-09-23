@@ -60,6 +60,8 @@ layout: default
             {% if page.title == post.title %}
               {% assign cnt = cnt | plus:1 %}
               {% assign count = tag | last | size %}
+              {% assign f = count | minus:1 %}
+              {% assign f1 = count | minus:2 %}
               {% assign current = forloop.index | minus:1 %}
               {% assign prev1 = forloop.index %}
               {% assign next1 = forloop.index | minus:2 %}
@@ -177,7 +179,7 @@ layout: default
                   <td class="more-posts-date">{{ tag[1][prev5].date | date:'%Y. %m. %d' }}</td>
                 </tr>
                 {% endif %}
-                {% if current == count %}
+                {% if current == f %}
                 <tr>
                   <th class="more-posts-title">
                     <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next6].title }} {{ next6 }}</a>
@@ -221,7 +223,7 @@ layout: default
                   <td class="more-posts-date">{{ tag[1][current].date | date:'%Y. %m. %d' }}</td>
                 </tr>
                 {% endif %}
-                {% if current == count-1 %}
+                {% if current == f1 %}
                 <tr>
                   <th class="more-posts-title">
                     <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ tag[1][next5].title }} {{ next5 }}</a>
