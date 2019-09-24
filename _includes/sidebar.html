@@ -33,7 +33,9 @@
 
             sub_nav : {{ sub_nav[0] }}, {{ sub_nav[1] }}, {{ sub_nav }}
             sub_is_relative : {{ sub_is_relative }}
-            
+            <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">                 
+              {{ sub_nav[0] }}
+            </a>
             {% for tag in site.categories %}
               {% if nav[0] == 'Programming' %}
                 {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Javascript' or tag[0] == 'Python' %}
