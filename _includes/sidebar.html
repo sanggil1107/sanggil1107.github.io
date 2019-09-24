@@ -30,7 +30,7 @@
             {% if sub_is_relative == '/' %} 
               {% assign sub_url = sub_nav[1] | prepend: site.baseurl %} 
             {% endif %} 
-            sub_nav : {% sub_nav %}
+            sub_nav : {{ sub_nav[0] }}, {{ sub_nav[1] }}, {{ sub_nav }}
             sub_is_relative : {% sub_is_relative %}
             {% for tag in site.categories %}
               {% if nav[0] == 'Programming' %}
