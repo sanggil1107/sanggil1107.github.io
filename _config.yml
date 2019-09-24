@@ -43,7 +43,8 @@ author:
 nav:
   Home:
     - '/'
-  Category:
+  ABOUT:
+  CATEGORY:
     - '/blog/'
     - { Programming: '/blog/categories/' }
     - { Cloud: '/blog/categories/' }
