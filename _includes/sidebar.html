@@ -31,7 +31,7 @@
               {% assign sub_url = sub_nav[1] | prepend: site.baseurl %} 
             {% endif %} 
             sub_nav : {{ sub_nav[0] }}, {{ sub_nav[1] }}, {{ sub_nav }}
-            sub_is_relative : {% sub_is_relative %}
+            sub_is_relative : {{ sub_is_relative }}
             {% for tag in site.categories %}
               {% if nav[0] == 'Programming' %}
                 {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Javascript' or tag[0] == 'Python' %}
