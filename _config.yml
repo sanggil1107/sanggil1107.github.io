@@ -43,7 +43,7 @@ author:
 nav:
   Home:
     - '/'
-  Categories:
+  Category:
     - '/blog/'
     - { Programming: '/blog/categories/' }
     - { Docker: '/blog/categories/' }
