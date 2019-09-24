@@ -46,6 +46,7 @@ nav:
   Programming:
     - '/blog/'
     - { Categories: '/blog/categories/' }
+    - { Docker: '/blog/categories/' }
   Cloud:
     - '/blog/'
     - { Categories: '/blog/categories/' }
