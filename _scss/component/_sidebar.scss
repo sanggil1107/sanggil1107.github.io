@@ -72,6 +72,14 @@
     content: "";
     padding-left: 1em;
   }
+  font-size: 90%;
+  line-height: 85%;
+}
+.sidebar-nav-item-sub-sub {
+  &:before {
+    content: "";
+    padding-left: 2em;
+  }
   font-size: 85%;
   line-height: 85%;
 }
