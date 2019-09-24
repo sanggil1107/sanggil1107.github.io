@@ -2,15 +2,15 @@
 layout: default
 title: Home
 ---
-<h2 class="post-head-title">Recent Post</h2>
-<br><br><br>
 <div class="tags-expo">
   <div class="tags-expo-section">
     <ul class="tags-expo-posts">
       {% for post in paginator.posts %}
         
         <a class="post-title" href="{{ post.url }}" style="color:black">
-          {{ post.title }} 
+          <font size="4">
+            {{ post.title }} 
+          </font>
         </a>
         <br>
         <big class="post-date">{{ post.date | date_to_string }}</big>
