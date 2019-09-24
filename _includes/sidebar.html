@@ -30,28 +30,25 @@
             {% if sub_is_relative == '/' %} 
               {% assign sub_url = sub_nav[1] | prepend: site.baseurl %} 
             {% endif %} 
-
-            sub_nav : {{ sub_nav[0] }}, {{ sub_nav[1] }}, {{ sub_nav }}
-            sub_is_relative : {{ sub_is_relative }}
-            <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">                 
+            <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}">                 
               {{ sub_nav[0] }}
             </a>
             {% for tag in site.categories %}
-              {% if nav[0] == 'Programming' %}
+              {% if sub_nav[0] == 'Programming' %}
                 {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Javascript' or tag[0] == 'Python' %}
                   <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">                 
                     {{ tag | first }} ({{ tag | last | size }}) 
                   </a>
                 {% endif %}
               {% endif %}
-              {% if nav[0] == 'Cloud' %}
-              {% if tag[0] == 'Docker' or tag[0] == 'Kubernetes' %}
-                <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">                 
-                  {{ tag | first }} ({{ tag | last | size }})
-                </a>
+              {% if sub_nav[0] == 'Cloud' %}
+                {% if tag[0] == 'Docker' or tag[0] == 'Kubernetes' %}
+                  <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">                 
+                    {{ tag | first }} ({{ tag | last | size }})
+                  </a>
+                {% endif %}
               {% endif %}
-            {% endif %}
-              {% if nav[0] == 'Blog' %}
+              {% if sub_nav[0] == 'Blog' %}
                 {% if tag[0] == '환경설정' %}
                   <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">
                     {{ tag | first }} ({{ tag | last | size }})
