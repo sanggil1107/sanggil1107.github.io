@@ -43,16 +43,13 @@ author:
 nav:
   Home:
     - '/'
-  Programming:
+  Categories:
     - '/blog/'
-    - { Categories: '/blog/categories/' }
+    - { Programming: '/blog/categories/' }
     - { Docker: '/blog/categories/' }
-  Cloud:
-    - '/blog/'
-    - { Categories: '/blog/categories/' }
-  Blog:
-    - '/blog/'
-    - { Categories: '/blog/categories/' }
+    - { Cloud: '/blog/categories/' }
+    - { Blog: '/blog/categories/' }
+
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
