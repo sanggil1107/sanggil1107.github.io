@@ -17,11 +17,21 @@
       {% assign sub_len = nav[1] | size | minus: 1 %}
 
       <span class="{% if sub_len > 0 %}foldable{% endif %}">
-        <a class="sidebar-nav-item" href="/blog/categories">
-          {{ nav[0] }}
-        </a>
-        
-        
+        {% if nav[0] == 'HOME' %}
+          <a class="sidebar-nav-item" href="{{ site.baseurl }}/">
+            {{ nav[0] }}
+          </a>
+        {% endif %}
+        {% if nav[0] == 'ABOUT' %}
+          <a class="sidebar-nav-item" href="/about/">
+            {{ nav[0] }}
+          </a>
+        {% endif %}
+        {% if nav[0] == 'CATEGORY' %}
+          <a class="sidebar-nav-item" href="/blog/categories">
+            {{ nav[0] }}
+          </a>
+        {% endif %}
         
         {% for i in (1..sub_len) %}
           {% for sub_nav in nav[1][i] %} 
