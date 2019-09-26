@@ -33,7 +33,7 @@ layout: default
           <div>
             <div style="float: left">
             {% if count > prev %}
-                &nbsp;&nbsp;<a href="{{ site.baseurl }}{{ tag[1][prev].url }}" style="text-align: left">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ site.baseurl }}{{ tag[1][prev].url }}" style="text-align: left">
                 <i class="fa fa-arrow-circle-left fa-3x" aria-hidden="true" style="color: black"></i> </a>
             {% endif %}
             </div>
@@ -41,7 +41,7 @@ layout: default
             <div style="float: right">
             {% if next > -1 %}
                 <a href="{{ site.baseurl }}{{ tag[1][next].url }}" style="text-align: right">
-                <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true" style="color: black"></i> </a>&nbsp;&nbsp;
+                <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true" style="color: black"></i> </a>&nbsp;&nbsp;&nbsp;&nbsp;
             {% endif %}
             </div>
           </div>
