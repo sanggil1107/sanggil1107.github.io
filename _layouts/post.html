@@ -28,18 +28,20 @@ layout: default
           {% assign prev = forloop.index %}
           {% assign next = forloop.index | minus:2 %}
           <div>
-          {% if count > prev %}
-            이전 : <a href="{{ site.baseurl }}{{ tag[1][prev].url }}" style="text-align: left">
-              <i class="fa fa-arrow-circle-left fa-5x" aria-hidden="true" style="color: black"></i> </a>
-          {% endif %}
-          
-          
-          
-          {% if next > -1 %}
-            다음 : <a href="{{ site.baseurl }}{{ tag[1][next].url }}" style="text-align: right">
-              <i class="fa fa-arrow-circle-right fa-5x" aria-hidden="true" style="color: black"></i> </a>
-          {% endif %}
-        </div>
+            <div style="text-align: left; display: inline">
+            {% if count > prev %}
+              이전 : <a href="{{ site.baseurl }}{{ tag[1][prev].url }}" style="text-align: left">
+                <i class="fa fa-arrow-circle-left fa-5x" aria-hidden="true" style="color: black"></i> </a>
+            {% endif %}
+            </div>
+            
+            <div style="text-align: right; display: inline">
+            {% if next > -1 %}
+              다음 : <a href="{{ site.baseurl }}{{ tag[1][next].url }}" style="text-align: right">
+                <i class="fa fa-arrow-circle-right fa-5x" aria-hidden="true" style="color: black"></i> </a>
+            {% endif %}
+            </div>
+          </div>
           <br>
         {% endif %}
       {% endif %}
