@@ -13,7 +13,13 @@ layout: default
   {% endfor %}
 
 
-  {% for tag in site.categories %}
+  
+ 
+  <article>
+    {{ content }}
+  </article>
+</div>
+{% for tag in site.categories %}
     {% for post in tag[1] %}
       {% if page.category == post.category %}
         {% if page.title == post.title %}
@@ -25,26 +31,18 @@ layout: default
             이전 : <a href="{{ site.baseurl }}{{ tag[1][prev].url }}">
               <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" style="color: black"></i> </a>
           {% endif %}
-          <br>
-          현재 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][current].url }}">
-              {{ tag[1][current].title }} {{ current }} </a>
+         
           
-          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           {% if next > -1 %}
-            다음 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][next].url }}">
-                {{ tag[1][next].title }} {{ next }} </a>
+            다음 : <a href="{{ site.baseurl }}{{ tag[1][next].url }}">
+              <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true" style="color: black"></i> </a>
           {% endif %}
           <br>
         {% endif %}
       {% endif %}
     {% endfor %}
   {% endfor %}
- 
-  <article>
-    {{ content }}
-  </article>
-</div>
-
 <hr/>
 <div class="more-posts">
   <div class="more-category">
