@@ -27,11 +27,12 @@ layout: default
           {% assign current = forloop.index | minus:1 %}
           {% assign prev = forloop.index %}
           {% assign next = forloop.index | minus:2 %}
+          <div style="text-align: left">
           {% if count > prev %}
             이전 : <a href="{{ site.baseurl }}{{ tag[1][prev].url }}" style="text-align: left">
               <i class="fa fa-arrow-circle-left fa-5x" aria-hidden="true" style="color: black"></i> </a>
           {% endif %}
-         
+          </div>
           
           <div style="text-align: right">
           {% if next > -1 %}

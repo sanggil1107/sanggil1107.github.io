@@ -4,6 +4,27 @@
   {% include head.html %}
   {% seo %}
 
+  <style>
+    a.top {
+      position: fixed;
+      right: 50px;
+      bottom: 50px;
+      display: none;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      $(window).scroll(function() {
+        if($(this).scrollTop() > 200) {
+          $('.top').fadeIn();
+        }
+        else {
+          $('.top').fadeOut();
+        }
+      });
+    });
+  </script>
+
   <body>
 
     {% include sidebar.html %}
@@ -76,6 +97,11 @@ ga('create', '{{ site.google_analytics_token }}', 'auto');
 ga('send', 'pageview');
     </script>
     {% endif %}
+
+  
+  <a href="#head" class="top">
+      <i class="fa fa-arrow-circle-right fa-5x" aria-hidden="true" style="color: black"></i>
+  </a>
 
   </body>
 
