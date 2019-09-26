@@ -3,9 +3,9 @@ layout: default
 ---
 
 <div class="post">
-  <h2 class="post-title" style="color: black" >     
+  <h3 class="post-title" style="color: black" >     
       {{ page.title }}
-  </h2>
+  </h3>
   <big class="post-date">{{ page.date | date_to_string }}</big>
   <br>
   {% for categories in page.categories %}
@@ -33,7 +33,7 @@ layout: default
           <div>
             <div style="float: left">
             {% if count > prev %}
-                &nbsp;&nbsp;&nbsp;&nbsp;<span><a href="{{ site.baseurl }}{{ tag[1][prev].url }}" style="text-align: left">
+                &nbsp;<span><a href="{{ site.baseurl }}{{ tag[1][prev].url }}" style="text-align: left">
                 <i class="fa fa-arrow-left fa-1x" aria-hidden="true" style="color: black"></i> </a>이전 글</span>
             {% endif %}
             </div>
@@ -41,7 +41,7 @@ layout: default
             <div style="float: right">
             {% if next > -1 %}
                 <span>다음 글<a href="{{ site.baseurl }}{{ tag[1][next].url }}" style="text-align: right">
-                <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i> </a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i> </a></span>&nbsp;
             {% endif %}
             </div>
           </div>
