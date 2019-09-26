@@ -4,7 +4,7 @@ layout: default
 
 <div class="post">
   <h2 class="post-title" style="color: black" >     
-      {{ post.title }}
+      {{ page.title }}
   </h2>
   <big class="post-date">{{ page.date | date_to_string }}</big>
   <br>
@@ -22,8 +22,8 @@ layout: default
           {% assign prev = forloop.index %}
           {% assign next = forloop.index | minus:2 %}
           {% if count > prev %}
-            이전 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][prev].url }}">
-                {{ tag[1][prev].title }} {{ prev }} </a>
+            이전 : <a href="{{ site.baseurl }}{{ tag[1][prev].url }}">
+              <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" style="color: black"></i> </a>
           {% endif %}
           <br>
           현재 : <a class="post-title" href="{{ site.baseurl }}{{ tag[1][current].url }}">
