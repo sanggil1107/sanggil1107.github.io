@@ -33,11 +33,12 @@ layout: default
           {% endif %}
          
           
-          
+          <div style="text-align: right">
           {% if next > -1 %}
             다음 : <a href="{{ site.baseurl }}{{ tag[1][next].url }}" style="text-align: right">
               <i class="fa fa-arrow-circle-right fa-5x" aria-hidden="true" style="color: black"></i> </a>
           {% endif %}
+        </div>
           <br>
         {% endif %}
       {% endif %}
