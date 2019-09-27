@@ -3,10 +3,10 @@ layout: default
 ---
 
 <div class="post">
-  <h3 class="post-title" style="color: black" >     
-    <font size="4">
+  <h3 class="post-title" style="color: black;font-size: 10px" >     
+
       {{ page.title }}
-    </font>
+
   </h3>
   <big class="post-date">{{ page.date | date_to_string }}</big>
   <br>
@@ -48,8 +48,8 @@ layout: default
             {% if next > -1 %}
                 <a href="{{ site.baseurl }}{{ tag[1][next].url }}" style="text-align: right">
                   <span style="display: inline-block; border: 1px solid black; padding: 10px; color:black">
-                    <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i>&nbsp;
                     다음 글 
+                    <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i>&nbsp;
                   </span>
                 </a>
             {% endif %}
