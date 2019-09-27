@@ -14,7 +14,7 @@ title: CATEGORY
           {% for sub_nav in nav[1][i] %} 
             <h2 id="{{ {{ sub_nav[0] }} | slugify }}">{{ sub_nav[0] }}</h2>
             {% for tag in site.categories %} 
-            <h2 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">■{{ tag[0] }}</a></h2> 
+            <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">■{{ tag[0] }}</a></h3> 
             <ul class="tags-expo-posts"> 
               {% for post in tag[1] %} 
                 <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(105, 99, 99)"> 
@@ -24,11 +24,12 @@ title: CATEGORY
               </li> 
               </a> 
               {% endfor %} 
-              <hr/>
+              
             </ul> 
             {% endfor %} 
           {% endfor %}
         {% endfor %} 
+        <hr/>
     {% endfor %}  
    </div> 
  </div> 
