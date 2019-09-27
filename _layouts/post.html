@@ -4,7 +4,9 @@ layout: default
 
 <div class="post">
   <h3 class="post-title" style="color: black" >     
+    <font size="4">
       {{ page.title }}
+    </font>
   </h3>
   <big class="post-date">{{ page.date | date_to_string }}</big>
   <br>
@@ -34,7 +36,7 @@ layout: default
             <div style="float: left">
             {% if count > prev %}
                 <a href="{{ site.baseurl }}{{ tag[1][prev].url }}" style="text-align: left">
-                  <span style="display: inline-block; border: 1px solid black; padding: 10px">
+                  <span style="display: inline-block; border: 1px solid black; padding: 10px; color:black">
                     &nbsp;<i class="fa fa-arrow-left fa-1x" aria-hidden="true" style="color: black"></i> 
                     이전 글
                   </span>
@@ -45,11 +47,11 @@ layout: default
             <div style="float: right">
             {% if next > -1 %}
                 <a href="{{ site.baseurl }}{{ tag[1][next].url }}" style="text-align: right">
-                  <span style="display: inline-block; border: 1px solid black; padding: 10px"></span>
-                <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i>&nbsp;
-                다음 글 
-              </span>
-            </a>
+                  <span style="display: inline-block; border: 1px solid black; padding: 10px; color:black">
+                    <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i>&nbsp;
+                    다음 글 
+                  </span>
+                </a>
             {% endif %}
             </div>
           </div>
