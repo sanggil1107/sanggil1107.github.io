@@ -9,10 +9,10 @@ title: CATEGORY
    <hr/> 
    <div class="tags-expo-section"> 
      {% for tag in site.categories %} 
-     <h2 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}">{{ tag[0] }}</a></h2> 
+     <h2 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">{{ tag[0] }}</a></h2> 
      <ul class="tags-expo-posts"> 
        {% for post in tag[1] %} 
-         <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: black"> 
+         <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(26, 25, 25)"> 
        <li> 
          {{ post.title }} 
        <small class="post-date">{{ post.date | date_to_string }}</small> 
