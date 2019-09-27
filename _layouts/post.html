@@ -33,14 +33,14 @@ layout: default
           <div>
             <div style="float: left">
             {% if count > prev %}
-                &nbsp;<span style="display: inline-block; border: 2px"><a href="{{ site.baseurl }}{{ tag[1][prev].url }}" style="text-align: left">
+                &nbsp;<span style="display: inline-block; border: 2px solid black"><a href="{{ site.baseurl }}{{ tag[1][prev].url }}" style="text-align: left">
                 <i class="fa fa-arrow-left fa-1x" aria-hidden="true" style="color: black"></i> </a>이전 글</span>
             {% endif %}
             </div>
             
             <div style="float: right">
             {% if next > -1 %}
-                <span style="display: inline-block; border: 2px">다음 글<a href="{{ site.baseurl }}{{ tag[1][next].url }}" style="text-align: right">
+                <span style="display: inline-block; border: 2px solid black">다음 글<a href="{{ site.baseurl }}{{ tag[1][next].url }}" style="text-align: right">
                 <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i> </a></span>&nbsp;
             {% endif %}
             </div>
