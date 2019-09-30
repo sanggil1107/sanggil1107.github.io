@@ -40,7 +40,7 @@
             {% if sub_is_relative == '/' %} 
               {% assign sub_url = sub_nav[1] | prepend: site.baseurl %} 
             {% endif %} 
-            <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category{ {{ sub_nav[0] }} | slugify }">                 
+            <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category{ sub_nav[0] | slugify }">                 
               {{ sub_nav[0] }}
             </a>
             {% for tag in site.categories %}
