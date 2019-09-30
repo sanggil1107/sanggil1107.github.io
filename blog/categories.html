@@ -41,7 +41,7 @@ title: CATEGORY
               {% if sub_nav[0] == 'Cloud'' %}
                 {% if tag[0] == 'Docker' or tag[0] == 'Kubernetes' %}
 
-                  <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">□ {{ tag[0] }}</a></h3> 
+                  <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">□ {{ tag | first }} ({{ tag | last | size }})</a></h3> 
                   <ul class="tags-expo-posts"> 
                     {% for post in tag[1] %} 
                       <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(105, 99, 99)"> 
@@ -58,7 +58,7 @@ title: CATEGORY
               {% if sub_nav[0] == 'Blog' %}
                 {% if tag[0] == '환경설정' %}
 
-                  <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">□ {{ tag[0] }}</a></h3> 
+                  <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">□ {{ tag | first }} ({{ tag | last | size }})</a></h3> 
                   <ul class="tags-expo-posts"> 
                     {% for post in tag[1] %} 
                       <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(105, 99, 99)"> 
