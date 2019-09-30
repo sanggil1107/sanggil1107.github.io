@@ -12,18 +12,7 @@
       display: none;
     }
   </style>
-  <script>
-
-      $(window).scroll(function() {
-        if($(document).scrollTop() > 500) {
-          $('.top').css('display','block')
-        }
-        else {
-          $('.top').fadeOut();
-        }
-      });
-   
-  </script>
+  
 
   <body>
 
@@ -50,7 +39,18 @@
         <a class="top" href="{{ site.baseurl }}/" >
           <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i>
         </a>
-   
+        <script>
+
+          $(window).scroll(function() {
+            if($(document).scrollTop() > 500) {
+              $('.top').css('display','block')
+            }
+            else {
+              $('.top').fadeOut();
+            }
+          });
+       
+      </script>
 
       <footer>
           <div id="footer" class="mastfooter">
