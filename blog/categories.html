@@ -14,18 +14,57 @@ title: CATEGORY
           {% for sub_nav in nav[1][i] %} 
             <h2 id="{{ {{ sub_nav[0] }} | slugify }}">{{ sub_nav[0] }}</h2>
             {% for tag in site.categories %} 
-            <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">■{{ tag[0] }}</a></h3> 
-            <ul class="tags-expo-posts"> 
-              {% for post in tag[1] %} 
-                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(105, 99, 99)"> 
-              <li> 
-                {{ post.title }} 
-              <small class="post-date">{{ post.date | date_to_string }}</small> 
-              </li> 
-              </a> 
-              {% endfor %} 
-              
-            </ul> 
+              {% if sub_nav[0] == 'Programming' %}
+                {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Javascript' or tag[0] == 'Python' %}
+
+                  <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">□ {{ tag[0] }}</a></h3> 
+                  <ul class="tags-expo-posts"> 
+                    {% for post in tag[1] %} 
+                      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(105, 99, 99)"> 
+                    <li> 
+                      {{ post.title }} 
+                    <small class="post-date">{{ post.date | date_to_string }}</small> 
+                    </li> 
+                    </a> 
+                    {% endfor %} 
+                    
+                  </ul> 
+                {% endif %}
+              {% endif %}
+              {% if sub_nav[0] == 'Cloud'' %}
+                {% if tag[0] == 'Docker' or tag[0] == 'Kubernetes' %}
+
+                  <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">□ {{ tag[0] }}</a></h3> 
+                  <ul class="tags-expo-posts"> 
+                    {% for post in tag[1] %} 
+                      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(105, 99, 99)"> 
+                    <li> 
+                      {{ post.title }} 
+                    <small class="post-date">{{ post.date | date_to_string }}</small> 
+                    </li> 
+                    </a> 
+                    {% endfor %} 
+                    
+                  </ul> 
+                {% endif %}
+              {% endif %}
+              {% if sub_nav[0] == 'Blog' %}
+                {% if tag[0] == '환경설정' %}
+
+                  <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">□ {{ tag[0] }}</a></h3> 
+                  <ul class="tags-expo-posts"> 
+                    {% for post in tag[1] %} 
+                      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(105, 99, 99)"> 
+                    <li> 
+                      {{ post.title }} 
+                    <small class="post-date">{{ post.date | date_to_string }}</small> 
+                    </li> 
+                    </a> 
+                    {% endfor %} 
+                    
+                  </ul> 
+                {% endif %}
+              {% endif %}
             {% endfor %} 
           {% endfor %}
           <hr/>
