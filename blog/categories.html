@@ -2,6 +2,9 @@
 layout: page 
 title: CATEGORY 
 --- 
+{% for categories in post.categories %}
+  <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
+{% endfor %}
 
 <div class="tags-expo"> 
   <div class="tags-expo-list"> 
