@@ -11,6 +11,12 @@
       bottom: 20px;
    
     }
+
+    .fa fa-arrow-right fa-1x {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+    }
   </style>
   
 
@@ -43,10 +49,10 @@
         $( document ).ready( function() {
           $( window ).scroll( function() {
             if( $( this ).scrollTop() > 200) {
-              $( ".top" ).fadeIn();
+              $( ".fa fa-arrow-right fa-1x" ).fadeIn();
             }
             else {
-              $( ".top" ).fadeOut();
+              $( ".fa fa-arrow-right fa-1x" ).fadeOut();
             }
           });
             return false;
