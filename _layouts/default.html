@@ -9,14 +9,9 @@
       position: fixed;
       right: 20px;
       bottom: 20px;
-   
+      display: none;
     }
 
-    .fa fa-arrow-right fa-1x {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-    }
   </style>
   
 
@@ -41,18 +36,19 @@
       <div class="container content">
         {{ content }}
       </div>
-      
+      <div>
         <a class="top" href="{{ site.baseurl }}/" >
           <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i>
         </a>
+      </div>
         <script>
         $( document ).ready( function() {
           $( window ).scroll( function() {
             if( $( this ).scrollTop() > 200) {
-              $( ".fa fa-arrow-right fa-1x" ).fadeIn();
+              $( ".top" ).fadeIn();
             }
             else {
-              $( ".fa fa-arrow-right fa-1x" ).fadeOut();
+              $( ".top" ).fadeOut();
             }
           });
             return false;
