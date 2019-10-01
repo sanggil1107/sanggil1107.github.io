@@ -10,6 +10,7 @@
       right: 20px;
       bottom: 20px;
       display: none;
+      z-index: 999;
     }
 
   </style>
@@ -41,7 +42,7 @@
           <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i>
         </a>
       </div>
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>
         $( document ).ready( function() {
           $( window ).scroll( function() {
@@ -52,7 +53,10 @@
               $( '.top' ).fadeOut();
             }
           });
+          $( '.top').click( function() {
+            $( 'html, body' ).animate( {scrollTop:0}, 400 );
             return false;
+          })
         });
       </script>
 

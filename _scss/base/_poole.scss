@@ -314,11 +314,12 @@ th {
   margin-right: auto;
 }
 
-.top {
+a.top {
   position: fixed;
   right: 20px;
   bottom: 20px;
-
+  display: none;
+  z-index: 999;
 }
 /*
  * Masthead
