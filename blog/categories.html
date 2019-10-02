@@ -27,7 +27,7 @@ title: CATEGORY
                 {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Javascript' or tag[0] == 'Python' %}
               
                   <a href="/Category/{{ tag[0] }}" style="color: black">
-                    <i class="fa fa-square fa-1x" aria-hidden="true" style="color: black"></i><font size="4">&nbsp;{{ tag | first }} ({{ tag | last | size }})</font>
+                    <i class="fa fa-square fa-1x" aria-hidden="true" style="color: black"></i><font size="5">&nbsp;<h3 id="{{ tag[0] | slugify }}">{{ tag | first }} ({{ tag | last | size }})</h3></font>
                   </a>
               
                   <ul class="tags-expo-posts"> 
