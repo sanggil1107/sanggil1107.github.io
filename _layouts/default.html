@@ -5,7 +5,7 @@
   {% seo %}
 
   <style>
-    a.top {
+    a.topbutton {
       position: fixed;
       right: 20px;
       bottom: 20px;
@@ -38,7 +38,7 @@
         {{ content }}
       </div>
       <div>
-        <a class="top" href="{{ site.baseurl }}/" >
+        <a class="topbutton" href="{{ site.baseurl }}/" >
           <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i>
         </a>
       </div>
@@ -47,13 +47,13 @@
         $( document ).ready( function() {
           $( window ).scroll( function() {
             if( $( this ).scrollTop() > 200) {
-              $( '.top' ).fadeIn();
+              $( '.topbutton' ).fadeIn();
             }
             else {
-              $( '.top' ).fadeOut();
+              $( '.topbutton' ).fadeOut();
             }
           });
-          $( '.top').click( function() {
+          $( '.topbutton').click( function() {
             $( 'html, body' ).animate( {scrollTop:0}, 400 );
             return false;
           })
