@@ -19,7 +19,11 @@ title: CATEGORY
       {% assign sub_len = nav[1] | size | minus: 1 %}
         {% for i in (1..sub_len) %}
           {% for sub_nav in nav[1][i] %} 
-            <h2 id="{{ sub_nav[0] | slugify }}">{{ sub_nav[0] }}</h2>
+            <ul style="list-style-type: square;">
+              <li>
+                <h2 id="{{ sub_nav[0] | slugify }}">{{ sub_nav[0] }}</h2>
+              </li>
+            </ul>
             {% for tag in site.categories %} 
               {% if sub_nav[0] == 'Programming' %}
                 {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Javascript' or tag[0] == 'Python' %}
@@ -27,7 +31,7 @@ title: CATEGORY
                   <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">□ {{ tag | first }} ({{ tag | last | size }})</a></h3> 
                   <ul class="tags-expo-posts"> 
                     {% for post in tag[1] %} 
-                      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(105, 99, 99)"> 
+                      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(114, 105, 110)"> 
                     <li> 
                       {{ post.title }} 
                     <small class="post-date">{{ post.date | date_to_string }}</small> 
