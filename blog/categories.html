@@ -32,7 +32,7 @@ title: CATEGORY
               
                   <ul class="tags-expo-posts"> 
                     {% for post in tag[1] %} 
-                      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(114, 105, 110)"> 
+                      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(150, 150, 150)"> 
                     <li> 
                       {{ post.title }} 
                     <small class="post-date">{{ post.date | date_to_string }}</small> 
@@ -46,12 +46,12 @@ title: CATEGORY
               {% if sub_nav[0] == 'Cloud'' %}
                 {% if tag[0] == 'Docker' or tag[0] == 'Kubernetes' %}
 
-                <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">
-                  <i class="fa fa-square fa-1x" aria-hidden="true" ></i>&nbsp;{{ tag | first }} ({{ tag | last | size }})
-                </a></h3>
+                  <a id="{{ tag[0] | slugify }}" href="/Category/{{ tag[0] }}" style="color: black">
+                    <i class="fa fa-square fa-1x" aria-hidden="true" style="color: black"></i><font size="4.5">&nbsp;{{ tag | first }} ({{ tag | last | size }})</font>
+                  </a>
                   <ul class="tags-expo-posts"> 
                     {% for post in tag[1] %} 
-                      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(105, 99, 99)"> 
+                      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(160, 160, 160)"> 
                     <li> 
                       {{ post.title }} 
                     <small class="post-date">{{ post.date | date_to_string }}</small> 
@@ -65,9 +65,9 @@ title: CATEGORY
               {% if sub_nav[0] == 'Blog' %}
                 {% if tag[0] == '환경설정' %}
 
-                <h3 id="{{ tag[0] | slugify }}"><a href="/Category/{{ tag[0] }}" style="color: black">
-                  <i class="fa fa-square fa-1x" aria-hidden="true" ></i>&nbsp;{{ tag | first }} ({{ tag | last | size }})
-                </a></h3>
+                  <a id="{{ tag[0] | slugify }}" href="/Category/{{ tag[0] }}" style="color: black">
+                    <i class="fa fa-square fa-1x" aria-hidden="true" style="color: black"></i><font size="4.5">&nbsp;{{ tag | first }} ({{ tag | last | size }})</font>
+                  </a>
                   <ul class="tags-expo-posts"> 
                     {% for post in tag[1] %} 
                       <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="color: rgb(105, 99, 99)"> 
