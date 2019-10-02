@@ -40,7 +40,7 @@
             {% if sub_is_relative == '/' %} 
               {% assign sub_url = sub_nav[1] | prepend: site.baseurl %} 
             {% endif %} 
-            <p class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" >                 
+            <p class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" style="color: white">                 
               {{ sub_nav[0] }}
             </p>
             {% for tag in site.categories %}
