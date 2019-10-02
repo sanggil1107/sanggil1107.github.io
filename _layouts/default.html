@@ -4,18 +4,6 @@
   {% include head.html %}
   {% seo %}
 
-  <style>
-    #top {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      display: none;
-      z-index: 999;
-    }
-
-  </style>
-  
-
   <body>
 
     {% include sidebar.html %}
@@ -37,32 +25,7 @@
       <div class="container content">
         {{ content }}
       </div>
-      <div>
-        <a id="top" class="topbutton" href="{{ site.baseurl }}/" >
-          <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i>
-        </a>
-        <a class="topbutton" href="{{ site.baseurl }}/" >
-          <i class="fa fa-arrow-right fa-1x" aria-hidden="true" style="color: black"></i>
-        </a>
-      </div>
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script>
-        $( document ).ready( function() {
-          $( window ).scroll( function() {
-            if( $( this ).scrollTop() > 200) {
-              $( '#top' ).fadeIn();
-            }
-            else {
-              $( '#top' ).fadeOut();
-            }
-          });
-          $( '#top').click( function() {
-            $( 'html, body' ).animate( {scrollTop:0}, 400 );
-            return false;
-          })
-        });
-      </script>
-
+      
       <footer>
           <div id="footer" class="mastfooter">
               <div class="container_body">
