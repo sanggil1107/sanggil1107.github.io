@@ -40,9 +40,9 @@
             {% if sub_is_relative == '/' %} 
               {% assign sub_url = sub_nav[1] | prepend: site.baseurl %} 
             {% endif %} 
-            <p class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" style="color: white">                 
+            <a class="sidebar-nav-item sidebar-nav-item-sub {% if page.url == tag[0] %}active{% endif %}" style="color: white">                 
               {{ sub_nav[0] }}
-            </p>
+            </a>
             {% for tag in site.categories %}
               {% if sub_nav[0] == 'Programming' %}
                 {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Javascript' or tag[0] == 'Python' %}
