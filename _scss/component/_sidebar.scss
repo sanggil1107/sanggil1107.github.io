@@ -18,7 +18,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 14rem;
+  width: 12rem;
   visibility: hidden;
   overflow-y: auto;
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
@@ -28,9 +28,9 @@
 
   @if $reverse-layout {
     left: auto;
-    right: -14rem;
+    right: -12rem;
   } @else {
-    left: -14rem;
+    left: -12rem;
     right: auto;
   }
 
