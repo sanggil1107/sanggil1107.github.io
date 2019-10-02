@@ -1,6 +1,6 @@
 # Site Info
 title:        Sanggil Log # 블로그 제목
-tagline:      'Log for Develop' # 페이지 제목 옆에 나타나는 설명 글
+tagline:      '상길이의 개발노트' # 페이지 제목 옆에 나타나는 설명 글
 description:  '소소한 일상의 기록' # 블로그 설명
 baseurl:      ''
 url:          https://sanggil1107.github.io/
