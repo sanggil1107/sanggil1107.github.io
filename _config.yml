@@ -48,7 +48,7 @@ nav:
     - '/blog/'
     - { Programming: '/blog/categories/' }
     - { Cloud: '/blog/categories/' }
-    - { Blog: '/blog/categories/' }
+    - { 개발환경: '/blog/categories/' }
 
 
 # Where are tags and categories displayed
