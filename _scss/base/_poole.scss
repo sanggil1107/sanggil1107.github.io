@@ -265,6 +265,30 @@ th {
 }
 
 
+.nav-buttons {
+  margin-left: 10px;
+  line-height: initial;
+  
+  .nav__icon {  
+    &:first-child {
+      margin-right: 10px;
+    }
+    
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .nav__icon-menu {
+    display: none;
+  }
+
+  @media only screen and (max-width: 576px) {
+    .nav__icon-menu {
+      display: inline-block;
+    }
+  }
+}
+
 /*
  * Custom type
  *
