@@ -338,13 +338,7 @@ th {
   margin-right: auto;
 }
 
-a.top {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  display: none;
-  z-index: 999;
-}
+
 /*
  * Masthead
  *
@@ -360,6 +354,10 @@ a.top {
   text-align: center;
 }
 .masthead {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  flex-direction: row;
   padding-top:    1rem;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
