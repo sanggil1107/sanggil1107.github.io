@@ -100,12 +100,28 @@ layout: default
               {% assign next6 = forloop.index | minus:7 %}
               {% if count < 8 %}
                 {% if cnt < 8 %}
-                <tr>
-                    <th class="more-posts-title">
-                      <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ post.title }} </a>
-                    </th>
-                    <td class="more-posts-date">{{ post.date | date:'%Y. %m. %d' }}</td>
-                  </tr>
+                  {% for tag in site.categories %}
+                    {% for post in tag[1] %}
+                      {% if page.category == post.category %}
+                        {% if page.title == post.title %}
+                        <tr>
+                          <th class="more-posts-title">
+                            <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;<U>{{ post.title }} </U></a>
+                          </th>
+                          <td class="more-posts-date">{{ post.date | date:'%Y. %m. %d' }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if page.title != post.title %}
+                        <tr>
+                          <th class="more-posts-title">
+                            <a class="more-posts-title" href="{{site.url}}{{post.url}}"> &nbsp;{{ post.title }} </a>
+                          </th>
+                          <td class="more-posts-date">{{ post.date | date:'%Y. %m. %d' }}</td>
+                        </tr>
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
                 {% endif %}
               {% endif %}
               {% if count > 7 %}
