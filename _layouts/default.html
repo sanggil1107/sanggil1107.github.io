@@ -26,8 +26,8 @@
                 </div>
                 <div class="header__overlay"></div>
              </div>
+             {% include search.html %}
            </div>
-           {% include search.html %}
       <div class="container content">
         {{ content }}
       </div>
@@ -56,9 +56,9 @@
         </footer>
         <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
+        {% include javascripts.html %}
     </div>
    
-    {% include javascripts.html %}
     <script>
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
