@@ -19,8 +19,13 @@
                   {{ site.tagline }} 
                  </a>
                </h3>
+               <div class="nav-buttons">
+                <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+                <i class="nav__icon nav__icon-search ion ion-md-search"></i>
+              </div>
              </div>
            </div>
+           {% include search.html %}
       <div class="container content">
         {{ content }}
       </div>
@@ -51,7 +56,7 @@
 
     </div>
    
-
+    {% include javascripts.html %}
     <script>
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
