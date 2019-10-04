@@ -43,7 +43,7 @@ title: CATEGORY
                   </ul> 
                 {% endif %}
               {% endif %}
-              {% if sub_nav[0] == 'Cloud'' %}
+              {% if sub_nav[0] == 'Cloud' %}
                 {% if tag[0] == 'Docker' or tag[0] == 'Kubernetes' %}
 
                   <a id="{{ tag[0] | slugify }}" href="/Category/{{ tag[0] }}" style="color: black">
@@ -62,8 +62,8 @@ title: CATEGORY
                   </ul> 
                 {% endif %}
               {% endif %}
-              {% if sub_nav[0] == 'Blog' %}
-                {% if tag[0] == '환경설정' %}
+              {% if sub_nav[0] == '개발환경' %}
+                {% if tag[0] == '환경설정' or tag[0] == 'Markdown' or tag[0] == 'Git' %}
 
                   <a id="{{ tag[0] | slugify }}" href="/Category/{{ tag[0] }}" style="color: black">
                     <i class="fa fa-square fa-1x" aria-hidden="true" style="color: black"></i><font size="4.5">&nbsp;{{ tag | first }} ({{ tag | last | size }})</font>
