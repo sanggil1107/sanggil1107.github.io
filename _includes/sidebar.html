@@ -58,8 +58,8 @@
                   </a>
                 {% endif %}
               {% endif %}
-              {% if sub_nav[0] == 'Blog' %}
-                {% if tag[0] == '환경설정' %}
+              {% if sub_nav[0] == '개발환경' %}
+                {% if tag[0] == '환경설정' or tag[0] == 'Markdown or tag[0] == 'Git' %}
                   <a class="sidebar-nav-item sidebar-nav-item-sub-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">
                     {{ tag | first }} ({{ tag | last | size }})
                   </a>
