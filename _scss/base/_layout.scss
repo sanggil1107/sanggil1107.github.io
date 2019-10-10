@@ -19,6 +19,14 @@
  * Center the page content.
  */
 
+ 
+.containers {
+  max-width: $container-base-width;
+  padding-left: $container-offset;
+  padding-right: $container-offset;
+  margin: 0 auto;
+}
+
 .container {
 
   .header__overlay {
