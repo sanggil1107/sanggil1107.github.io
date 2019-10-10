@@ -28,3 +28,22 @@ h1, h2, h3, h4, h5, h6 {
 code {
   color: #666;
 }
+
+
+[hidden] {
+  display: none;
+}
+
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
