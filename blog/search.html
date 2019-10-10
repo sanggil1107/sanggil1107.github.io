@@ -1,8 +1,37 @@
 --- 
 layout: default 
-title: CATEGORY 
+title: SEARCH 
 --- 
+<style>
 
+.search-results-list {
+  height: 55vh;
+  margin: 0 0 0 -5px;
+  padding: 0 26px;
+  list-style: decimal;
+  font-weight: 700;
+  overflow: auto;
+  white-space: normal;
+
+
+  
+  .search-results__link {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: lighten($dark, 10%);
+    transition: all .15s;
+
+  }
+  .screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+  }
+</style>
 <!-- begin search -->
 <div class="search" style="position: fixed">
   <div class="containers">
@@ -15,7 +44,8 @@ title: CATEGORY
             </div>
             <label for="js-search-input" class="screen-reader-text">Search for Blog</label>
             <input type="text" id="js-search-input" class="search__text" autocomplete="off"
-              placeholder="Type to search..." style="border: none; padding: 20px; font-size: 28px; line-height: 32px">
+              placeholder="Type to search..." 
+              style="border: none; padding: 20px; font-size: 28px; line-height: 32px; border-bottom: 3px solid $dark;">
           </div>
           <ul id="js-results-container" class="search-results-list"></ul>
         </div>
