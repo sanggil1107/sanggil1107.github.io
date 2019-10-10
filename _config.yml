@@ -69,4 +69,3 @@ theme_settings:
   str_previous_page: "Prev"
   post_navigation: true
 
-excerpt_separator: <!--more-->
