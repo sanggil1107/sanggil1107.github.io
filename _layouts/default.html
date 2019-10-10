@@ -5,7 +5,46 @@
   {% seo %}
 
   <body>
+  <style>
+  .top {
+  position: fixed;
+  bottom: 40px;
+  right: -100px;
+	z-index: 1;
+	width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+	background-color:  #9a9a9a;
+	color: #000000;
+	cursor: pointer;
+	transition: all .25s ease;
+	opacity: .7;
+  
 
+}
+
+@media only screen and (max-width: 600px) {
+  .top {
+    bottom: 25px;
+    
+  }
+}  
+  </style>
+  <script>
+    $(".top").click(function() {
+    $("html, body")
+      .stop()
+      .animate({ scrollTop: 0 }, "slow", "swing");
+  });
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > $(window).height()) {
+      $(".top").addClass("is-active");
+    } else {
+      $(".top").removeClass("is-active");
+    }
+  });  
+  </script>
     {% include sidebar.html %}
 
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
