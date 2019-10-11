@@ -97,9 +97,9 @@
         });
         $(window).scroll(function() {
           if ($(this).scrollTop() > $(window).height()) {
-            $(".top").addClass("is-active");
+            $(".top").fadeIn();
           } else {
-            $(".top").removeClass("is-active");
+            $(".top").fadeOut();
           }
         });  
         </script>
