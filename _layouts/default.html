@@ -19,7 +19,8 @@
 	color: #000000;
 	cursor: pointer;
 	transition: all .25s ease;
-	opacity: .7;
+  opacity: .7;
+  display: none;
   
 
 }
@@ -93,7 +94,7 @@
             .animate({ scrollTop: 0 }, "slow", "swing");
         });
         $(window).scroll(function() {
-          if ($(this).scrollTop() > $(window).height()) {
+          if ($(this).scrollTop() > 200) {
             $(".top").fadeIn();
           } else {
             $(".top").fadeOut();
