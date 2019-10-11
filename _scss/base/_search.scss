@@ -43,6 +43,7 @@
     border: none;
     border-bottom: 3px solid #000;
     color: #000;
+    transition: all .15s;
     &::placeholder {
       font-weight: 700;
       color: #bbb;
@@ -53,6 +54,7 @@
     @media only screen and (min-width: 38em) {
       width: 80%;
       padding-top: 100px;
+    }
   }
 }
 
