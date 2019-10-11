@@ -9,7 +9,7 @@
   .top {
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  right: 14px;
 	z-index: 1;
 	width: 40px;
   height: 40px;
@@ -19,9 +19,7 @@
 	color: #000000;
 	cursor: pointer;
 	transition: all .25s ease;
-  opacity: .7;
-  display: none;
-  
+  opacity: .7;  
 
 }
 
@@ -30,7 +28,15 @@
     bottom: 25px;
     
   }
-}  
+}
+
+.searchicon {
+  position: absolute;
+  top:  .8rem;
+  left: auto;
+  right: 1rem;
+  padding: .25rem .75rem;
+}
   </style>
 
     {% include sidebar.html %}
@@ -40,19 +46,19 @@
          <div class="wrap">
            <div class="masthead">
              <div class="container">
-               <div>
+               
               <h3 class="masthead-title" style="color: black">
-                  <div style="float: center">
+                  
                  <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}">
                   {{ site.tagline }} 
                  </a>
-                </div>
+               
                  
-                 <div style="float: right">
-                 <a href="/blog/search" style="right: auto;"><i class="nav__icon nav__icon-search ion ion-md-search" style="text-align: right;"></i></a>
-                 </div>
+                
+                 <a class="searchicon" href="/blog/search" style="right: auto;"><i class="nav__icon nav__icon-search ion ion-md-search" style="text-align: right;"></i></a>
+                
                 </h3>
-              </div>
+           
 
              </div>
              
