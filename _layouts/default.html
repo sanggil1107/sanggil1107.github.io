@@ -49,7 +49,7 @@
                 </div>
                  
                  <div style="float: right">
-                 <a href="/blog/search" style="text-align: right"><i class="nav__icon nav__icon-search ion ion-md-search" style="text-align: right;"></i></a>
+                 <a href="/blog/search" style="right: auto;"><i class="nav__icon nav__icon-search ion ion-md-search" style="text-align: right;"></i></a>
                  </div>
                 </h3>
               </div>
@@ -94,7 +94,7 @@
             .animate({ scrollTop: 0 }, "slow", "swing");
         });
         $(window).scroll(function() {
-          if ($(this).scrollTop() > 200) {
+          if ($(this).scrollTop() > 400) {
             $(".top").fadeIn();
           } else {
             $(".top").fadeOut();
