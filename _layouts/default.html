@@ -31,20 +31,7 @@
   }
 }  
   </style>
-  <script>
-    $(".top").click(function() {
-    $("html, body")
-      .stop()
-      .animate({ scrollTop: 0 }, "slow", "swing");
-  });
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > $(window).height()) {
-      $(".top").addClass("is-active");
-    } else {
-      $(".top").removeClass("is-active");
-    }
-  });  
-  </script>
+
     {% include sidebar.html %}
 
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
@@ -96,6 +83,20 @@
         <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
         {% include javascripts.html %}
+        <script>
+          $(".top").click(function() {
+          $("html, body")
+            .stop()
+            .animate({ scrollTop: 0 }, "slow", "swing");
+        });
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > $(window).height()) {
+            $(".top").addClass("is-active");
+          } else {
+            $(".top").removeClass("is-active");
+          }
+        });  
+        </script>
     </div>
    
     <script>
