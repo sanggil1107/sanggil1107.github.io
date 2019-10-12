@@ -14,7 +14,10 @@ title: SEARCH
   .search__group {
     margin-bottom: 30px;
   }
-
+  
+  .aback {
+    color: black;
+  }
   .search__text {
     width: 330px;
     padding: 20px 18px 18px 0;
@@ -56,7 +59,7 @@ title: SEARCH
             <input type="text" id="js-search-input" class="search__text" autocomplete="off"
             placeholder="Type to search...">
                   
-                    <a href="javascript:history.back()" style="right: 50px"><i class="ion ion-md-close"></i></a>
+                    <a class="aback"href="javascript:history.back()" style="right: 50px"><i class="ion ion-md-close"></i></a>
                   
           </div>
           <ul id="js-results-container" class="search-results-list"></ul>
