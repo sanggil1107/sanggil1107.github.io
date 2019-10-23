@@ -61,7 +61,7 @@ hero:
 
 # Puglins
 mathjax: true # whether support mathjax
-google_analytics_token: 'UA-67856795-3' # leave blank if you don't want google analytics
+google_analytic: 'UA-120077195-2' # leave blank if you don't want google analytics
 disqus_short_name: 'ringsterz' # leave blank if you don't want disqus
 
 theme_settings:
