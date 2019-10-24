@@ -38,22 +38,45 @@ Got permission denied while trying to connect to the Docker daemon socket at uni
 
 ```
 $ docker version
+
+Client:  
+ Version:           18.06.0-ce  
+ API version:       1.38  
+ Go version:        go1.10.3  
+ Git commit:        0ffa825  
+ Built:             Wed Jul 18 19:11:02 2018  
+ OS/Arch:           linux/amd64  
+ Experimental:      false  
+  
+Server:  
+ Engine:  
+  Version:          18.06.0-ce  
+  API version:      1.38 (minimum version 1.12)  
+  Go version:       go1.10.3  
+  Git commit:       0ffa825  
+  Built:            Wed Jul 18 19:09:05 2018  
+  OS/Arch:          linux/amd64  
+  Experimental:     false  
 ```
-> Client:
->  Version:           18.06.0-ce
->  API version:       1.38
->  Go version:        go1.10.3
->  Git commit:        0ffa825
->  Built:             Wed Jul 18 19:11:02 2018
->  OS/Arch:           linux/amd64
->  Experimental:      false
-> 
-> Server:
->  Engine:
->   Version:          18.06.0-ce
->   API version:      1.38 (minimum version 1.12)
->   Go version:       go1.10.3
->   Git commit:       0ffa825
->   Built:            Wed Jul 18 19:09:05 2018
->   OS/Arch:          linux/amd64
->   Experimental:     false
+
+```
+$ docker version
+```
+> Client:  
+>  Version:           18.06.0-ce  
+>  API version:       1.38  
+>  Go version:        go1.10.3  
+>  Git commit:        0ffa825  
+>  Built:             Wed Jul 18 19:11:02 2018  
+>  OS/Arch:           linux/amd64  
+>  Experimental:      false  
+>   
+> Server:  
+>  Engine:  
+>   Version:          18.06.0-ce  
+>   API version:      1.38 (minimum version 1.12)  
+>   Go version:       go1.10.3  
+>   Git commit:       0ffa825  
+>   Built:            Wed Jul 18 19:09:05 2018  
+>   OS/Arch:          linux/amd64  
+>   Experimental:     false  
