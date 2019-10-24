@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Docker] Docker 설치(feat. ubuntu)
+title: "[Docker] Docker 설치(feat. ubuntu)"
 category: [Docker]
 ---
 <br>
