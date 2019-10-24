@@ -4,7 +4,7 @@ title: [Docker] Docker 설치(feat. ubuntu)
 category: [Docker]
 ---
 <br>
-Docker 설치해보기
+Docker 설치해보기 
 <!-- more -->
 <hr>
 
