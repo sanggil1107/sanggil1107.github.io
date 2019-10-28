@@ -8,7 +8,7 @@ Docker 명령어에 대해 알아보자
 <!-- more -->
 <hr>
 
-`docker image pull [옵션] 이미지명[:태그]`
+<span style="color:red">docker image pull [옵션] 이미지명[:태그]</span>
 ```
 $ docker image pull centos:7
 
