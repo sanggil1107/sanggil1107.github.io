@@ -21,7 +21,7 @@ Digest: sha256:307835c385f656ec2e2fec602cf093224173c51119bbebd602c53c3653a3d6eb
 Status: Downloaded newer image for centos:7
 ```
 
-```docker images [옵션] [repository명]```
+`docker images [옵션] [repository명]`
 ```
 $ docker images
 
@@ -246,6 +246,7 @@ b67d19e65ef6: Pushed
 `docker logout [서버명]`
 ```
 $ docker logout
+
 Removing login credentials for https://index.docker.io/v1/
 ```
 
@@ -395,4 +396,151 @@ $ docker top 9cd3f115880c
 UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
 root                6157                6134                0                   10월27               ?                   00:00:00            nginx: master process nginx -g daemon off;
 systemd+            6204                6157                0                   10월27               ?                   00:00:00            nginx: worker process
+```
+
+`docker start [옵션] 컨테이너 식별자`
+```
+$ docker start 53e652bede18
+
+53e652bede18
+```
+
+```
+$ docker ps
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   wizardly_mcclintock
+6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
+53e652bede18        centos              "/bin/bash"              About an hour ago   Up 5 seconds                               Test3
+```
+
+`docker stop [옵션] 컨테이너 식별자`
+```
+$ docker stop 53e652bede18
+
+53e652bede18
+```
+
+```
+$ docker ps
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   wizardly_mcclintock
+6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
+```
+
+`docker restart [옵션] 컨테이너 식별자`
+```
+$ docker restart 53e652bede18
+
+53e652bede18
+```
+
+```
+$ docker ps
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   wizardly_mcclintock
+6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
+53e652bede18        centos              "/bin/bash"              About an hour ago   Up 1 second                                Test3
+```
+
+ 
+`docker rm [옵션] 컨테이너 식별자`  
+정지중인 컨테이너 삭제 
+```
+$ docker ps -a
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                         PORTS                  NAMES
+436377e9d58d        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                          fervent_lalande
+cc7a7306349a        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                          loving_mcclintock
+23d446e9134d        centos              "bin/bash"               About an hour ago   Exited (0) About an hour ago                          volumetest1
+9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour               0.0.0.0:8080->80/tcp   wizardly_mcclintock
+6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                                      silly_chatterjee
+188a421b227f        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                          Test2
+53e652bede18        centos              "/bin/bash"              2 hours ago         Up 2 minutes                                          Test3
+608e309487bd        centos              "/bin/cal"               2 hours ago         Exited (0) 6 minutes ago                              Test
+```
+
+```
+$ docker rm 436377e9d58d
+
+436377e9d58d
+```
+
+```
+$ docker ps -a
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                         PORTS                  NAMES
+cc7a7306349a        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                          loving_mcclintock
+23d446e9134d        centos              "bin/bash"               About an hour ago   Exited (0) About an hour ago                          volumetest1
+9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour               0.0.0.0:8080->80/tcp   wizardly_mcclintock
+6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                                      silly_chatterjee
+188a421b227f        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                          Test2
+53e652bede18        centos              "/bin/bash"              2 hours ago         Up 3 minutes                                          Test3
+608e309487bd        centos              "/bin/cal"               2 hours ago         Exited (0) 7 minutes ago                              Test
+```
+
+`docker container prune [옵션]`
+정지중인 모든 컨테이너 삭제
+```
+$ docker container prune
+
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+cc7a7306349aa7bffa40780ff30b31b6644dfa5894820e1f71327ea5934df78b
+23d446e9134d3e302509b869629f2b6d1b8f3842724d4b09d258ede4a72777f0
+188a421b227fc4ba7b2d8341082624d8a4424faf97ac9e7ab5f1af4043c6f30c
+608e309487bd21a979de80637ef0ec27d24d331e6e8848dc1fd07fbcf0e3f4d3
+
+Total reclaimed space: 43B
+```
+```
+$ docker ps -a
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+9cd3f115880c        nginx               "nginx -g 'daemon of…"   25 hours ago        Up 25 hours         0.0.0.0:8080->80/tcp   wizardly_mcclintock
+6becd04e405c        centos              "/bin/ping localhost"    25 hours ago        Up 25 hours                                silly_chatterjee
+53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                Test3
+```
+
+`docker pause 컨테이너 식별자`
+실행중인 컨테이너(작동 중인 프로세스) 중단
+```
+$ docker pause 9cd3f115880c
+
+9cd3f115880c
+```
+```
+$ docker ps
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                 PORTS                  NAMES
+9cd3f115880c        nginx               "nginx -g 'daemon of…"   25 hours ago        Up 25 hours (Paused)   0.0.0.0:8080->80/tcp   wizardly_mcclintock
+6becd04e405c        centos              "/bin/ping localhost"    25 hours ago        Up 25 hours                                   silly_chatterjee
+53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                   Test3
+```
+
+`docker unpause 컨테이너 식별자`
+```
+$ docker unpause 9cd3f115880c
+
+9cd3f115880c
+```
+```
+$ docker ps
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+9cd3f115880c        nginx               "nginx -g 'daemon of…"   25 hours ago        Up 25 hours         0.0.0.0:8080->80/tcp   wizardly_mcclintock
+6becd04e405c        centos              "/bin/ping localhost"    25 hours ago        Up 25 hours                                silly_chatterjee
+53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                Test3
+```
+
+`docker attach [옵션] 컨테이너 식별자`
+싱행중인 컨테이너에 접속
+```
+$ docker attach 53e652bede18
+
+[root@53e652bede18 /]# ls
+bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
