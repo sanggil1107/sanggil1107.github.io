@@ -8,7 +8,10 @@ Docker 명령어에 대해 알아보자
 <!-- more -->
 <hr>
 
-<span style="color:red">docker image pull [옵션] 이미지명[:태그]</span>
+```cs
+#docker image pull [옵션] 이미지명[:태그]
+```
+
 ```
 $ docker image pull centos:7
 
@@ -18,7 +21,7 @@ Digest: sha256:307835c385f656ec2e2fec602cf093224173c51119bbebd602c53c3653a3d6eb
 Status: Downloaded newer image for centos:7
 ```
 
-`docker images [옵션] [repository명]`
+```docker images [옵션] [repository명]```
 ```
 $ docker images
 
