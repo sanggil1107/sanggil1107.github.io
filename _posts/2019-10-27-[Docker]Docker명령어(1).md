@@ -8,11 +8,8 @@ Docker 명령어에 대해 알아보자
 <!-- more -->
 <hr>
 
-
-### 이미지 다운로드 (docker image)
+## 이미지 다운로드 (docker pull)
 `docker image pull [옵션] 이미지명[:태그]`
-
-
 ```
 $ docker image pull centos:7
 
@@ -21,8 +18,9 @@ d8d02d457314: Pull complete
 Digest: sha256:307835c385f656ec2e2fec602cf093224173c51119bbebd602c53c3653a3d6eb
 Status: Downloaded newer image for centos:7
 ```
+<br>
 
-### 이미지 목록 (docker images)
+## 이미지 목록 (docker images)
 `docker images [옵션] [repository명]`
 ```
 $ docker images
@@ -30,7 +28,9 @@ $ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 centos              7                   67fa590cfc1c        2 weeks ago         202MB
 ```
+<br>
 
+## 이미지 상세정보 (docker inspect)
 `docker image inspect 이미지명[:태그]`
 ```
 $ docker image inspect centos:7
@@ -137,7 +137,9 @@ $ docker image inspect centos:7
     }
 ]
 ```
+<br>
 
+## 이미지 태그 설정
 `docker image tag 원본이미지 태그이미지`  
 단 docker hub에 push 하기 위해서는 `Docker hub 사용자명/이미지명:[태그명]` 형식으로 태그이미지를 지정해야한다.
 ```
@@ -148,7 +150,9 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 centos              7                   67fa590cfc1c        2 months ago        202MB
 ysg/ysgcentos       1.0                 67fa590cfc1c        2 months ago        202MB
 ```
+<br>
 
+## Docker Hub에서 이미지 검색 (docker search)
 `docker search [옵션] <검색키워드>`
 ```
 $ docker search nginx
@@ -180,8 +184,9 @@ ansibleplaybookbundle/nginx-apb   An APB to deploy NGINX                        
 wodby/nginx                       Generic nginx                                   0                                       [OK]
 centos/nginx-110-centos7          Platform for running nginx 1.10 or building …   0                                       
 ```
+<br>
 
-### 이미지 삭제 (docker rm)
+## 이미지 삭제 (docker rm)
 `docker image rm [옵션] 이미지명`
 ```
 $ docker image rm centos:7
@@ -194,9 +199,9 @@ $ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ysg/ysgcentos       1.0                 67fa590cfc1c        2 months ago        202MB
 ```
+<br>
 
-
-
+## Docker Hub 로그인 (docker login)
 `docker login [옵션] [서버]`
 ```
 $ docker login
@@ -234,7 +239,9 @@ nginx                  latest              540a289bab6c        4 days ago       
 sanggil1107/ysgnginx   1.0                 540a289bab6c        4 days ago          126MB
 ysg/ysgcentos          1.0                 67fa590cfc1c        2 months ago        202MB
 ```
+<br>
 
+## 이미지 업로드 (docker push)
 `docker push 이미지명[:태그명]`
 ```
 $ docker push sanggil1107/ysgnginx:1.0
@@ -245,14 +252,18 @@ a89b8f05da3a: Pushed
 b67d19e65ef6: Pushed 
 1.0: digest: sha256:f56b43e9913cef097f246d65119df4eda1d61670f7f2ab720831a01f66f6ff9c size: 948
 ```
+<br>
 
+## Docker hub 로그아웃 (docker logout)
 `docker logout [서버명]`
 ```
 $ docker logout
 
 Removing login credentials for https://index.docker.io/v1/
 ```
+<br>
 
+## 컨테이너 실행 (docker run)
 `docker run [옵션] 이미지명[:태그명] [인수]`
 ```
 $ docker run -it --name "Test" centos /bin/cal
@@ -265,43 +276,17 @@ Su Mo Tu We Th Fr Sa
 22 23 24 25 26 27 28
 29 30
 ```
-
 ```
 $ docker run -it --name "Test3" centos /bin/bash
 
 [root@ca8fd2f4982a /]# ls
 anaconda-post.log  bin  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
-
-
-```
-$ docker run -d centos /bin/ping localhost
-
-6becd04e405cabfc1e627ef6b3f573212762101f6419c157ef22246b1dce57c9
-```
-
-`docker logs `
-```
-$ docker logs 6becd04e405cabfc1e627ef6b3f573212762101f6419c157ef22246b1dce57c9
-
-PING localhost (127.0.0.1) 56(84) bytes of data.
-64 bytes from localhost (127.0.0.1): icmp_seq=1 ttl=64 time=0.149 ms
-64 bytes from localhost (127.0.0.1): icmp_seq=2 ttl=64 time=0.020 ms
-64 bytes from localhost (127.0.0.1): icmp_seq=3 ttl=64 time=0.022 ms
-64 bytes from localhost (127.0.0.1): icmp_seq=4 ttl=64 time=0.024 ms
-64 bytes from localhost (127.0.0.1): icmp_seq=5 ttl=64 time=0.022 ms
-64 bytes from localhost (127.0.0.1): icmp_seq=6 ttl=64 time=0.020 ms
-64 bytes from localhost (127.0.0.1): icmp_seq=7 ttl=64 time=0.030 ms
-64 bytes from localhost (127.0.0.1): icmp_seq=8 ttl=64 time=0.019 ms
-```
-
-
 ```
 $ docker run -d -p 8080:80 nginx
 
 9cd3f115880c4da7885f706bd83f63131c4e0e8b2543321a5560138f01f0b0c1
 ```
-
 ```
 $ ls
 
@@ -312,7 +297,6 @@ $ docker run -i -t -v /vtest --name volumetest1 centos bin/bash
 [root@23d446e9134d /]# ls
 bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  vtest
 ```
-
 ```
 $ docker run -it -e foo=bar centos /bin/bash
 
@@ -324,7 +308,6 @@ BASH_ARGC=()
 ...
 foo=bar
 ```
-
 ```
 $ cat env_list 
 yang=sanggil
@@ -339,7 +322,31 @@ BASH_ARGC=()
 ...
 yang=sanggil
 ```
+<br>
 
+## 컨테이너 로그 확인
+`docker logs `
+```
+$ docker run -d centos /bin/ping localhost
+
+6becd04e405cabfc1e627ef6b3f573212762101f6419c157ef22246b1dce57c9
+```
+```
+$ docker logs 6becd04e405cabfc1e627ef6b3f573212762101f6419c157ef22246b1dce57c9
+
+PING localhost (127.0.0.1) 56(84) bytes of data.
+64 bytes from localhost (127.0.0.1): icmp_seq=1 ttl=64 time=0.149 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=2 ttl=64 time=0.020 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=3 ttl=64 time=0.022 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=4 ttl=64 time=0.024 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=5 ttl=64 time=0.022 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=6 ttl=64 time=0.020 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=7 ttl=64 time=0.030 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=8 ttl=64 time=0.019 ms
+```
+<br>
+
+## 컨테이너 목록 (docker ps)
 `docker ps [옵션]`
 ```
 $ docker ps
@@ -348,7 +355,6 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 9cd3f115880c        nginx               "nginx -g 'daemon of…"   41 minutes ago      Up 41 minutes       0.0.0.0:8080->80/tcp   wizardly_mcclintock
 6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
 ```
-
 ```
 $ docker ps -a
 
@@ -362,7 +368,6 @@ cc7a7306349a        centos              "/bin/bash"              24 minutes ago 
 53e652bede18        centos              "/bin/bash"              About an hour ago   Exited (130) About an hour ago                          Test3
 608e309487bd        centos              "/bin/cal"               About an hour ago   Exited (0) About an hour ago                            Test
 ```
-
 ```
 $ docker ps -a -f name=Test
 
@@ -371,7 +376,6 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 53e652bede18        centos              "/bin/bash"         About an hour ago   Exited (130) About an hour ago                       Test3
 608e309487bd        centos              "/bin/cal"          About an hour ago   Exited (0) About an hour ago                         Test
 ```
-
 ```
 $ docker ps -a -f exited=0
 
@@ -382,7 +386,9 @@ cc7a7306349a        centos              "/bin/bash"         25 minutes ago      
 188a421b227f        centos              "/bin/bash"         About an hour ago   Exited (0) About an hour ago                       Test2
 608e309487bd        centos              "/bin/cal"          About an hour ago   Exited (0) About an hour ago                       Test
 ```
+<br>
 
+## 실행 중인 컨테이너 리소스 사용 정보 (docker stats)
 `docker stats [컨테이너 식별자]`
 ```
 $ docker stats
@@ -391,7 +397,9 @@ CONTAINER ID        NAME                  CPU %               MEM USAGE / LIMIT 
 9cd3f115880c        wizardly_mcclintock   0.00%               2.211MiB / 3.852GiB   0.06%               12.5kB / 1.75kB     0B / 0B             2
 6becd04e405c        silly_chatterjee      0.01%               968KiB / 3.852GiB     0.02%               11.6kB / 0B         0B / 0B             1
 ```
+<br>
 
+## 컨테이너에서 실행 중인 프로세스 목록 (docker top)
 `docker top 컨테이너 식별자`
 ```
 $ docker top 9cd3f115880c
@@ -400,14 +408,15 @@ UID                 PID                 PPID                C                   
 root                6157                6134                0                   10월27               ?                   00:00:00            nginx: master process nginx -g daemon off;
 systemd+            6204                6157                0                   10월27               ?                   00:00:00            nginx: worker process
 ```
+<br>
 
+## 정지된 컨테이너 기동 (docker start)
 `docker start [옵션] 컨테이너 식별자`
 ```
 $ docker start 53e652bede18
 
 53e652bede18
 ```
-
 ```
 $ docker ps
 
@@ -416,14 +425,15 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
 53e652bede18        centos              "/bin/bash"              About an hour ago   Up 5 seconds                               Test3
 ```
+<br>
 
+## 기동중인 컨테이너 정지 (docker stop)
 `docker stop [옵션] 컨테이너 식별자`
 ```
 $ docker stop 53e652bede18
 
 53e652bede18
 ```
-
 ```
 $ docker ps
 
@@ -431,14 +441,15 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   wizardly_mcclintock
 6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
 ```
+<br>
 
+## 컨테이너 재기동 (docker restart)
 `docker restart [옵션] 컨테이너 식별자`
 ```
 $ docker restart 53e652bede18
 
 53e652bede18
 ```
-
 ```
 $ docker ps
 
@@ -447,10 +458,10 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
 53e652bede18        centos              "/bin/bash"              About an hour ago   Up 1 second                                Test3
 ```
-
+<br>
  
+ ## 정지중인 컨테이너 삭제 (docker rm)
 `docker rm [옵션] 컨테이너 식별자`  
-정지중인 컨테이너 삭제 
 ```
 $ docker ps -a
 
@@ -464,13 +475,11 @@ cc7a7306349a        centos              "/bin/bash"              About an hour a
 53e652bede18        centos              "/bin/bash"              2 hours ago         Up 2 minutes                                          Test3
 608e309487bd        centos              "/bin/cal"               2 hours ago         Exited (0) 6 minutes ago                              Test
 ```
-
 ```
 $ docker rm 436377e9d58d
 
 436377e9d58d
 ```
-
 ```
 $ docker ps -a
 
@@ -483,7 +492,9 @@ cc7a7306349a        centos              "/bin/bash"              About an hour a
 53e652bede18        centos              "/bin/bash"              2 hours ago         Up 3 minutes                                          Test3
 608e309487bd        centos              "/bin/cal"               2 hours ago         Exited (0) 7 minutes ago                              Test
 ```
+<br>
 
+## 정지중인 모든 컨테이너 삭제 (docker container prune)
 `docker container prune [옵션]`  
 정지중인 모든 컨테이너 삭제
 ```
@@ -507,9 +518,10 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 6becd04e405c        centos              "/bin/ping localhost"    25 hours ago        Up 25 hours                                silly_chatterjee
 53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                Test3
 ```
+<br>
 
+## 실행중인 컨테이너(작동 중인 프로세스) 정지 (docker pause)
 `docker pause 컨테이너 식별자`  
-실행중인 컨테이너(작동 중인 프로세스) 중단
 ```
 $ docker pause 9cd3f115880c
 
@@ -523,7 +535,9 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 6becd04e405c        centos              "/bin/ping localhost"    25 hours ago        Up 25 hours                                   silly_chatterjee
 53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                   Test3
 ```
+<br>
 
+## 정지중인 컨테이너 시작 (docker unpause)
 `docker unpause 컨테이너 식별자`  
 ```
 $ docker unpause 9cd3f115880c
@@ -538,9 +552,10 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 6becd04e405c        centos              "/bin/ping localhost"    25 hours ago        Up 25 hours                                silly_chatterjee
 53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                Test3
 ```
+<br>
 
+## 실행중인 컨테이너에 접속
 `docker attach [옵션] 컨테이너 식별자`  
-실행중인 컨테이너에 접속
 ```
 $ docker attach 53e652bede18
 
