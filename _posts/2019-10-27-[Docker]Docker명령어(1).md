@@ -8,6 +8,8 @@ Docker 명령어에 대해 알아보자
 <!-- more -->
 <hr>
 
+# Docker 명령어
+
 ## 이미지 다운로드 (docker pull)
 `docker image pull [옵션] 이미지명[:태그]`
 ```
@@ -20,6 +22,7 @@ Status: Downloaded newer image for centos:7
 ```
 <br>
 
+---
 ## 이미지 목록 (docker images)
 `docker images [옵션] [repository명]`
 ```
@@ -30,7 +33,8 @@ centos              7                   67fa590cfc1c        2 weeks ago         
 ```
 <br>
 
-## 이미지 상세정보 (docker inspect)
+---
+## <strong>이미지 상세정보 (docker inspect)</strong>
 `docker image inspect 이미지명[:태그]`
 ```
 $ docker image inspect centos:7
