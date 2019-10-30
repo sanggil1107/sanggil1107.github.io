@@ -30,14 +30,14 @@
 .container {
 
 
-  max-width: 28rem;
+  max-width: 48rem;
   a {
     @if $theme-color != $default { color: $theme-color; }
   }
 }
 @media (min-width: 38em) {
   .container {
-    max-width: 32rem;
+    max-width: 48rem;
     &.content {
       padding-top: 6.5rem;
     }
@@ -59,7 +59,7 @@
 }
 @media (min-width: 38em) {
   .container_body {
-    max-width: 32rem;
+    max-width: 48rem;
     &.content {
       padding-top: 6.5rem;
     }
@@ -67,6 +67,6 @@
 }
 @media (min-width: 56em) {
   .container_body {
-    max-width: 38rem;
+    max-width: 48rem;
   }
 }
