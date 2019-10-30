@@ -9,6 +9,7 @@ Docker 명령어에 대해 알아보자
 <hr>
 
 
+### 이미지 다운로드 (docker image)
 `docker image pull [옵션] 이미지명[:태그]`
 
 
@@ -21,6 +22,7 @@ Digest: sha256:307835c385f656ec2e2fec602cf093224173c51119bbebd602c53c3653a3d6eb
 Status: Downloaded newer image for centos:7
 ```
 
+### 이미지 목록 (docker images)
 `docker images [옵션] [repository명]`
 ```
 $ docker images
@@ -179,6 +181,7 @@ wodby/nginx                       Generic nginx                                 
 centos/nginx-110-centos7          Platform for running nginx 1.10 or building …   0                                       
 ```
 
+### 이미지 삭제 (docker rm)
 `docker image rm [옵션] 이미지명`
 ```
 $ docker image rm centos:7
@@ -481,7 +484,7 @@ cc7a7306349a        centos              "/bin/bash"              About an hour a
 608e309487bd        centos              "/bin/cal"               2 hours ago         Exited (0) 7 minutes ago                              Test
 ```
 
-`docker container prune [옵션]`
+`docker container prune [옵션]`  
 정지중인 모든 컨테이너 삭제
 ```
 $ docker container prune
@@ -505,7 +508,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                Test3
 ```
 
-`docker pause 컨테이너 식별자`
+`docker pause 컨테이너 식별자`  
 실행중인 컨테이너(작동 중인 프로세스) 중단
 ```
 $ docker pause 9cd3f115880c
@@ -521,7 +524,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                   Test3
 ```
 
-`docker unpause 컨테이너 식별자`
+`docker unpause 컨테이너 식별자`  
 ```
 $ docker unpause 9cd3f115880c
 
@@ -536,11 +539,12 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                Test3
 ```
 
-`docker attach [옵션] 컨테이너 식별자`
-싱행중인 컨테이너에 접속
+`docker attach [옵션] 컨테이너 식별자`  
+실행중인 컨테이너에 접속
 ```
 $ docker attach 53e652bede18
 
 [root@53e652bede18 /]# ls
 bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
+
