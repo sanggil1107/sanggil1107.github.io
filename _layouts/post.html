@@ -2,12 +2,12 @@
 layout: default
 ---
 <style>
-  .post {
+  .back {
     background-image: url( "/public/img/알고리즘/선택정렬0.png" );
   }
 </style>
 <div class="post">
-    
+  <div class="back">
   <h3 class="post-title" style="color: black;font-size: 25px" >     
 
       {{ page.title }}
@@ -18,7 +18,7 @@ layout: default
   {% for categories in page.categories %}
     <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
   {% endfor %}
-
+  </div>
 
   
  
