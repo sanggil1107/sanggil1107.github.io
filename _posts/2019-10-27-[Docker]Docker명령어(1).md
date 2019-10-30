@@ -2,6 +2,7 @@
 layout: post
 title: "[Docker] 3.Docker 명렁어(1)"
 category: [Docker]
+image: /public/img/알고리즘/삽입정렬3.png
 ---
 <br>
 Docker 명령어에 대해 알아보자
