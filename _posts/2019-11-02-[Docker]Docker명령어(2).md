@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Docker] 3.Docker 명렁어(2)"
+title: "[Docker] 4.Docker 명렁어(2)"
 category: [Docker]
 image: /public/img/알고리즘/삽입정렬3.png
 ---
