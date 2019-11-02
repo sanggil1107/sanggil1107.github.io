@@ -12,6 +12,7 @@ Docker 명령어에 대해 알아보자
 # Docker 명령어
 
 ## 이미지 다운로드 (docker pull)
+---
 `docker image pull [옵션] 이미지명[:태그]`
 ```
 $ docker image pull centos:7
@@ -23,8 +24,8 @@ Status: Downloaded newer image for centos:7
 ```
 <br>
 
----
 ## 이미지 목록 (docker images)
+---
 `docker images [옵션] [repository명]`
 ```
 $ docker images
@@ -34,8 +35,8 @@ centos              7                   67fa590cfc1c        2 weeks ago         
 ```
 <br>
 
----
 ## <strong>이미지 상세정보 (docker inspect)</strong>
+---
 `docker image inspect 이미지명[:태그]`
 ```
 $ docker image inspect centos:7
@@ -145,6 +146,7 @@ $ docker image inspect centos:7
 <br>
 
 ## 이미지 태그 설정
+---
 `docker image tag 원본이미지 태그이미지`  
 단 docker hub에 push 하기 위해서는 `Docker hub 사용자명/이미지명:[태그명]` 형식으로 태그이미지를 지정해야한다.
 ```
@@ -158,6 +160,7 @@ ysg/ysgcentos       1.0                 67fa590cfc1c        2 months ago        
 <br>
 
 ## Docker Hub에서 이미지 검색 (docker search)
+---
 `docker search [옵션] <검색키워드>`
 ```
 $ docker search nginx
@@ -192,6 +195,7 @@ centos/nginx-110-centos7          Platform for running nginx 1.10 or building �
 <br>
 
 ## 이미지 삭제 (docker rm)
+---
 `docker image rm [옵션] 이미지명`
 ```
 $ docker image rm centos:7
@@ -207,6 +211,7 @@ ysg/ysgcentos       1.0                 67fa590cfc1c        2 months ago        
 <br>
 
 ## Docker Hub 로그인 (docker login)
+---
 `docker login [옵션] [서버]`
 ```
 $ docker login
@@ -247,6 +252,7 @@ ysg/ysgcentos          1.0                 67fa590cfc1c        2 months ago     
 <br>
 
 ## 이미지 업로드 (docker push)
+---
 `docker push 이미지명[:태그명]`
 ```
 $ docker push sanggil1107/ysgnginx:1.0
@@ -260,6 +266,7 @@ b67d19e65ef6: Pushed
 <br>
 
 ## Docker hub 로그아웃 (docker logout)
+---
 `docker logout [서버명]`
 ```
 $ docker logout
@@ -269,6 +276,7 @@ Removing login credentials for https://index.docker.io/v1/
 <br>
 
 ## 컨테이너 실행 (docker run)
+---
 `docker run [옵션] 이미지명[:태그명] [인수]`
 ```
 $ docker run -it --name "Test" centos /bin/cal
@@ -330,6 +338,7 @@ yang=sanggil
 <br>
 
 ## 컨테이너 로그 확인
+---
 `docker logs `
 ```
 $ docker run -d centos /bin/ping localhost
@@ -352,6 +361,7 @@ PING localhost (127.0.0.1) 56(84) bytes of data.
 <br>
 
 ## 컨테이너 목록 (docker ps)
+---
 `docker ps [옵션]`
 ```
 $ docker ps
@@ -394,6 +404,7 @@ cc7a7306349a        centos              "/bin/bash"         25 minutes ago      
 <br>
 
 ## 실행 중인 컨테이너 리소스 사용 정보 (docker stats)
+---
 `docker stats [컨테이너 식별자]`
 ```
 $ docker stats
@@ -405,6 +416,7 @@ CONTAINER ID        NAME                  CPU %               MEM USAGE / LIMIT 
 <br>
 
 ## 컨테이너에서 실행 중인 프로세스 목록 (docker top)
+---
 `docker top 컨테이너 식별자`
 ```
 $ docker top 9cd3f115880c
@@ -416,6 +428,7 @@ systemd+            6204                6157                0                   
 <br>
 
 ## 정지된 컨테이너 기동 (docker start)
+---
 `docker start [옵션] 컨테이너 식별자`
 ```
 $ docker start 53e652bede18
@@ -433,6 +446,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 <br>
 
 ## 기동중인 컨테이너 정지 (docker stop)
+---
 `docker stop [옵션] 컨테이너 식별자`
 ```
 $ docker stop 53e652bede18
@@ -449,6 +463,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 <br>
 
 ## 컨테이너 재기동 (docker restart)
+---
 `docker restart [옵션] 컨테이너 식별자`
 ```
 $ docker restart 53e652bede18
@@ -466,6 +481,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 <br>
  
  ## 정지중인 컨테이너 삭제 (docker rm)
+ ---
 `docker rm [옵션] 컨테이너 식별자`  
 ```
 $ docker ps -a
@@ -500,8 +516,8 @@ cc7a7306349a        centos              "/bin/bash"              About an hour a
 <br>
 
 ## 정지중인 모든 컨테이너 삭제 (docker container prune)
+---
 `docker container prune [옵션]`  
-정지중인 모든 컨테이너 삭제
 ```
 $ docker container prune
 
@@ -526,6 +542,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 <br>
 
 ## 실행중인 컨테이너(작동 중인 프로세스) 정지 (docker pause)
+---
 `docker pause 컨테이너 식별자`  
 ```
 $ docker pause 9cd3f115880c
@@ -543,6 +560,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 <br>
 
 ## 정지중인 컨테이너 시작 (docker unpause)
+---
 `docker unpause 컨테이너 식별자`  
 ```
 $ docker unpause 9cd3f115880c
@@ -560,6 +578,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 <br>
 
 ## 실행중인 컨테이너에 접속
+---
 `docker attach [옵션] 컨테이너 식별자`  
 ```
 $ docker attach 53e652bede18
