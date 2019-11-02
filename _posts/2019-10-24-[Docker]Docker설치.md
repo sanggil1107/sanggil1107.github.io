@@ -11,9 +11,11 @@ Docker 설치해보기
 # Docker 설치
 
 ## 설치환경
+---
 OS : ubuntu 16.04
 
 ## 설치
+---
 docker 설치에 앞서 패키지 정보 업데이트를 해준다.
 ```
 $ sudo apt-get update
