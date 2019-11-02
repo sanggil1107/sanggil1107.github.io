@@ -147,7 +147,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ```
 <br>
  
- ## 정지 중인 컨테이너 삭제 (docker rm)
+## 정지 중인 컨테이너 삭제 (docker rm)
  ---
 `docker rm [옵션] <컨테이너 식별자>`  
 ```
