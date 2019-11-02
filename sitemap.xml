@@ -23,7 +23,7 @@ layout: null
     {% if page.date %}
     <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
     {% endif %}
-    <changefreq>{{ sitemap.freq | default: 'monthly' }}</changefreq>
+    <changefreq>{{ sitemap.freq | default: 'weekly' }}</changefreq>
     <priority>{{ sitemap.priority | default: '1.0' }}</priority>
   </url>
   {% endif %}
