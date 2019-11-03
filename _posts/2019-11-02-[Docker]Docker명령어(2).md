@@ -548,3 +548,22 @@ REPOSITORY             TAG                 IMAGE ID            CREATED          
 sanggil1107/ysgnginx   1.0                 540a289bab6c        10 days ago         126MB
 centos                 latest              0f3e07c0138f        4 weeks ago         220MB
 ```
+<br>
+
+## 이미지 생성(docker build)
+---
+Dockerfile로부터 이미지를 생성
+`docker build [옵션] <dockerfile 경로>`
+```
+$ docker build -t dockerfile4 .
+
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM ubuntu:16.04
+ ---> 5f2bf26e3524
+Step 2/2 : ENTRYPOINT ["echo", "Hello ENTRYPOINT"]
+ ---> Running in 059f7f22e938
+Removing intermediate container 059f7f22e938
+ ---> b8e3559cdd3d
+Successfully built b8e3559cdd3d
+Successfully tagged dockerfile4:latest
+```
