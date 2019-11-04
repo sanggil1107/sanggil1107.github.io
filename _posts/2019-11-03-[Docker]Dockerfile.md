@@ -12,6 +12,7 @@ Dockerfile 에 대해 알아보자
 # Dockerfile
 ---
 Docker 상에서 작동시킬 컨테이너의 이미지를 생성하기 위한 설정 파일이며, `docker build` 명령을 통해 Dockerfile에 기술된 설정 정보를 바탕으로 이미지를 생성할 수 있다.
+<br>
 
 ## FROM
 ---
@@ -33,6 +34,7 @@ $ docker images
 REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
 dockerfile             latest              0f3e07c0138f        4 weeks ago         220MB
 ```
+<br>
 
 ## RUN
 ---
@@ -103,6 +105,7 @@ drwxr-xr-x 1 root root    4096 Nov  3 08:59 .
 drwxr-xr-x 1 root root    4096 Nov  3 08:59 ..
 drwxr-xr-x 6 root root    4096 Nov  3 08:56 nginx
 ```
+<br>
 
 ## CMD
 ---
@@ -196,6 +199,7 @@ $ docker run -it dockerfile3 "/bin/echo" "HI"
 
 HI
 ```
+<br>
 
 ## ENTRYPOINT
 ---
@@ -229,6 +233,7 @@ $ docker run -it dockerfile4 test
 
 Hello ENTRYPOINT test
 ```
+<br>
 
 ## ENV
 ---
@@ -259,6 +264,7 @@ $ docker run -it dockerfile5
 
 /home
 ```
+<br>
 
 ## WORKDIR
 ---
@@ -321,6 +327,7 @@ $ docker run -it dockerfile6
 
 root@18007ff9830f:/home/DIR#
 ```
+<br>
 
 ## EXPOSE
 ---
@@ -335,6 +342,7 @@ EXPOSE 80
 
 CMD nginx -g 'damon off;'
 ```
+<br>
 
 ## ADD
 ---
@@ -390,6 +398,7 @@ drwxr-xr-x 2 root root 4096 Nov  3 13:26 .
 drwxr-xr-x 1 root root 4096 Nov  3 13:26 ..
 -rw-rw-r-- 1 root root   45 Nov  3 13:25 host.html
 ```
+<br>
 
 ## COPY
 ---
