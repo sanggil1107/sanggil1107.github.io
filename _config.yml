@@ -46,6 +46,7 @@ nav:
   ABOUT:
   CATEGORY:
     - '/blog/'
+    - { Web: '/blog/categories/' }
     - { Programming: '/blog/categories/' }
     - { Cloud: '/blog/categories/' }
     - { 개발환경: '/blog/categories/' }

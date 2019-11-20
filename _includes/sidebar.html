@@ -44,8 +44,15 @@
               {{ sub_nav[0] }}
             </a>
             {% for tag in site.categories %}
+              {% if sub_nav[0] == 'Web' %}
+                {% if tag[0] == 'HTML' or tag[0] == 'CSS' or tag[0] == 'JavaScript' %}
+                  <a class="sidebar-nav-item sidebar-nav-item-sub-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">                 
+                    {{ tag | first }} ({{ tag | last | size }}) 
+                  </a>
+                {% endif %}
+              {% endif %}
               {% if sub_nav[0] == 'Programming' %}
-                {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Javascript' or tag[0] == 'Python' %}
+                {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Python' %}
                   <a class="sidebar-nav-item sidebar-nav-item-sub-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">                 
                     {{ tag | first }} ({{ tag | last | size }}) 
                   </a>

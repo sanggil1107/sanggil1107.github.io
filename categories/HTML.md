@@ -1,7 +1,7 @@
 ---
 layout: category
-title: JavaScript
-permalink: '/Category/JavaScript'
+title: HTML
+permalink: '/Category/HTML'
 ---
 
 Another sample category page.
