@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[HTML] 4.ol, ul, li 태그"
+title: "[HTML] 5.ol, ul, li 태그"
 category: [HTML]
 
 ---
