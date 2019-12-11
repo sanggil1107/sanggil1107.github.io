@@ -32,7 +32,7 @@ category: [HTML]
     </body>
 </div>
 ```
-<img src="https://sanggil1107.github.io//public/img/html/div.PNG" >
+<img src="https://sanggil1107.github.io//public/img/html/div.png" >
 
 # `<span>` 태그
 ---
@@ -55,6 +55,7 @@ category: [HTML]
 </div>
 ```
 <img src="https://sanggil1107.github.io//public/img/html/span.PNG" >
+<br>
 
 # `<div>` 와 `<span>`의 차이
 ---
