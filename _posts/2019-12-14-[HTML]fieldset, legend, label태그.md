@@ -20,6 +20,7 @@ category: [HTML]
 |:---:|:---:|:---:|
 |disabled|그룹 내 모든 양식 요소를 비활성화|boolean|
 |name|그룹의 이름| |
+
 <br>
 
 # `<legend>` 태그
@@ -50,7 +51,6 @@ category: [HTML]
 </html>
 ```
 <img src="https://sanggil1107.github.io//public/img/html/fieldset.PNG" >
-<br>
 
 # `<label>` 태그
 ---
@@ -64,7 +64,7 @@ category: [HTML]
 
 ```html
 <!DOCTYPE html>
-<html>
+<html>  
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
