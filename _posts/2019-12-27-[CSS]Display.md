@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "[CSS] 박스 모델"
+title: "[CSS] Display"
 category: [CSS]
 
 ---
 <br>
 
-`박스 모델`에 대해 알아보자
+`Display` 속성에 대해 알아보자
 <!-- more -->
 
 <hr>
