@@ -284,3 +284,4 @@ background: background-color background-image background-repeat background-attac
 div {
     background: red url('mountain.jpg') no-repeat fixed center;
 }
+```
