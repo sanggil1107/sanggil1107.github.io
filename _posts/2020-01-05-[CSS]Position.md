@@ -100,6 +100,7 @@ me 라는 자식 요소에 `position: relative` 값과 left, top 값을 지정�
 `absolute` 는 부모 요소나 가장 가까이 있는 조상 요소를 기준으로 좌표 속성(top, bottom, left, right) 만큼 위치한다.  
 - 부모 요소나 조상 요소의 position 이 relative, absolute, fixed 로 선언되어 있을 때 부모 요소나 조상 요소를 기준으로 위치한다.
 - 부모 요소나 조상 요소의 position 이 static인 경우, html body 요소를 기준으로 위치한다. 
+
 ```html
 <html>
     <head>
@@ -144,6 +145,7 @@ me 라는 자식 요소에 `position: relative` 값과 left, top 값을 지정�
 me 라는 자식 요소에 `position: absolute` 값과 left, top 값을 지정하였고 이 때, 부모/조상 요소의 `postion` 이 모두 static 이므로 부모 요소 기준이 아닌 html body 요소를 기준으로 위치하게 된다.  
 
 만약 좌표 속성을 지정하지 않는다면 기본 위치(`static`)를 기준으로 위치한다.
+
 ```html
 <html>
     <head>
@@ -296,6 +298,7 @@ me 라는 자식 요소에 `position: absolute` 값과 left, top 값을 지정�
 |initial|기본값으로 설정|
 
 코드 상 나중에 입력한 순서대로(z,y,x) 맨 위에 배치된다.
+
 ```html
 <html>
     <head>
@@ -333,6 +336,7 @@ me 라는 자식 요소에 `position: absolute` 값과 left, top 값을 지정�
 <br>
 
 x와 z 요소에 `z-index` 값을 지정하며 배치 순서를 변경하였다.
+
 ```html
 <html>
     <head>
