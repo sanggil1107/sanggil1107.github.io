@@ -277,8 +277,10 @@ category: [CSS]
 ---
 `background` 속성은 배경 속성들을 한 번에 정의하기 위한 축약 속성이다.
 
-```
-background: background-color background-image background-repeat background-attachment background-position
+```css
+선택자 {
+    background: background-color background-image background-repeat background-attachment background-position
+}
 ```
 ```css
 div {
