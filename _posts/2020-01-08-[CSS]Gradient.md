@@ -26,6 +26,7 @@ linear-gradient(direction, color1, color2 ...)
 ```
 
 direction 은 방향을 의미하며 값은 아래와 같다.
+
 |값|설명|
 |:---:|:---:|
 |to bottom|위에서 아래로(기본값)|
@@ -118,12 +119,14 @@ radial-gradient(shape size at position, color1, color2 ...)
 ```
 
 shape 는 모양을 의미하며 값은 아래와 같다.
+
 |값|설명|
 |:---:|:---:|
 |ellipse|타원형(기본값)|
 |circle|원형|
 
 size 는 원 크기를 의미하며 값은 아래와 같다.
+
 |값|설명|
 |:---:|:---:|
 |closest-side|가장 가까운 모서리까지|
