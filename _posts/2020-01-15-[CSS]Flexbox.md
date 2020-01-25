@@ -301,7 +301,7 @@ item이 한 줄로 되어 있을 경우 많이 사용하며 item이 `flex-wrap: 
     align-items: flex-end;
 }
 ```
-<img src="https://sanggil1107.github.io//public/img/css/timesflexend.PNG" >
+<img src="https://sanggil1107.github.io//public/img/css/aligntimesflexend.PNG" >
 <br>
 
 - center
@@ -313,7 +313,7 @@ item이 한 줄로 되어 있을 경우 많이 사용하며 item이 `flex-wrap: 
     align-items: center;
 }
 ```
-<img src="https://sanggil1107.github.io//public/img/css/aligntimecenter.PNG" >
+<img src="https://sanggil1107.github.io//public/img/css/aligntimecenterPNG.PNG" >
 <br>
 
 - stretch
