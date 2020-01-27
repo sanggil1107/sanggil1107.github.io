@@ -64,9 +64,9 @@ category: [CSS]
     </body>
 </html>
 ```
-<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
-  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
-  XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
+<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="NWPmbdM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="NWPmbdM">
+  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/NWPmbdM">
+  NWPmbdM</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -141,9 +141,9 @@ category: [CSS]
     </body>
 </html>
 ```
-<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
-  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
-  XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
+<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="NWPmbdM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="NWPmbdM">
+  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/NWPmbdM">
+  NWPmbdM</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -234,9 +234,9 @@ animation-iteration-count: infinite;
     </body>
 </html>
 ```
-<p class="codepen" data-height="500" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
-  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
-  XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
+<p class="codepen" data-height="500" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="NWPmbdM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="NWPmbdM">
+  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/NWPmbdM">
+  NWPmbdM</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -350,9 +350,9 @@ animation-iteration-count: infinite;
     </body>
 </html>
 ```
-<p class="codepen" data-height="500" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
-  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
-  XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
+<p class="codepen" data-height="500" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="NWPmbdM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="NWPmbdM">
+  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/NWPmbdM">
+  NWPmbdM</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -406,9 +406,9 @@ animation-iteration-count: infinite;
     </body>
 </html>
 ```
-<p class="codepen" data-height="500" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
-  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
-  XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
+<p class="codepen" data-height="500" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="NWPmbdM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="NWPmbdM">
+  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/NWPmbdM">
+  NWPmbdM</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
