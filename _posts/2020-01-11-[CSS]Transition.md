@@ -71,9 +71,9 @@ category: [CSS]
     </body>
 </html>
 ```
-<p class="codepen" data-height="800" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 800px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
-  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
-  XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
+<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="gObyJyv" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="gObyJyv">
+  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/gObyJyv">
+  gObyJyv</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -124,9 +124,9 @@ transition-duration 속성은 transition-property 속성과 1:1로 대응한다.
     </body>
 </html>
 ```
-<p class="codepen" data-height="800" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 800px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
-  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
-  XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
+<p class="codepen" data-height="800" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="zYxXQQG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="zYxXQQG">
+  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/zYxXQQG">
+  zYxXQQG</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -187,9 +187,9 @@ transition-duration 속성은 transition-property 속성과 1:1로 대응한다.
     </body>
 </html>
 ```
-<p class="codepen" data-height="800" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 800px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
-  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
-  XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
+<p class="codepen" data-height="800" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="NWPmVVO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="NWPmVVO">
+  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/NWPmVVO">
+  NWPmVVO</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -234,9 +234,9 @@ transition-duration 속성은 transition-property 속성과 1:1로 대응한다.
     </body>
 </html>
 ```
-<p class="codepen" data-height="800" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 800px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
-  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
-  XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
+<p class="codepen" data-height="800" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="YzPMbox" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="YzPMbox">
+  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/YzPMbox">
+  YzPMbox</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
@@ -291,10 +291,9 @@ transition-duration 속성은 transition-property 속성과 1:1로 대응한다.
     </body>
 </html>
 ```
-
-<p class="codepen" data-height="800" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 800px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
-  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
-  XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
+<p class="codepen" data-height="1000" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="ZEYZNgz" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="ZEYZNgz">
+  <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/ZEYZNgz">
+  ZEYZNgz</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
