@@ -71,7 +71,7 @@ category: [CSS]
     </body>
 </html>
 ```
-<p class="codepen" data-height="800" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="gObyJyv" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="gObyJyv">
+<p class="codepen" data-height="810" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="gObyJyv" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="gObyJyv">
   <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/gObyJyv">
   gObyJyv</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
