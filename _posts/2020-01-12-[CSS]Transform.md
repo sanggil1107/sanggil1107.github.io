@@ -93,7 +93,7 @@ category: [CSS]
     </body>
 </html>
 ```
-<p class="codepen" data-height="600" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="eYmoaXO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="eYmoaXO">
+<p class="codepen" data-height="550" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="eYmoaXO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="eYmoaXO">
   <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/eYmoaXO">
   eYmoaXO</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -154,7 +154,7 @@ category: [CSS]
     </body>
 </html>
 ```
-<p class="codepen" data-height="300" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
+<p class="codepen" data-height="400" data-theme-id="default" data-default-tab="result" data-user="omfazpiq" data-slug-hash="XWJebme" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWJebme">
   <span>See the Pen <a href="https://codepen.io/omfazpiq/pen/XWJebme">
   XWJebme</a> by 양상길 (<a href="https://codepen.io/omfazpiq">@omfazpiq</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
