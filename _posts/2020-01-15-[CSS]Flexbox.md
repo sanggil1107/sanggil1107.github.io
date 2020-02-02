@@ -208,7 +208,7 @@ flex 레이아웃 중 부모 요소에 해당하며 flex item이라는 복수의
 |space-around|item들을 균등한 여백을 포함하여 정렬| |
 
 - flex-start   
-시작점을 기준으로 정렬한다.
+: 시작점을 기준으로 정렬한다.
 
 ```css
 .container {
