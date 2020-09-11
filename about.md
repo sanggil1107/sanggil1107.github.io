@@ -12,6 +12,6 @@ image: '/public/logo.png'
 
 <center>
 
-<p> </p>
+<p>안녕하세요 </p>  
 
 </center>
