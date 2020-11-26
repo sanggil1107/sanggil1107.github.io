@@ -45,7 +45,7 @@
             </a>
             {% for tag in site.categories %}
               {% if sub_nav[0] == 'Web' %}
-                {% if tag[0] == 'HTML' or tag[0] == 'CSS' or tag[0] == 'JavaScript' or tage[0] == 'React' %}
+                {% if tag[0] == 'HTML' or tag[0] == 'CSS' or tag[0] == 'JavaScript' or tag[0] == 'React' %}
                   <a class="sidebar-nav-item sidebar-nav-item-sub-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">                 
                     {{ tag | first }} ({{ tag | last | size }}) 
                   </a>
