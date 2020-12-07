@@ -12,6 +12,21 @@ category: [React]
 <hr>
 
 # Router
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+);
+```
 ## Route 컴포넌트로 특정 주소에 컴포넌트 연결
 ```jsx
 <Route path="주소규칙" component={컴포넌트} />
@@ -246,8 +261,8 @@ const About = ({location}) => {
     </div>
   );
 };
-```
 export default About;
+```
 
 ## 서브 라우트
 ```jsx
