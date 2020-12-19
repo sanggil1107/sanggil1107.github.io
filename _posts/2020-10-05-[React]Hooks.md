@@ -468,7 +468,7 @@ const Average = () => {
   const onChange = useCallback(e => {
     setNumber(e.target.value);
   }, []); // 컴포넌트가 처음 렌더링될 때만 함수 생성
-
+ 
   const onInsert = useCallback(() => {
     const nextList = list.concat(parseInt(number));
     setList(nextList);
