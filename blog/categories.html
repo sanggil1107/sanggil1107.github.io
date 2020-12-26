@@ -44,7 +44,7 @@ title: CATEGORY
                 {% endif %}
               {% endif %} 
               {% if sub_nav[0] == 'Programming' %}
-                {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Python' %}
+                {% if tag[0] == '자료구조' or if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Python' %}
               
                   <a id="{{ tag[0] | slugify }}" href="/Category/{{ tag[0] }}" style="color: black">
                     <i class="fa fa-square fa-1x" aria-hidden="true" style="color: black"></i><font size="4.5">&nbsp;{{ tag | first }} ({{ tag | last | size }})</font>

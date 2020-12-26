@@ -52,7 +52,7 @@
                 {% endif %}
               {% endif %}
               {% if sub_nav[0] == 'Programming' %}
-                {% if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Python' %}
+                {% if tag[0] == '자료구조' or if tag[0] == '알고리즘' or tag[0] == 'Django' or tag[0] == 'Java' or tag[0] == 'Python' %}
                   <a class="sidebar-nav-item sidebar-nav-item-sub-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">                 
                     {{ tag | first }} ({{ tag | last | size }}) 
                   </a>
