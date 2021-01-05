@@ -6,7 +6,7 @@ category: [JavaScript]
 ---
 <br>
 
-연산자에 대해 알아보자
+`연산자`에 대해 알아보자
 <!-- more -->
 
 <hr>
