@@ -512,7 +512,7 @@ const todos = handleActions(
     [INSERT]: (state, action) => ({
       ...state,
       todos: state.todos.concat(action.payload)
-    }),
+    }), 
     [TOGGLE]: (state, action) => ({
       ...state,
       todos: state.todos.map(todo => 
