@@ -500,7 +500,7 @@ const initialState = {
       text: 'redux 사용',
       done: false
     }
-  ]
+  ]  
 };
 
 const todos = handleActions(
