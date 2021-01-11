@@ -591,7 +591,7 @@ import Todos from '../Todos';
 
 const TodosContainer = () => {
   const { input, todos } = useSelector(({todos}) => ({
-    input: todos.input,
+    input: todos.input, 
     todos: todos.todos
   }));
   const dispatch = useDispatch();
