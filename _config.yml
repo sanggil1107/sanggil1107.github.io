@@ -47,6 +47,7 @@ nav:
   ABOUT:
   CATEGORY:
     - '/blog/'
+    - { AI & BigData: '/blog/categories/' }
     - { Web: '/blog/categories/' }
     - { Programming: '/blog/categories/' }
     - { Cloud: '/blog/categories/' }
