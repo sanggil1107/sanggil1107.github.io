@@ -34,9 +34,10 @@ docker image 목록 출력
 
 ---
 `docker images [옵션] [repository명]`
+
 |옵션|설명|
 |---|---|
-|-all, -a|모든 이미지 표시|
+|--all, -a|모든 이미지 표시|
 |--digests|다이제스트를 표시할지 말지|
 |--no-trunc|결과를 모두 표시|
 |--quiet, -q|Docker image ID만 표시|
@@ -200,9 +201,14 @@ wodby/nginx                        Generic nginx                                
 ```
 <br>
 
-## 이미지 삭제 (docker rmi)
+## 이미지 삭제 (docker rmi / docker image prune)
 ---
 `docker rmi [옵션] 이미지명`
+
+|옵션|설명|
+|---|---|
+|--force, -f|이미지를 강제로 삭제|
+
 ```
 $ docker images
 
@@ -223,7 +229,17 @@ REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
 nginx        latest    f6d0b4767a6c   2 weeks ago    133MB
 centos       7         8652b9f0cb4c   2 months ago   204MB
 ```
+
+`docker image prune [옵션]`
+
+사용하지 않는 이미지 삭제
+
+|옵션|설명|
+|---|---|
+|--force, -f|이미지를 강제로 삭제|
+|--all, -a|사용하지 않은 이미지 모두 삭제|
 <br>
+
 
 ## Docker Hub 로그인 (docker login)
 ---
@@ -259,10 +275,10 @@ Status: Downloaded newer image for nginx:latest
 $ docker image tag nginx sanggil1107/ysgnginx:1.0
 $ docker images
 
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-nginx                  latest              540a289bab6c        4 days ago          126MB
-sanggil1107/ysgnginx   1.0                 540a289bab6c        4 days ago          126MB
-ysg/ysgcentos          1.0                 67fa590cfc1c        2 months ago        202MB
+REPOSITORY             TAG       IMAGE ID       CREATED        SIZE
+sanggil1107/ysgnginx   1.0       f6d0b4767a6c   2 weeks ago    133MB
+nginx                  latest    f6d0b4767a6c   2 weeks ago    133MB
+centos                 7         8652b9f0cb4c   2 months ago   204MB
 ```
 <br>
 
