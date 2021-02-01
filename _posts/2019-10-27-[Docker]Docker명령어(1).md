@@ -12,32 +12,57 @@ Docker 명령어에 대해 알아보자
 # Docker 명령어
 
 ## 이미지 다운로드 (docker pull)
+
+docker hub에서 이미지 다운
+
 ---
-`docker image pull [옵션] 이미지명[:태그]`
+`docker pull [옵션] 이미지명[:태그]`
 ```
-$ docker image pull centos:7
+$ docker pull centos:7
 
 7: Pulling from library/centos
-d8d02d457314: Pull complete 
-Digest: sha256:307835c385f656ec2e2fec602cf093224173c51119bbebd602c53c3653a3d6eb
+2d473b07cdd5: Pull complete
+Digest: sha256:0f4ec88e21daf75124b8a9e5ca03c37a5e937e0e108a255d890492430789b60e
 Status: Downloaded newer image for centos:7
+docker.io/library/centos:7
 ```
 <br>
 
 ## 이미지 목록 (docker images)
+
+docker image 목록 출력
+
 ---
 `docker images [옵션] [repository명]`
+|옵션|설명|
+|---|---|
+|-all, -a|모든 이미지 표시|
+|--digests|다이제스트를 표시할지 말지|
+|--no-trunc|결과를 모두 표시|
+|--quiet, -q|Docker image ID만 표시|
+<br>
+
 ```
 $ docker images
 
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-centos              7                   67fa590cfc1c        2 weeks ago         202MB
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+nginx        latest    f6d0b4767a6c   2 weeks ago    133MB
+centos       7         8652b9f0cb4c   2 months ago   204MB
+```
+```
+$ docker images nginx
+
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+nginx        latest    f6d0b4767a6c   2 weeks ago   133MB
 ```
 <br>
 
 ## 이미지 상세정보 (docker inspect)
+
+image 상세정보
+
 ---
-`docker image inspect 이미지명[:태그]`
+`docker inspect 이미지명[:태그]`
 ```
 $ docker image inspect centos:7
 
@@ -145,17 +170,18 @@ $ docker image inspect centos:7
 ```
 <br>
 
-## 이미지 태그 설정
+## 이미지 태그 설정(docker tag)
 ---
-`docker image tag 원본이미지 태그이미지`  
+`docker tag 원본이미지 태그이미지`  
 단 docker hub에 push 하기 위해서는 `Docker hub 사용자명/이미지명:[태그명]` 형식으로 태그이미지를 지정해야한다.
 ```
-$ docker image tag centos:7 ysg/ysgcentos:1.0
+$ docker tag centos:7 ysg:1.0
 $ docker images
 
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-centos              7                   67fa590cfc1c        2 months ago        202MB
-ysg/ysgcentos       1.0                 67fa590cfc1c        2 months ago        202MB
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+nginx        latest    f6d0b4767a6c   2 weeks ago    133MB
+centos       7         8652b9f0cb4c   2 months ago   204MB
+ysg          1.0       8652b9f0cb4c   2 months ago   204MB
 ```
 <br>
 
@@ -165,32 +191,12 @@ ysg/ysgcentos       1.0                 67fa590cfc1c        2 months ago        
 ```
 $ docker search nginx
 
-NAME                              DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
-nginx                             Official build of Nginx.                        12109               [OK]                
-jwilder/nginx-proxy               Automated Nginx reverse proxy for docker con…   1678                                    [OK]
-richarvey/nginx-php-fpm           Container running Nginx + PHP-FPM capable of…   744                                     [OK]
-linuxserver/nginx                 An Nginx container, brought to you by LinuxS…   79                                      
-bitnami/nginx                     Bitnami nginx Docker Image                      72                                      [OK]
-tiangolo/nginx-rtmp               Docker image with Nginx using the nginx-rtmp…   58                                      [OK]
-nginxdemos/hello                  NGINX webserver that serves a simple page co…   31                                      [OK]
-jlesage/nginx-proxy-manager       Docker container for Nginx Proxy Manager        26                                      [OK]
-jc21/nginx-proxy-manager          Docker container for managing Nginx proxy ho…   26                                      
-nginx/nginx-ingress               NGINX Ingress Controller for Kubernetes         22                                      
-privatebin/nginx-fpm-alpine       PrivateBin running on an Nginx, php-fpm & Al…   18                                      [OK]
-schmunk42/nginx-redirect          A very simple container to redirect HTTP tra…   17                                      [OK]
-blacklabelops/nginx               Dockerized Nginx Reverse Proxy Server.          12                                      [OK]
-centos/nginx-18-centos7           Platform for running nginx 1.8 or building n…   11                                      
-centos/nginx-112-centos7          Platform for running nginx 1.12 or building …   10                                      
-nginxinc/nginx-unprivileged       Unprivileged NGINX Dockerfiles                  9                                       
-nginx/nginx-prometheus-exporter   NGINX Prometheus Exporter                       7                                       
-sophos/nginx-vts-exporter         Simple server that scrapes Nginx vts stats a…   5                                       [OK]
-1science/nginx                    Nginx Docker images that include Consul Temp…   5                                       [OK]
-mailu/nginx                       Mailu nginx frontend                            4                                       [OK]
-pebbletech/nginx-proxy            nginx-proxy sets up a container running ngin…   2                                       [OK]
-travix/nginx                      NGinx reverse proxy                             2                                       [OK]
-ansibleplaybookbundle/nginx-apb   An APB to deploy NGINX                          1                                       [OK]
-wodby/nginx                       Generic nginx                                   0                                       [OK]
-centos/nginx-110-centos7          Platform for running nginx 1.10 or building …   0                                       
+NAME                               DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+nginx                              Official build of Nginx.                        14372     [OK]
+jwilder/nginx-proxy                Automated Nginx reverse proxy for docker con…   1951                 [OK]
+richarvey/nginx-php-fpm            Container running Nginx + PHP-FPM capable of…   804                  [OK]
+.... 
+wodby/nginx                        Generic nginx                                   1                    [OK]
 ```
 <br>
 
@@ -198,15 +204,24 @@ centos/nginx-110-centos7          Platform for running nginx 1.10 or building �
 ---
 `docker rmi [옵션] 이미지명`
 ```
-$ docker rmi centos:7
-
-Untagged: centos:7
-Untagged: centos@sha256:307835c385f656ec2e2fec602cf093224173c51119bbebd602c53c3653a3d6eb
-
 $ docker images
 
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-ysg/ysgcentos       1.0                 67fa590cfc1c        2 months ago        202MB
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+nginx        latest    f6d0b4767a6c   2 weeks ago    133MB
+centos       7         8652b9f0cb4c   2 months ago   204MB
+ysg          1.0       8652b9f0cb4c   2 months ago   204MB
+```
+```
+$ docker rmi ysg:1.0
+
+Untagged: ysg:1.0
+```
+```
+$ docker images
+
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+nginx        latest    f6d0b4767a6c   2 weeks ago    133MB
+centos       7         8652b9f0cb4c   2 months ago   204MB
 ```
 <br>
 
