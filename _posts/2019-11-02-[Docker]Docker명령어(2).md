@@ -5,13 +5,23 @@ category: [Docker]
 image: /public/img/알고리즘/삽입정렬3.png
 ---
 <br>
-Docker 명령어에 대해 알아보자
+
+`Docker 명령어`에 대해 알아보자
 <!-- more -->
 <hr>
 
 ## 컨테이너 실행 (docker run)
 ---
-`docker run [옵션] 이미지명[:태그명] [인수]`
+`docker run [옵션] [컨테이너명] 이미지명[:태그명] [인수]`
+
+|옵션|설명|
+|---|---|
+|--attach, -a|표준 입력, 출력, 오류 출력에 attach 한다.|
+|--cidfile|컨테이너 ID를 파일로 출력|
+|--detach, -d|컨테이너를 생성하고 백그라운드에서 실행|
+|--interactive, -i|컨테이너의 표준 입력|
+|--tty, -t|단말기 디바이스 사용|
+
 ```
 $ docker run -it --name "Test" centos /bin/cal
 
