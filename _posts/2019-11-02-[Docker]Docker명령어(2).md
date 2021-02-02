@@ -20,7 +20,7 @@ category: [Docker]
 |--detach, -d|컨테이너를 생성하고 백그라운드에서 실행|
 |--interactive, -i|컨테이너의 표준 입력|
 |--tty, -t|단말기 디바이스 사용|
-
+ 
 ```
 $ docker run -it --name "Test" centos /bin/cal
 
