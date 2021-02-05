@@ -21,7 +21,7 @@ category: [Docker]
 |--interactive, -i|컨테이너의 표준 입력|
 |--tty, -t|단말기 디바이스 사용|
   
-```  
+```   
 $ docker run -it --name "Test" centos /bin/cal
 
    September 2019   
