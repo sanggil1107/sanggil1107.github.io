@@ -17,7 +17,6 @@ category: [Docker]
 |---|---|
 |--attach, -a|표준 입력, 출력, 오류 출력에 attach 한다.|
 |--cidfile|컨테이너 ID를 파일로 출력|
-|--detach, -d|컨테이너를 생성하고 백그라운드에서 실행|
 |--interactive, -i|컨테이너의 표준 입력|
 |--tty, -t|단말기 디바이스 사용|
     
@@ -38,16 +37,40 @@ $ docker run -it --name "Test3" centos /bin/bash
 [root@ca8fd2f4982a /]# ls
 anaconda-post.log  bin  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
+다음은 백그라운드에서 컨테이너를 실행하는 방법이다.
+
+|옵션|설명|
+|---|---|
+|--detach, -d|백그라운드에서 실행|
+|--user, -u|사용자명을 지정|
+|--restart=[no | on-failure | on-failure:횟수 | always | unless-stopped]|명령의 실행 결과에 따라 재시작 옵션|
+|--rm|명령 실행 완료 후 컨테이너 자동 삭제|
+
+```
+$ docker run -d centos /bin/ping localhost
+45cdb13542301f3355e248d902ba299f276f6c35c12555d612336d57e5128a25
+```
+다음과 같이 컨테이너가 실행 중임을 알 수 있다.
+```
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND                 CREATED          STATUS          PORTS     NAMES
+45cdb1354230   centos    "/bin/ping localhost"   17 seconds ago   Up 16 seconds             hungry_wiles
+```
+
+다음은 컨테이너의 네트워크를 설정하는 방법이다.
+|옵션|설명|
+|---|---|
+|--detach, -d|백그라운드에서 실행|
+|--user, -u|사용자명을 지정|
+|--restart=[no | on-failure | on-failure:횟수 | always | unless-stopped]|명령의 실행 결과에 따라 재시작 옵션|
+|--rm|명령 실행 완료 후 컨테이너 자동 삭제|
+
 ```
 $ docker run -d -p 8080:80 nginx
 
 9cd3f115880c4da7885f706bd83f63131c4e0e8b2543321a5560138f01f0b0c1
 ```
 ```
-$ ls
-
-Desktop  Documents  Downloads  examples.desktop  Music  Pictures  Public  Templates  Videos  vtest
-
 $ docker run -i -t -v /vtest --name volumetest1 centos bin/bash
 
 [root@23d446e9134d /]# ls
@@ -85,11 +108,10 @@ yang=sanggil
 `docker logs `
 ```
 $ docker run -d centos /bin/ping localhost
-
-6becd04e405cabfc1e627ef6b3f573212762101f6419c157ef22246b1dce57c9
+45cdb13542301f3355e248d902ba299f276f6c35c12555d612336d57e5128a25
 ```
 ```
-$ docker logs 6becd04e405cabfc1e627ef6b3f573212762101f6419c157ef22246b1dce57c9
+$ docker logs 45cdb13542301f3355e248d902ba299f276f6c35c12555d612336d57e5128a25
 
 PING localhost (127.0.0.1) 56(84) bytes of data.
 64 bytes from localhost (127.0.0.1): icmp_seq=1 ttl=64 time=0.149 ms
@@ -100,6 +122,7 @@ PING localhost (127.0.0.1) 56(84) bytes of data.
 64 bytes from localhost (127.0.0.1): icmp_seq=6 ttl=64 time=0.020 ms
 64 bytes from localhost (127.0.0.1): icmp_seq=7 ttl=64 time=0.030 ms
 64 bytes from localhost (127.0.0.1): icmp_seq=8 ttl=64 time=0.019 ms
+...
 ```
 <br>
 
