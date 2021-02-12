@@ -372,3 +372,4 @@ UID                 PID                 PPID                C                   
 root                6157                6134                0                   10월27               ?                   00:00:00            nginx: master process nginx -g daemon off;
 systemd+            6204                6157                0                   10월27               ?                   00:00:00            nginx: worker process
 ```
+ 
