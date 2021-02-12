@@ -43,7 +43,7 @@ anaconda-post.log  bin  dev  etc  home  lib  lib64  media  mnt  opt  proc  root 
 |---|---|
 |--detach, -d|백그라운드에서 실행|
 |--user, -u|사용자명을 지정|
-|--restart=[no | on-failure | on-failure:횟수 | always | unless-stopped]|명령의 실행 결과에 따라 재시작 옵션|
+|--restart=`[no | on-failure | on-failure:횟수 | always | unless-stopped]`|명령의 실행 결과에 따라 재시작 옵션|
 |--rm|명령 실행 완료 후 컨테이너 자동 삭제|
 
 ```
@@ -60,16 +60,25 @@ CONTAINER ID   IMAGE     COMMAND                 CREATED          STATUS        
 다음은 컨테이너의 네트워크를 설정하는 방법이다.
 |옵션|설명|
 |---|---|
-|--detach, -d|백그라운드에서 실행|
-|--user, -u|사용자명을 지정|
-|--restart=[no | on-failure | on-failure:횟수 | always | unless-stopped]|명령의 실행 결과에 따라 재시작 옵션|
-|--rm|명령 실행 완료 후 컨테이너 자동 삭제|
-
+|--add-host 호스트명:IP|컨테이너의 /etc/hosts에 호스트명과 ip를 정의|
+|--dns IP주소|컨테이너용 DNS 서버의 IP 지정|
+|--expose|지정한 범위의 포트 번호를 할당|
+|--mac-address=MAC주소|컨테이너의 MAC 지정|
+|--net=`[bridge | none | container:<name | id> | host | NETWORK]`|컨테이너의 네트워크를 지정|
+|--hostname, -h|컨테이너 자신의 호스트명 지정|
+|--publish, -p 호스트의 포트 번호:컨테이너의 포트 번호|호스트와 컨테이너의 포트 매핑|
+|--publish-all, -p|호스트의 임의의 포트를 컨테이너에 할당|
 ```
 $ docker run -d -p 8080:80 nginx
 
-9cd3f115880c4da7885f706bd83f63131c4e0e8b2543321a5560138f01f0b0c1
+bdf8250879ac608831626240134f331ebb75daec9242298b57bd6ace3fc272a4
 ```
+다음은 컨테이너의 자원을 설정하는 방법이다.
+|옵션|설명|
+|---|---|
+|--cpu-shares, -c|CPU의 사용 배분|
+|--memory, -m|사용할 메모리를 제한하여 실행|
+|--volume [호스트의 디렉토리]:[컨테이너의 디렉토리], -v|호스트와 컨테이너의 디렉토리 공유|
 ```
 $ docker run -i -t -v /vtest --name volumetest1 centos bin/bash
 
