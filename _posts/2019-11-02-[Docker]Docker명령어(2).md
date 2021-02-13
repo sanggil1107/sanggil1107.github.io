@@ -460,18 +460,16 @@ CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   5 days ago          Up 2 minutes        0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    5 days ago          Up 5 days                                  silly_chatterjee
-53e652bede18        centos              "/bin/bash"              5 days ago          Up 4 days                                  Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                  NAMES
+809019f71618   nginx     "/docker-entrypoint.…"   3 seconds ago   Up 2 seconds   0.0.0.0:8080->80/tcp   exciting_ganguly
 ```
 ```
-$ docker port 9cd3f115880c
+$ docker port 809019f71618
 
 80/tcp -> 0.0.0.0:8080
 ```
 ```
-$ docker port 9cd3f115880c 80
+$ docker port 809019f71618 80
 
 0.0.0.0:8080
 ```
@@ -483,20 +481,16 @@ $ docker port 9cd3f115880c 80
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   5 days ago          Up 2 minutes        0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    5 days ago          Up 5 days                                  silly_chatterjee
-53e652bede18        centos              "/bin/bash"              5 days ago          Up 4 days                                  Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                  NAMES
+809019f71618   nginx     "/docker-entrypoint.…"   3 minutes ago   Up 3 minutes   0.0.0.0:8080->80/tcp   exciting_ganguly
 ```
 ```
-$ docker rename wizardly_mcclintock nginx
+$ docker rename exciting_ganguly ysg
 
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   5 days ago          Up 10 minutes       0.0.0.0:8080->80/tcp   nginx
-6becd04e405c        centos              "/bin/ping localhost"    5 days ago          Up 5 days                                  silly_chatterjee
-53e652bede18        centos              "/bin/bash"              5 days ago          Up 4 days                                  Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                  NAMES
+809019f71618   nginx     "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes   0.0.0.0:8080->80/tcp   ysg
 ```
 <br>
 
@@ -504,42 +498,37 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ---
 `docker cp <컨테이너 식별자>:<컨테이너 안의 파일 경로> <호스트의 디렉토리 경로>`
 ```
-$ docker cp 9cd3f115880c:/etc/nginx/nginx.conf ./nginx.conf
+$ docker cp 809019f71618:/etc/nginx/nginx.conf ./nginx.conf
 ```
 ```
 $ ls
 
-Desktop  Documents  Downloads  env_list  examples.desktop  Music  nginx.conf  Pictures  Public  Templates  Videos  vtest
+nginx.conf
 ```
 `docker cp <호스트 파일> <컨테이너 식별자>:<컨테이너 안의 파일 경로>` 
 ```
 $ ls
 
-Desktop  Documents  Downloads  env_list  examples.desktop  local.txt  Music  nginx.conf  Pictures  Public  Templates  Videos  vtest
+nginx.conf  test.txt
 ```
 ```
-$ docker cp ./local.txt 9cd3f115880c:/tmp/local.txt
+$ docker cp ./test.txt 809019f71618:/tmp/test.txt
 ```
 ```
 $ docker exec -it 9cd3f115880c /bin/bash
 
-root@9cd3f115880c:/# ls
-bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-root@9cd3f115880c:/# cd /tmp/
-root@9cd3f115880c:/tmp# ls
-local.txt
+root@809019f71618:/# ls
+bin  boot  dev  docker-entrypoint.d  docker-entrypoint.sh  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@809019f71618:/# cd tmp/
+root@809019f71618:/tmp# ls
+test.txt
 ```
 <br>
 
 ## 컨테이너 변경 내역 확인(docker diff)
 `docker diff <컨테이너 식별자>`
 ```
-$ docker diff 9cd3f115880c
-
-C /tmp
-A /tmp/local.txt
-C /root
-A /root/.bash_history
+$ docker diff 809019f71618
 C /run
 A /run/nginx.pid
 C /var
@@ -550,57 +539,56 @@ A /var/cache/nginx/proxy_temp
 A /var/cache/nginx/scgi_temp
 A /var/cache/nginx/uwsgi_temp
 A /var/cache/nginx/client_temp
+C /etc
+C /etc/nginx
+C /etc/nginx/conf.d
+C /etc/nginx/conf.d/default.conf
+C /tmp
+A /tmp/test.txt
 ```
 <br>
 
-## 컨테이너로부터의 이미지 생성(docker commit)
+## 컨테이너로부터 이미지 생성(docker commit)
+---
 `docker commit [옵션] <컨테이너 식별자> [이미지명[:태그명]]`
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   5 days ago          Up 38 minutes       0.0.0.0:8080->80/tcp   nginx
-6becd04e405c        centos              "/bin/ping localhost"    5 days ago          Up 5 days                                  silly_chatterjee
-53e652bede18        centos              "/bin/bash"              5 days ago          Up 4 days                                  Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+809019f71618   nginx     "/docker-entrypoint.…"   28 minutes ago   Up 28 minutes   0.0.0.0:8080->80/tcp   ysg
 ```
 ```
-$ docker commit 9cd3f115880c ysg/newnaginx:1.1
+$ docker commit 809019f71618 newimage
 
-sha256:ed64139f3913a9fd33afff4632b6af1cf3e1096a93cc6e5bd7f51ef92417ee20
+sha256:2a0566be6fedfd31d9eae0e245fd35517ce17861b745e3d15d4ac1e17becfcdb
 ```
 ```
 $ docker images
 
-REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
-ysg/newnaginx          1.1                 ed64139f3913        2 seconds ago       126MB
-nginx                  latest              540a289bab6c        10 days ago         126MB
-sanggil1107/ysgnginx   1.0                 540a289bab6c        10 days ago         126MB
-centos                 latest              0f3e07c0138f        4 weeks ago         220MB
-ysg/ysgcentos          1.0                 67fa590cfc1c        2 months ago        202MB
+REPOSITORY             TAG       IMAGE ID       CREATED          SIZE
+newimage               latest    2a0566be6fed   13 seconds ago   133MB
 ```
 <br>
 
 ## 컨테이너를 파일로 출력(docker export)
 ---
+
+실행 중인 컨테이너의 디렉토리/파일을 모아 tar로 생성
+
 `docker export <컨테이너 식별자>`
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   5 days ago          Up 45 minutes       0.0.0.0:8080->80/tcp   nginx
-6becd04e405c        centos              "/bin/ping localhost"    5 days ago          Up 5 days                                  silly_chatterjee
-53e652bede18        centos              "/bin/bash"              5 days ago          Up 4 days                                  Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+809019f71618   nginx     "/docker-entrypoint.…"   32 minutes ago   Up 32 minutes   0.0.0.0:8080->80/tcp   ysg
 ```
 ```
-$ docker exprort 9cd3f115880c > nginx.tar
+$ docker export 809019f71618 > tartest.tar
 ```
 ```
-$ ls -al
+$ ls
 
-total 125464
-drwxr-xr-x 19 ysg  ysg       4096 11월  2 13:25 .
-drwxr-xr-x  3 root root      4096  8월 29 01:23 ..
--rw-rw-r--  1 ysg  ysg  128327680 11월  2 13:25 nginx.tar
+tartest.tar
 ```
 <br>
 
@@ -608,15 +596,15 @@ drwxr-xr-x  3 root root      4096  8월 29 01:23 ..
 ---
 `docker import <파일 또는 URL> [이미지명[:태그명]]`
 ```
-$ docker import nginx.tar new:1.1
+$ docker import tartest.tar tarimage
 
-sha256:c1cbed9183aeb68827dfda66f2f4efb4b05400462174d429b0a1ef929cd76d06
+sha256:4883995813962e852c8260c9174d497e4e16c649e177c1c0fa75d3565708c937
 ```
 ```
 $ docker images
 
-REPOSITORY             TAG                 IMAGE ID            CREATED              SIZE
-new                    1.1                 c1cbed9183ae        About a minute ago   125MB
+REPOSITORY             TAG       IMAGE ID       CREATED         SIZE
+tarimage               latest    488399581396   6 seconds ago   131MB
 ```
 <br>
 
