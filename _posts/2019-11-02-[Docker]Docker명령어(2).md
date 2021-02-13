@@ -85,6 +85,14 @@ $ docker run -i -t -v /vtest --name volumetest1 centos bin/bash
 [root@23d446e9134d /]# ls
 bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  vtest
 ```
+다음은 컨테이너의 환경변수나 작업 디렉토리를 설정하는 방법이다.
+|옵션|설명|
+|---|---|
+|--env=환경변수, -e|환경변수를 설정|
+|--env-file=파일명|환경변수를 파일로부터 설정|
+|--read-only=`[true | false]`|컨테이너의 파일 시스템의 읽기 전용 여부 설정|
+|--workdir=패스, -w|컨테이너의 작업 디렉토리 지정|
+|--user=사용자명, -u|사용자명 또는 UID를 지정|
 ```
 $ docker run -it -e foo=bar centos /bin/bash
 
@@ -115,56 +123,82 @@ yang=sanggil
 
 ## 컨테이너 목록 (docker ps)
 ---
+
+작동하는 컨테이너의 가동 상태 확인
+
 `docker ps [옵션]`
+
+|옵션|설명|
+|---|---|
+|--all, -a|실행 중/정지 중을 포함한 모든 컨테이너 표시|
+|--filter, -f|표시할 컨테이너의 필터링|
+|--format|표시 포맷을 지정|
+|--last, -n|마지막으로 실행된 n건의 컨테이너만 표시|
+|--latest, -l|마지막으로 실행된 컨테이너만 표시|
+|--no-trunc|정보를 생략하지 않고 표시|
+|--quiet, -q|컨테이너 ID만 표시|
+|--size, -s|파일 크기 표시|
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   41 minutes ago      Up 41 minutes       0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                  NAMES
+5fac4b5a8b83   nginx     "/docker-entrypoint.…"   3 seconds ago   Up 2 seconds   0.0.0.0:8080->80/tcp   stupefied_jang
 ```
 ```
 $ docker ps -a
-
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                           PORTS                  NAMES
-436377e9d58d        centos              "/bin/bash"              21 minutes ago      Exited (0) 21 minutes ago                               fervent_lalande
-cc7a7306349a        centos              "/bin/bash"              24 minutes ago      Exited (0) 23 minutes ago                               loving_mcclintock
-23d446e9134d        centos              "bin/bash"               28 minutes ago      Exited (0) 28 minutes ago                               volumetest1
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   42 minutes ago      Up 42 minutes                    0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                                        silly_chatterjee
-188a421b227f        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                            Test2
-53e652bede18        centos              "/bin/bash"              About an hour ago   Exited (130) About an hour ago                          Test3
-608e309487bd        centos              "/bin/cal"               About an hour ago   Exited (0) About an hour ago                            Test
+CONTAINER ID   IMAGE      COMMAND                  CREATED          STATUS                      PORTS                  NAMES
+5fac4b5a8b83   nginx      "/docker-entrypoint.…"   32 seconds ago   Up 31 seconds               0.0.0.0:8080->80/tcp   stupefied_jang
+bdf8250879ac   nginx      "/docker-entrypoint.…"   19 hours ago     Exited (255) 14 hours ago   0.0.0.0:8080->80/tcp   funny_bell
+45cdb1354230   centos     "/bin/ping localhost"    19 hours ago     Exited (255) 14 hours ago                          hungry_wiles
+2f16a1d56967   centos     "/bin/bash"              19 hours ago     Exited (130) 19 hours ago                          Test1
+8fcfc5c36f94   centos     "/bin/cal"               19 hours ago     Exited (0) 19 hours ago                            Test
+d898e872e5c2   centos:7   "/bin/bash"              11 days ago      Exited (137) 11 days ago                           cool_mestorf
 ```
 ```
 $ docker ps -a -f name=Test
 
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                           PORTS               NAMES
-188a421b227f        centos              "/bin/bash"         About an hour ago   Exited (0) About an hour ago                         Test2
-53e652bede18        centos              "/bin/bash"         About an hour ago   Exited (130) About an hour ago                       Test3
-608e309487bd        centos              "/bin/cal"          About an hour ago   Exited (0) About an hour ago                         Test
+CONTAINER ID   IMAGE     COMMAND       CREATED        STATUS                      PORTS     NAMES
+2f16a1d56967   centos    "/bin/bash"   19 hours ago   Exited (130) 19 hours ago             Test1
+8fcfc5c36f94   centos    "/bin/cal"    19 hours ago   Exited (0) 19 hours ago               Test
 ```
 ```
 $ docker ps -a -f exited=0
 
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                         PORTS               NAMES
-436377e9d58d        centos              "/bin/bash"         23 minutes ago      Exited (0) 22 minutes ago                          fervent_lalande
-cc7a7306349a        centos              "/bin/bash"         25 minutes ago      Exited (0) 24 minutes ago                          loving_mcclintock
-23d446e9134d        centos              "bin/bash"          30 minutes ago      Exited (0) 30 minutes ago                          volumetest1
-188a421b227f        centos              "/bin/bash"         About an hour ago   Exited (0) About an hour ago                       Test2
-608e309487bd        centos              "/bin/cal"          About an hour ago   Exited (0) About an hour ago                       Test
+CONTAINER ID   IMAGE     COMMAND      CREATED        STATUS                    PORTS     NAMES
+8fcfc5c36f94   centos    "/bin/cal"   19 hours ago   Exited (0) 19 hours ago             Test
 ```
 <br>
+
+
+## 실행 중인 컨테이너 리소스 사용 정보 (docker stats)
+---
+
+작동하는 컨테이너 가동 상태 확인
+
+`docker stats [컨테이너 식별자]`
+```
+$ docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT    MEM %     NET I/O       BLOCK I/O   PIDS
+5fac4b5a8b83   stupefied_jang   0.00%     8.297MiB / 12.4GiB   0.07%     1.31kB / 0B   0B / 0B     2
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT    MEM %     NET I/O       BLOCK I/O   PIDS
+5fac4b5a8b83   stupefied_jang   0.00%     8.297MiB / 12.4GiB   0.07%     1.31kB / 0B   0B / 0B     2
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT    MEM %     NET I/O       BLOCK I/O   PIDS
+5fac4b5a8b83   stupefied_jang   0.00%     8.297MiB / 12.4GiB   0.07%     1.31kB / 0B   0B / 0B     2
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT    MEM %     NET I/O       BLOCK I/O   PIDS
+...
+```
+<br>
+
 
 ## 컨테이너에서 실행 중인 프로세스 목록 (docker top)
 ---
 `docker top <컨테이너 식별자>`
 ```
-$ docker top 9cd3f115880c
-
+$ docker top 5fac4b5a8b83
 UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
-root                6157                6134                0                   10월27               ?                   00:00:00            nginx: master process nginx -g daemon off;
-systemd+            6204                6157                0                   10월27               ?                   00:00:00            nginx: worker process
+root                866                 845                 0                   06:11               ?                   00:00:00            nginx: master process nginx -g daemon off;
+uuidd               927                 866                 0                   06:11               ?                   00:00:00            nginx: worker process
 ```
  
 
@@ -195,17 +229,16 @@ PING localhost (127.0.0.1) 56(84) bytes of data.
 ---
 `docker start [옵션] <컨테이너 식별자>`
 ```
-$ docker start 53e652bede18
+$ docker start 45cdb1354230
 
-53e652bede18
+45cdb1354230
 ```
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
-53e652bede18        centos              "/bin/bash"              About an hour ago   Up 5 seconds                               Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+5fac4b5a8b83   nginx     "/docker-entrypoint.…"   16 minutes ago   Up 16 minutes   0.0.0.0:8080->80/tcp   stupefied_jang
+45cdb1354230   centos    "/bin/ping localhost"    19 hours ago     Up 16 seconds                          hungry_wiles
 ```
 <br>
 
@@ -213,16 +246,15 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ---
 `docker stop [옵션] <컨테이너 식별자>`
 ```
-$ docker stop 53e652bede18
+$ docker stop 45cdb1354230
 
-53e652bede18
+45cdb1354230
 ```
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+5fac4b5a8b83   nginx     "/docker-entrypoint.…"   19 minutes ago   Up 19 minutes   0.0.0.0:8080->80/tcp   stupefied_jang
 ```
 <br>
 
@@ -230,52 +262,47 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ---
 `docker restart [옵션] <컨테이너 식별자>`
 ```
-$ docker restart 53e652bede18
+$ docker restart 45cdb1354230
 
-53e652bede18
+45cdb1354230
 ```
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                           silly_chatterjee
-53e652bede18        centos              "/bin/bash"              About an hour ago   Up 1 second                                Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+5fac4b5a8b83   nginx     "/docker-entrypoint.…"   26 minutes ago   Up 26 minutes   0.0.0.0:8080->80/tcp   stupefied_jang
+45cdb1354230   centos    "/bin/ping localhost"    19 hours ago     Up 2 seconds                           hungry_wiles
 ```
 <br>
- 
+
 ## 정지 중인 컨테이너 삭제 (docker rm)
  ---
 `docker rm [옵션] <컨테이너 식별자>`  
 ```
 $ docker ps -a
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                         PORTS                  NAMES
-436377e9d58d        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                          fervent_lalande
-cc7a7306349a        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                          loving_mcclintock
-23d446e9134d        centos              "bin/bash"               About an hour ago   Exited (0) About an hour ago                          volumetest1
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour               0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                                      silly_chatterjee
-188a421b227f        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                          Test2
-53e652bede18        centos              "/bin/bash"              2 hours ago         Up 2 minutes                                          Test3
-608e309487bd        centos              "/bin/cal"               2 hours ago         Exited (0) 6 minutes ago                              Test
+CONTAINER ID   IMAGE      COMMAND                  CREATED          STATUS                      PORTS                  NAMES
+5fac4b5a8b83   nginx      "/docker-entrypoint.…"   31 minutes ago   Up 31 minutes               0.0.0.0:8080->80/tcp   stupefied_jang
+bdf8250879ac   nginx      "/docker-entrypoint.…"   19 hours ago     Exited (255) 15 hours ago   0.0.0.0:8080->80/tcp   funny_bell
+45cdb1354230   centos     "/bin/ping localhost"    20 hours ago     Up 5 minutes                                       hungry_wiles
+2f16a1d56967   centos     "/bin/bash"              20 hours ago     Exited (130) 20 hours ago                          Test1
+8fcfc5c36f94   centos     "/bin/cal"               20 hours ago     Exited (0) 20 hours ago                            Test
+d898e872e5c2   centos:7   "/bin/bash"              11 days ago      Exited (137) 11 days ago                           cool_mestorf
 ```
 ```
-$ docker rm 436377e9d58d
+$ docker rm d898e872e5c2
 
-436377e9d58d
+d898e872e5c2
 ```
 ```
 $ docker ps -a
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                         PORTS                  NAMES
-cc7a7306349a        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                          loving_mcclintock
-23d446e9134d        centos              "bin/bash"               About an hour ago   Exited (0) About an hour ago                          volumetest1
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour               0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    About an hour ago   Up About an hour                                      silly_chatterjee
-188a421b227f        centos              "/bin/bash"              About an hour ago   Exited (0) About an hour ago                          Test2
-53e652bede18        centos              "/bin/bash"              2 hours ago         Up 3 minutes                                          Test3
-608e309487bd        centos              "/bin/cal"               2 hours ago         Exited (0) 7 minutes ago                              Test
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS                  NAMES
+5fac4b5a8b83   nginx     "/docker-entrypoint.…"   32 minutes ago   Up 32 minutes               0.0.0.0:8080->80/tcp   stupefied_jang
+bdf8250879ac   nginx     "/docker-entrypoint.…"   19 hours ago     Exited (255) 15 hours ago   0.0.0.0:8080->80/tcp   funny_bell
+45cdb1354230   centos    "/bin/ping localhost"    20 hours ago     Up 5 minutes                                       hungry_wiles
+2f16a1d56967   centos    "/bin/bash"              20 hours ago     Exited (130) 20 hours ago                          Test1
+8fcfc5c36f94   centos    "/bin/cal"               20 hours ago     Exited (0) 20 hours ago                            Test
 ```
 <br>
 
@@ -288,38 +315,35 @@ $ docker container prune
 WARNING! This will remove all stopped containers.
 Are you sure you want to continue? [y/N] y
 Deleted Containers:
-cc7a7306349aa7bffa40780ff30b31b6644dfa5894820e1f71327ea5934df78b
-23d446e9134d3e302509b869629f2b6d1b8f3842724d4b09d258ede4a72777f0
-188a421b227fc4ba7b2d8341082624d8a4424faf97ac9e7ab5f1af4043c6f30c
-608e309487bd21a979de80637ef0ec27d24d331e6e8848dc1fd07fbcf0e3f4d3
+bdf8250879ac608831626240134f331ebb75daec9242298b57bd6ace3fc272a4
+2f16a1d569675351c994e5231ae2edba984aea8a08aa9157aa232dcc81431069
+8fcfc5c36f94dc8549ade12f2efec7b751b4cda302b74e426b86af94e0734c81
 
-Total reclaimed space: 43B
+Total reclaimed space: 1.124kB
 ```
 ```
 $ docker ps -a
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   25 hours ago        Up 25 hours         0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    25 hours ago        Up 25 hours                                silly_chatterjee
-53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+5fac4b5a8b83   nginx     "/docker-entrypoint.…"   35 minutes ago   Up 35 minutes   0.0.0.0:8080->80/tcp   stupefied_jang
+45cdb1354230   centos    "/bin/ping localhost"    20 hours ago     Up 8 minutes                           hungry_wiles
 ```
 <br>
 
-## 실행 중인 컨테이너(작동 중인 프로세스) 정지 (docker pause)
+## 실행 중인 컨테이너(작동 중인 프로세스) 중단 (docker pause)
 ---
 `docker pause <컨테이너 식별자>`  
 ```
-$ docker pause 9cd3f115880c
+$ docker pause 5fac4b5a8b83
 
-9cd3f115880c
+5fac4b5a8b83
 ```
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                 PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   25 hours ago        Up 25 hours (Paused)   0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    25 hours ago        Up 25 hours                                   silly_chatterjee
-53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                   Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                   PORTS                  NAMES
+5fac4b5a8b83   nginx     "/docker-entrypoint.…"   44 minutes ago   Up 44 minutes (Paused)   0.0.0.0:8080->80/tcp   stupefied_jang
+45cdb1354230   centos    "/bin/ping localhost"    20 hours ago     Up 17 minutes                                   hungry_wiles
 ```
 <br>
 
@@ -327,17 +351,16 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ---
 `docker unpause <컨테이너 식별자>`  
 ```
-$ docker unpause 9cd3f115880c
+$ docker unpause 5fac4b5a8b83
 
-9cd3f115880c
+5fac4b5a8b83
 ```
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   25 hours ago        Up 25 hours         0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    25 hours ago        Up 25 hours                                silly_chatterjee
-53e652bede18        centos              "/bin/bash"              25 hours ago        Up 24 hours                                Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+5fac4b5a8b83   nginx     "/docker-entrypoint.…"   45 minutes ago   Up 45 minutes   0.0.0.0:8080->80/tcp   stupefied_jang
+45cdb1354230   centos    "/bin/ping localhost"    20 hours ago     Up 19 minutes                          hungry_wiles
 ```
 <br>
 

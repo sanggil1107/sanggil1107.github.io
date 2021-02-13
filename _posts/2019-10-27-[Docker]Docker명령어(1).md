@@ -305,15 +305,3 @@ $ docker logout
 Removing login credentials for https://index.docker.io/v1/
 ```
 <br>
-
-## 실행 중인 컨테이너 리소스 사용 정보 (docker stats)
----
-`docker stats [컨테이너 식별자]`
-```
-$ docker stats
-
-CONTAINER ID        NAME                  CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
-9cd3f115880c        wizardly_mcclintock   0.00%               2.211MiB / 3.852GiB   0.06%               12.5kB / 1.75kB     0B / 0B             2
-6becd04e405c        silly_chatterjee      0.01%               968KiB / 3.852GiB     0.02%               11.6kB / 0B         0B / 0B             1
-```
-<br>
