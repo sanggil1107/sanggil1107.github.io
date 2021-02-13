@@ -9,7 +9,7 @@ category: [Docker]
 <!-- more -->
 <hr>
 
-## 컨테이너 실행 (docker run)
+## 컨테이너 생성 및 실행 (docker run)
 ---
 `docker run [옵션] [컨테이너명] 이미지명[:태그명] [인수]`
 
@@ -200,7 +200,7 @@ UID                 PID                 PPID                C                   
 root                866                 845                 0                   06:11               ?                   00:00:00            nginx: master process nginx -g daemon off;
 uuidd               927                 866                 0                   06:11               ?                   00:00:00            nginx: worker process
 ```
- 
+<br>
 
 ## 컨테이너 로그 확인
 ---
@@ -366,55 +366,91 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS       
 
 ## 실행 중인 컨테이너에 접속(docker attach)
 ---
+
+실행 중인 컨테이너에 연결 
+
 `docker attach [옵션] <컨테이너 식별자>`  
 ```
 $ docker run -it -d centos /bin/bash
 
-1c9750acdca25f179a7bbb9216ebb92a7887149f7ad582c6ae05c4dadaca6f28
+bb8f15806b843fafd11d281e0d85b4f00a43e27d0268d23ad463762fbce605c0
 ```
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-1c9750acdca2        centos              "/bin/bash"              2 seconds ago       Up 2 seconds                               nostalgic_gates
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   5 days ago          Up 4 days           0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    5 days ago          Up 5 days                                  silly_chatterjee
-53e652bede18        centos              "/bin/bash"              5 days ago          Up 4 days                                  Test3
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+bb8f15806b84   centos    "/bin/bash"   5 seconds ago   Up 4 seconds             vibrant_ramanujan
 ```
 ```
-$ docker attach 1c9750acdca2
+$ docker attach bb8f15806b84
 
-[root@1c9750acdca2 /]# ls
+[root@bb8f15806b84 /]# ls
 bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-```
-```
-$ docker attach 9cd3f115880c
-
 ```
 <br>
 
 ## 실행 중인 컨테이너에서 프로세스 실행(docker exec)
 ---
-`docker exex [옵션] <컨테이너 식별자> <실행할 명령> [인수]`
+
+실행 중인 컨테이너에서 새로운 프로세스를 실행
+
+`docker exec [옵션] <컨테이너 식별자> <실행할 명령> [인수]`
 ```
 $ docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        nginx               "nginx -g 'daemon of…"   5 days ago          Up 4 days           0.0.0.0:8080->80/tcp   wizardly_mcclintock
-6becd04e405c        centos              "/bin/ping localhost"    5 days ago          Up 5 days                                  silly_chatterjee
-53e652bede18        centos              "/bin/bash"              5 days ago          Up 4 days                                  Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+a22d39d575b6   nginx     "/docker-entrypoint.…"   37 seconds ago   Up 37 seconds   0.0.0.0:8080->80/tcp   laughing_gauss
 ```
 ```
-$ docker exec -it 9cd3f115880c /bin/bash
+$ docker exec -it a22d39d575b6 /bin/bash
 
-root@9cd3f115880c:/# ls
-bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-root@9cd3f115880c:/# 
+root@a22d39d575b6:/# ls
+bin   dev                  docker-entrypoint.sh  home  lib64  mnt  proc  run   srv  tmp  var
+boot  docker-entrypoint.d  etc                   lib   media  opt  root  sbin  sys  usr
 ```
 ```
-$ docker exec -it 9cd3f115880c /bin/echo "hello"
+$ docker exec -it a22d39d575b6 /bin/echo "hi"
 
-hello
+hi
+```
+
+`docker attach`로 /bin/bash 에 접속한 후 exit를 통해 나오면 컨테이너가 죽지만,
+`docker exec`로 /bin/bash에 접속한 후 exit를 통해 나와도 컨테이너가 죽지 않는다.
+`attach`
+```
+$ docker ps
+
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+cd21d85bfdae   centos    "/bin/bash"   5 minutes ago   Up 5 minutes             sharp_mclean
+```
+```
+$ docker attach cd21d85bfdae
+
+[root@cd21d85bfdae /]# exit
+exit
+```
+```
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+`exec`
+```
+$ docker ps
+
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS        PORTS     NAMES
+16f82e5a726c   centos    "/bin/bash"   2 seconds ago   Up 1 second             zealous_rosalind
+```
+```
+$ docker exec -it 16f82e5a726c /bin/bash
+
+[root@16f82e5a726c /]# exit
+exit
+```
+```
+$ docker ps
+
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+16f82e5a726c   centos    "/bin/bash"   2 minutes ago   Up 2 minutes             zealous_rosalind
 ```
 <br>
 
