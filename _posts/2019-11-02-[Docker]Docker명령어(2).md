@@ -614,24 +614,16 @@ tarimage               latest    488399581396   6 seconds ago   131MB
 ```
 $ docker images
 
-REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
-new                    1.1                 c1cbed9183ae        5 minutes ago       125MB
-ysg/newnaginx          1.1                 ed64139f3913        18 minutes ago      126MB
-nginx                  latest              540a289bab6c        10 days ago         126MB
-sanggil1107/ysgnginx   1.0                 540a289bab6c        10 days ago         126MB
-centos                 latest              0f3e07c0138f        4 weeks ago         220MB
-ysg/ysgcentos          1.0                 67fa590cfc1c        2 months ago        202MB
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+nginx        latest    f6d0b4767a6c   4 weeks ago   133MB
 ```
 ```
-$ docker save -o new.zip new
+$ docker save -o nginx.zip nginx
 ```
 ```
-$ ls -al
+$ ls
 
-total 250792
-drwxr-xr-x 19 ysg  ysg       4096 11월  2 13:40 .
-drwxr-xr-x  3 root root      4096  8월 29 01:23 ..
--rw-------  1 ysg  ysg  128335872 11월  2 13:40 new.zip
+nginx.zip
 ```
 <br>
 
@@ -639,9 +631,9 @@ drwxr-xr-x  3 root root      4096  8월 29 01:23 ..
 ---
 `docker load [옵션] [파일]`
 ```
-$ docker load -i new.zip
+$ docker load -i nginx.zip
 
-Loaded image: new:1.1
+Loaded image: nginx:latest
 ```
 <br>
 
@@ -649,54 +641,97 @@ Loaded image: new:1.1
 ---
 `docker system prune [옵션]`
 ```
-$ docker system prune -a
-WARNING! This will remove:
-        - all stopped containers
-        - all networks not used by at least one container
-        - all images without at least one container associated to them
-        - all build cache
-Are you sure you want to continue? [y/N] y
-Deleted Containers:
-1c9750acdca25f179a7bbb9216ebb92a7887149f7ad582c6ae05c4dadaca6f28
-53fdaf5ad92ea050a08c1f1b5e15ec8fce56e3b553325a48de373487c549c563
-57593f9eeedca92f191120f59296fcd75dba41a9266e26972a13688891eb7708
-9a28ba890e81716b4fe1e5bb135032df12cfdc0d0b9b39b4f51f87bcf67e35d4
-
-Deleted Images:
-untagged: nginx:latest
-untagged: nginx@sha256:922c815aa4df050d4df476e92daed4231f466acc8ee90e0e774951b0fd7195a4
-untagged: ysg/newnaginx:1.1
-deleted: sha256:ed64139f3913a9fd33afff4632b6af1cf3e1096a93cc6e5bd7f51ef92417ee20
-deleted: sha256:7290db1730e6adac29da378c94178ae107454640e582e96b524032006a3e44b9
-untagged: new:1.1
-deleted: sha256:c1cbed9183aeb68827dfda66f2f4efb4b05400462174d429b0a1ef929cd76d06
-deleted: sha256:56fca39b276e62f00fd4be15ff94962defb88d27605b6021775a2665aa5d0b0a
-untagged: ysg/ysgcentos:1.0
-deleted: sha256:67fa590cfc1c207c30b837528373f819f6262c884b7e69118d060a0c04d70ab8
-deleted: sha256:877b494a9f30e74e61b441ed84bb74b14e66fb9cc321d83f3a8a19c60d078654
-
-Total reclaimed space: 326.4MB
-```
-```
 $ docker ps -a
-
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
-9cd3f115880c        540a289bab6c        "nginx -g 'daemon of…"   5 days ago          Up About an hour    0.0.0.0:8080->80/tcp   nginx
-6becd04e405c        centos              "/bin/ping localhost"    5 days ago          Up 5 days                                  silly_chatterjee
-53e652bede18        centos              "/bin/bash"              5 days ago          Up 4 days                                  Test3
+CONTAINER ID   IMAGE     COMMAND                  CREATED      STATUS                    PORTS                  NAMES
+809019f71618   nginx     "/docker-entrypoint.…"   2 days ago   Up 6 seconds              0.0.0.0:8080->80/tcp   ysg
+16f82e5a726c   centos    "/bin/bash"              2 days ago   Exited (255) 2 days ago                          zealous_rosalind
+a22d39d575b6   nginx     "/docker-entrypoint.…"   2 days ago   Exited (0) 2 days ago                            laughing_gauss
+cd21d85bfdae   centos    "/bin/bash"              2 days ago   Exited (0) 2 days ago                            sharp_mclean
+bb8f15806b84   centos    "/bin/bash"              2 days ago   Exited (0) 2 days ago                            vibrant_ramanujan
+d46aba680474   centos    "/bin/bash"              2 days ago   Exited (0) 2 days ago                            optimistic_montalcini
+be0f97e44094   centos    "/bin/bash"              2 days ago   Exited (0) 2 days ago                            practical_lehmann
+e6e0436b2420   centos    "/bin/bash"              2 days ago   Exited (130) 2 days ago                          elegant_beaver
+79f2b4d98888   centos    "/bin/bash"              2 days ago   Exited (0) 2 days ago                            relaxed_rosalind
+a0380bf99aae   centos    "/bin/bash"              2 days ago   Exited (130) 2 days ago                          festive_bhaskara
+641d103ee795   centos    "/bin/bash"              2 days ago   Exited (0) 2 days ago                            keen_pare
+701974abc917   centos    "/bin/bash"              2 days ago   Exited (0) 2 days ago                            dreamy_satoshi
+5fac4b5a8b83   nginx     "/docker-entrypoint.…"   2 days ago   Exited (0) 2 days ago                            stupefied_jang
+45cdb1354230   centos    "/bin/ping localhost"    3 days ago   Exited (0) 2 days ago                            hungry_wiles
 ```
 ```
 $ docker images
 
-REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
-sanggil1107/ysgnginx   1.0                 540a289bab6c        10 days ago         126MB
-centos                 latest              0f3e07c0138f        4 weeks ago         220MB
+REPOSITORY             TAG       IMAGE ID       CREATED        SIZE
+tarimage               latest    488399581396   47 hours ago   131MB
+newimage               latest    2a0566be6fed   47 hours ago   133MB
+nginx                  latest    f6d0b4767a6c   4 weeks ago    133MB
+sanggil1107/ysgnginx   1.0       f6d0b4767a6c   4 weeks ago    133MB
+centos                 latest    300e315adb2f   2 months ago   209MB
+centos                 7         8652b9f0cb4c   3 months ago   204MB
+```
+```
+$ docker system prune -a
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all images without at least one container associated to them
+  - all build cache
+
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+16f82e5a726c685dba4615be5109c27f493de75fc9045ac192d31ac2b18005d4
+a22d39d575b6a4e4413b95f209b550d09508ec75a348faae08bbab99dd282e5e
+cd21d85bfdae7f3f5b96f0d254025c1cb1cc183e693610c4049c1a57b0ffeae0
+bb8f15806b843fafd11d281e0d85b4f00a43e27d0268d23ad463762fbce605c0
+d46aba6804748db5df4bce75eec9f6c0eedb765c9ccdfbdee80f2eeadf2418bd
+be0f97e44094e140555e74b132599fd02df49c57850745f30115817cd68858ac
+e6e0436b24204e41b6e2d04711da00bb171803572723e293ffe10818583b08c8
+79f2b4d9888849d10864fe1d9000b411eac7720494dce551bfaff4d80f99f288
+a0380bf99aae968e4649255ffece67cd9d0abbf40d43f06af85392d6bcaea9ce
+641d103ee7959ff5e03252e7e00acc24fee6be6189846b735b7db7cfb4deee9e
+701974abc9179adc130a0fb2349d9a79d972d9f6407c6b403f02321ccfe96724
+5fac4b5a8b83dd01ce4372841a5a4dcd8fde959c3d4d7e6036df7f39c09006c3
+45cdb13542301f3355e248d902ba299f276f6c35c12555d612336d57e5128a25
+
+Deleted Images:
+untagged: centos:latest
+untagged: centos@sha256:5528e8b1b1719d34604c87e11dcd1c0a20bedf46e83b5632cdeac91b8c04efc1
+deleted: sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55
+deleted: sha256:2653d992f4ef2bfd27f94db643815aa567240c37732cae1405ad1c1309ee9859
+untagged: tarimage:latest
+deleted: sha256:4883995813962e852c8260c9174d497e4e16c649e177c1c0fa75d3565708c937
+deleted: sha256:8bb2e426aa3a81d164c3bdb31b2160945599b2884aa7d0845b32ae8674983bbf
+untagged: centos:7
+untagged: centos@sha256:0f4ec88e21daf75124b8a9e5ca03c37a5e937e0e108a255d890492430789b60e
+deleted: sha256:8652b9f0cb4c0599575e5a003f5906876e10c1ceb2ab9fe1786712dac14a50cf
+deleted: sha256:174f5685490326fc0a1c0f5570b8663732189b327007e47ff13d2ca59673db02
+untagged: nginx:latest
+untagged: nginx@sha256:10b8cc432d56da8b61b070f4c7d2543a9ed17c2b23010b43af434fd40e2ca4aa
+untagged: newimage:latest
+deleted: sha256:2a0566be6fedfd31d9eae0e245fd35517ce17861b745e3d15d4ac1e17becfcdb
+deleted: sha256:ed956f19e85e1aa2ce6471ec960dc52949e4d688a5e6c546c962115fa01d6dc1
+
+Total reclaimed space: 544.6MB
+```
+```
+$ docker ps -a
+
+CONTAINER ID   IMAGE          COMMAND                  CREATED      STATUS         PORTS                  NAMES
+809019f71618   f6d0b4767a6c   "/docker-entrypoint.…"   2 days ago   Up 2 minutes   0.0.0.0:8080->80/tcp   ysg
+```
+```
+$ docker images
+
+REPOSITORY             TAG       IMAGE ID       CREATED       SIZE
+sanggil1107/ysgnginx   1.0       f6d0b4767a6c   4 weeks ago   133MB
 ```
 <br>
 
 ## 이미지 생성(docker build)
 ---
+
 Dockerfile로부터 이미지를 생성
+
 `docker build [옵션] <dockerfile 경로>`
 ```
 $ docker build -t dockerfile4 .
