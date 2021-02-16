@@ -395,6 +395,14 @@ bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  s
 실행 중인 컨테이너에서 새로운 프로세스를 실행
 
 `docker exec [옵션] <컨테이너 식별자> <실행할 명령> [인수]`
+
+|옵션|설명|
+|---|---|
+|--detach, -d|명령을 백그라운드에서 실행|
+|--interactive, -i|컨테이너의 표준 입력|
+|--tty, -t|단말 디바이스를 사용|
+|--user, -u|사용자명을 지정|
+
 ```
 $ docker ps
 
@@ -526,6 +534,7 @@ test.txt
 <br>
 
 ## 컨테이너 변경 내역 확인(docker diff)
+---
 `docker diff <컨테이너 식별자>`
 ```
 $ docker diff 809019f71618
@@ -551,6 +560,14 @@ A /tmp/test.txt
 ## 컨테이너로부터 이미지 생성(docker commit)
 ---
 `docker commit [옵션] <컨테이너 식별자> [이미지명[:태그명]]`
+
+|옵션|설명|
+|---|---|
+|--author, -a|작성자를 지정|
+|--message, -m|메시지를 지정|
+|--change, -c|commit 시 Dockerfile 명령을 지정|
+|--pause, -p|컨테이너를 일시 정지하고 commit 실행|
+
 ```
 $ docker ps
 
@@ -640,6 +657,12 @@ Loaded image: nginx:latest
 ## 불필요한 리소스 - 이미지/컨테이너 정리(docker system prune)
 ---
 `docker system prune [옵션]`
+
+|옵션|설명|
+|---|---|
+|--all, -a|사용하지 않는 리소스를 모두 삭제|
+|--force, -f|강제적으로 삭제|
+
 ```
 $ docker ps -a
 CONTAINER ID   IMAGE     COMMAND                  CREATED      STATUS                    PORTS                  NAMES
