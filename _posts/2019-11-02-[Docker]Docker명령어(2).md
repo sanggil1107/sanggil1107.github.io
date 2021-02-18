@@ -167,7 +167,7 @@ $ docker ps -a -f exited=0
 CONTAINER ID   IMAGE     COMMAND      CREATED        STATUS                    PORTS     NAMES
 8fcfc5c36f94   centos    "/bin/cal"   19 hours ago   Exited (0) 19 hours ago             Test
 ```
-<br>
+<br> 
   
 
 ## 실행 중인 컨테이너 리소스 사용 정보 (docker stats)
