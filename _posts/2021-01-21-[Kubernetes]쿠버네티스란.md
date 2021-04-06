@@ -52,3 +52,33 @@ category: [Kubernetes]
 : 애플리케이션 구성 요소와 실행되는 노드를 모니터링하고 노드 장애 발생 시 다른 노드로 일정을 자동으로 재조정한다.
 4] 오토스케일링
 : 배포된 애플리케이션에 급격한 부하가 발생하면 쿠버네티스는 리소스 모니터링을 통해 인스턴스 수를 조정하며 부하를 분산시킬 수 있다.
+
+# node
+노드는 `kubernetes`의 object 중 가장 큰 개념으로, cluster의 관리 대상으로 등록된 Docker Host이다. node의 가장 큰 역할은 pod라고 하는 `kube`의 배포단위를 관리하고 각 pod에 배치된 container가 적절히 구동되도록 네트워크, 스토리지 등 기능의 모듈을 제공한다. node는 크게 master/worder, 2가지의 역할을 가진다. 모든 cluster는 최소 3개의 node(1 master, 2 worker node)를 가져야하며 동작 프로세스는 중앙의 master가 rest api를 이용하여 원격으로 다른 node들을 관리한다.
+
+## master node
+cluster 전체를 관리하는 node로 사용자의 모든 명령을 입력받아 처리한다. 따라서 관리자지만 master에 접속할 수 있도록 보안을 설정해야 한다.
+
+### REST API server
+사용자는 kubectl 이라는 CLI 도구를 통해 명령을 입력한다. kubectl은 REST API 서버를 호출하여 명령을 처리한다. 실제 작업은 원하는 상태를 etcd(key-value 저장소)에 저장하고 저장되어 있는 상태를 단순 조회한다. REST API서버는 worder node의 kubelet에 입력받은 명령을 전송한다.
+
+### etcd
+cluster 내부 설정과 상태 데이터를 저장하고 있는 key-value 저장소이다. 여러 개로 분산/복제가 가능하며 안전성이 높다. etcd를 백업하면 언제든지 cluster 복구가 가능하다. 다른 모듈에서 etcd 사용 시, 직접 접근이 불가능하기 때문에 REST API를 거쳐 접근할 수 있다.
+
+### scheduler
+node가 배정되지 않은 채 새로 생성된 pod를 감지하고, 실행할 node를 선택하는 기능을 한다. 여러 가지 조건(리소스, label 등)을 고려하여 pod-node를 스케줄링한다.
+
+### kube/cloud controller
+kube controller는 node controller, replication controller, service account 등과 같이 거의 모든 controller를 구동하는 component이며, cloud controller는 AWS, GCE 등의 클라우드 인터페이스에 맞춰 구현할 수 있도록 호환성을 제공하는 모듈이다.
+
+## worker node
+실제 container와 pod를 생성/구동하는 node이며 수백, 수천대로 확장이 가능하다. pod들의 통신을 위한 네트워크, 저장소 volume 등을 설정한다. 또한, 각 node에 label을 붙여서 사용목적을 정의할 수도 있다.
+
+### kubelet
+node에 할당된 pod들의 생명주기를 관리한다. pod 생성 및 container 상태를 확인하여 주기적으로 master에 전달한다. 그리고 master node의 REST API 서버의 요청을 받아 사용자 명령을 pod에 수행한다.
+
+### kube-proxy
+pod로 연결되는 네트워크 규칙을 관리하는 모듈이다. 내부 네트워크 세션/클러스터 외부와 pod의 통신 기능을 제공한다.
+
+### ingress(infrastructure) node
+service 하는데 필요한 기타 인프라 기능의 pod/container를 구동하는 node이다. container registry나 ingress 기능을 수행하는 Docker registry, HAProxy router, logging, metrics, git 등의 service 들이 할당된다. 또한, 외부로부터 들어오는 요청에 대한 로드 밸런싱 등의 기능도 수행한다.
