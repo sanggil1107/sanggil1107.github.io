@@ -60,7 +60,7 @@ category: [Kubernetes]
 cluster 전체를 관리하는 node로 사용자의 모든 명령을 입력받아 처리한다. 따라서 관리자지만 master에 접속할 수 있도록 보안을 설정해야 한다.
 
 ### REST API server
-사용자는 kubectl 이라는 CLI 도구를 통해 명령을 입력한다. kubectl은 REST API 서버를 호출하여 명령을 처리한다. 실제 작업은 원하는 상태를 etcd(key-value 저장소)에 저장하고 저장되어 있는 상태를 단순 조회한다. REST API서버는 worder node의 kubelet에 입력받은 명령을 전송한다.
+사용자는 kubectl 이라는 CLI 도구를 통해 명령을 입력한다. kubectl은 REST API 서버를 호출하여 명령을 처리한다. 실제 작업은 원하는 상태를 etcd(key-value 저장소)에 저장하고 저장되어 있는 상태를 단순 조회한다. REST API서버는 worder node의 kubelet에 입력받은 명령을 전송한다. 
 
 ### etcd
 cluster 내부 설정과 상태 데이터를 저장하고 있는 key-value 저장소이다. 여러 개로 분산/복제가 가능하며 안전성이 높다. etcd를 백업하면 언제든지 cluster 복구가 가능하다. 다른 모듈에서 etcd 사용 시, 직접 접근이 불가능하기 때문에 REST API를 거쳐 접근할 수 있다.
