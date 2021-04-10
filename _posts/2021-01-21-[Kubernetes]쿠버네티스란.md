@@ -54,7 +54,7 @@ category: [Kubernetes]
 : 배포된 애플리케이션에 급격한 부하가 발생하면 쿠버네티스는 리소스 모니터링을 통해 인스턴스 수를 조정하며 부하를 분산시킬 수 있다.
 
 # node
-노드는 `kubernetes`의 object 중 가장 큰 개념으로, cluster의 관리 대상으로 등록된 Docker Host이다. node의 가장 큰 역할은 pod라고 하는 `kube`의 배포단위를 관리하고 각 pod에 배치된 container가 적절히 구동되도록 네트워크, 스토리지 등 기능의 모듈을 제공한다. node는 크게 master/worder, 2가지의 역할을 가진다. 모든 cluster는 최소 3개의 node(1 master, 2 worker node)를 가져야하며 동작 프로세스는 중앙의 master가 rest api를 이용하여 원격으로 다른 node들을 관리한다.
+노드는 `kubernetes`의 object 중 가장 큰 개념으로, cluster의 관리 대상으로 등록된 Docker Host이다. node의 가장 큰 역할은 pod라고 하는 `kube`의 배포단위를 관리하고 각 pod에 배치된 container가 적절히 구동되도록 네트워크, 스토리지 등 기능의 모듈을 제공한다. node는 크게 master/worder, 2가지의 역할을 가진다. 모든 cluster는 최소 3개의 node(1 master, 2 worker node)를 가져야하며 동작 프로세스는 중앙의 master가 rest api를 이용하여 원격으로 다른 node들을 관리한다. 
 
 ## master node
 cluster 전체를 관리하는 node로 사용자의 모든 명령을 입력받아 처리한다. 따라서 관리자지만 master에 접속할 수 있도록 보안을 설정해야 한다.
