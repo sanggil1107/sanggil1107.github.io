@@ -74,7 +74,7 @@ kube controller는 node controller, replication controller, service account 등�
 ## worker node
 실제 container와 pod를 생성/구동하는 node이며 수백, 수천대로 확장이 가능하다. pod들의 통신을 위한 네트워크, 저장소 volume 등을 설정한다. 또한, 각 node에 label을 붙여서 사용목적을 정의할 수도 있다.
 
-### kubelet  
+### kubelet   
 node에 할당된 pod들의 생명주기를 관리한다. pod 생성 및 container 상태를 확인하여 주기적으로 master에 전달한다. 그리고 master node의 REST API 서버의 요청을 받아 사용자 명령을 pod에 수행한다.
  
 ### kube-proxy
