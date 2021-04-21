@@ -78,7 +78,7 @@ kube controller는 node controller, replication controller, service account 등�
 node에 할당된 pod들의 생명주기를 관리한다. pod 생성 및 container 상태를 확인하여 주기적으로 master에 전달한다. 그리고 master node의 REST API 서버의 요청을 받아 사용자 명령을 pod에 수행한다.
 
 ### kube-proxy
-pod로 연결되는 네트워크 규칙을 관리하는 모듈이다. 내부 네트워크 세션/클러스터 외부와 pod의 통신 기능을 제공한다.
+pod로 연결되는 네트워크 규칙을 관리하는 모듈이다. 내부 네트워크 세션/클러스터 외부와 pod의 통신 기능을 제공한다. 
 
 ### ingress(infrastructure) node
 service 하는데 필요한 기타 인프라 기능의 pod/container를 구동하는 node이다. container registry나 ingress 기능을 수행하는 Docker registry, HAProxy router, logging, metrics, git 등의 service 들이 할당된다. 또한, 외부로부터 들어오는 요청에 대한 로드 밸런싱 등의 기능도 수행한다. 
