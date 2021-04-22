@@ -44,7 +44,7 @@ title: CATEGORY
                 {% endif %}
               {% endif %}
               {% if sub_nav[0] == 'Web' %}
-                {% if tag[0] == 'HTML' or tag[0] == 'CSS' or tag[0] == 'JavaScript' or tag[0] == 'React' %}
+                {% if tag[0] == 'HTML' or tag[0] == 'CSS' or tag[0] == 'JavaScript' or tag[0] == 'React' or tag[0] == 'Vue' %}
               
                   <a id="{{ tag[0] | slugify }}" href="/Category/{{ tag[0] }}" style="color: black">
                     <i class="fa fa-square fa-1x" aria-hidden="true" style="color: black"></i><font size="4.5">&nbsp;{{ tag | first }} ({{ tag | last | size }})</font>
