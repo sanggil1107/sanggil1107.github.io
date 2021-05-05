@@ -358,6 +358,7 @@ th {
   display: flex;
   flex-wrap: wrap;
   flex: 0 1 auto;
+  z-index: 1;
   flex-direction: row;
   padding-top:    1rem;
   padding-bottom: 1rem;
