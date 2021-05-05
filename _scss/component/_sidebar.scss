@@ -125,6 +125,7 @@ a.sidebar-nav-item:focus {
   background-color: $white;
   border-radius: .25rem;
   cursor: pointer;
+  z-index: 2;
 }
 
 .sidebar-toggle:before {
