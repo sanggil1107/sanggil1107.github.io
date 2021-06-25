@@ -45,7 +45,7 @@
             </a>
             {% for tag in site.categories %}
               {% if sub_nav[0] == 'AI & BigData' %}
-                {% if tag[0] == '데이터분석' %}
+                {% if tag[0] == '데이터분석' or tag[0] == '머신러닝' %}
                   <a class="sidebar-nav-item sidebar-nav-item-sub-sub {% if page.url == tag[0] %}active{% endif %}" href="/Category/{{ tag[0] }}">                 
                     {{ tag | first }} ({{ tag | last | size }}) 
                   </a>
