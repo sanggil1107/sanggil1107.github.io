@@ -43,60 +43,96 @@
     line-height: 1.4rem;
   }
 
-  .toc {
+    
+  .toc-fixed {
     position: fixed;
-    right: 0px;
-    width: 240px;
-    color: $default;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: 4.5rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    margin-right: -80px;
-    margin-top: -60px;
-    font-size: 0.7rem;
-    border-left: 2px solid #e0d9e7;
-    
-    display: none;
-    @media (min-width: 75em){
-      width: 240px;
-      display: block;
-    }
-    @media (min-width: 85em){
-      width: 300px;
-      display: block;
-    }
-    @media (min-width: 95em){
-      width: 360px;
-      display: block;
-    }
-    
-    a.toc-active {
-      font-weight: bold; 
-      transition: all 0.125s ease-in 0s; 
-      font-size: 0.75rem;
-      color: #9075aa;
-    }
-    
-    ul {
-      list-style-type: none;
-      margin-bottom: 0.1rem;
-      padding-left: 0rem;
-      li {
-        padding-left: .5rem;
-      }
-    }
-    
-    a {
-        color: $default;
-        text-decoration: none;
-    }
-    
-    a:hover {
-       color:$theme-color;
-    }
+    top: 150px;
+    height: 400px;
   }
+
+
+  .toc {
+    left: calc((100% - 960px) / 2 - 250px);
+    width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 150px;
+    height: 400px;
+  }
+
+
+  .toc-list {
+    margin-top: 10px !important;
+    font-size: 0.9em;
+  }
+
+  .toc > .toc-list li {
+    margin-bottom: 10px;
+  }
+
+  .toc > .toc-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .toc > .toc-list li a {
+    text-decoration: none;
+  }
+
+  // .toc {
+  //   position: fixed;
+  //   right: 0px;
+  //   width: 240px;
+  //   color: $default;
+  //   overflow-y: auto;
+  //   overflow-x: hidden;
+  //   padding-right: 4.5rem;
+  //   padding-top: 0.25rem;
+  //   padding-bottom: 0.25rem;
+  //   margin-right: -80px;
+  //   margin-top: -60px;
+  //   font-size: 0.7rem;
+  //   border-left: 2px solid #e0d9e7;
+    
+  //   display: none;
+  //   @media (min-width: 75em){
+  //     width: 240px;
+  //     display: block;
+  //   }
+  //   @media (min-width: 85em){
+  //     width: 300px;
+  //     display: block;
+  //   }
+  //   @media (min-width: 95em){
+  //     width: 360px;
+  //     display: block;
+  //   }
+    
+  //   a.toc-active {
+  //     font-weight: bold; 
+  //     transition: all 0.125s ease-in 0s; 
+  //     font-size: 0.75rem;
+  //     color: #9075aa;
+  //   }
+    
+  //   ul {
+  //     list-style-type: none;
+  //     margin-bottom: 0.1rem;
+  //     padding-left: 0rem;
+  //     li {
+  //       padding-left: .5rem;
+  //     }
+  //   }
+    
+  //   a {
+  //       color: $default;
+  //       text-decoration: none;
+  //   }
+    
+  //   a:hover {
+  //      color:$theme-color;
+  //   }
+  // }
 }
 
 

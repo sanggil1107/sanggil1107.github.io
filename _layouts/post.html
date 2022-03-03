@@ -456,6 +456,47 @@ layout: default
 </div>
 
 <script>
+  var content = document.querySelector('.post-article"')
+  var headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6, h7')
+  var headingMap = {}
+
+  Array.prototype.forEach.call(headings, function (heading) {
+      var id = heading.id ? heading.id : heading.textContent.trim().toLowerCase()
+                 .split(' ').join('-').replace(/[\!\@\#\$\%\^\&\*\(\):]/ig, '')
+      headingMap[id] = !isNaN(headingMap[id]) ? ++headingMap[id] : 0
+      if (headingMap[id]) {
+        heading.id = id + '-' + headingMap[id]
+      } else {
+        heading.id = id
+      }
+    })
+
+  tocbot.init({
+    tocSelector: '.toc',
+    contentSelector: '.post-article"',
+    headingSelector:'h1, h2, h3',
+    hasInnerContainers: false
+  });
+
+  $(document).ready(function(){
+   // $('.toc').addClass('toc-absolute');
+   // $('.toc').addClass('toc-fixed');
+    var toc_top = $('.toc').offset().top + 250;
+    $(window).scroll(function() {
+      if ($(this).scrollTop() >= toc_top) {
+        //$('.toc').addClass('toc-fixed');
+        //$('.toc').removeClass('toc-absolute');
+      } else {
+        //$('.toc').addClass('toc-absolute');
+        //$('.toc').removeClass('toc-fixed');
+      }
+    });
+  });
+
+</script>
+	
+
+<script>
     function getTOCNodes(master) {
       var nodes = Array.prototype.slice.call(master.getElementsByTagName("*"), 0);
       var tocNodes = nodes.filter(function(elem) {
