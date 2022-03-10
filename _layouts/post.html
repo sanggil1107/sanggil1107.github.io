@@ -18,14 +18,33 @@ layout: default
   {% for categories in page.categories %}
     <a href="/Category/{{ categories }}" class="post-tag">{{ categories }}</a>
   {% endfor %}
+  <br>
+  <br>
   </div>
   
  
   <article class="post-article">
+    <ins class="kakao_ad_area" style="display:none; width: 50%;" 
+    data-ad-unit    = "DAN-FwcR4gnQAXHsS8Ih" 
+    data-ad-width   = "728" 
+    data-ad-height  = "90"
+    width = "50%"></ins> 
+    
+    <ins class="kakao_ad_area" style="display:none; width: 49%;" 
+    data-ad-unit    = "DAN-qyrWlNFETQBnOYnJ" 
+    data-ad-width   = "320" 
+    data-ad-height  = "100"
+    width = "49%"></ins> 
     <div class="toc">
       {% include toc.html html=content %}
     </div>
     {{ content }}
+
+    <ins class="kakao_ad_area" style="display:none;" 
+ data-ad-unit    = "DAN-BHgT46zL3yCgu8No" 
+ data-ad-width   = "300" 
+ data-ad-height  = "250"></ins> 
+ <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
   </article>
 </div>
 <style>
@@ -449,6 +468,45 @@ layout: default
   </table>
 </div>
 
+<script>
+  var content = document.querySelector('.post-article"')
+  var headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6, h7')
+  var headingMap = {}
+
+  Array.prototype.forEach.call(headings, function (heading) {
+      var id = heading.id ? heading.id : heading.textContent.trim().toLowerCase()
+                 .split(' ').join('-').replace(/[\!\@\#\$\%\^\&\*\(\):]/ig, '')
+      headingMap[id] = !isNaN(headingMap[id]) ? ++headingMap[id] : 0
+      if (headingMap[id]) {
+        heading.id = id + '-' + headingMap[id]
+      } else {
+        heading.id = id
+      }
+    })
+
+  tocbot.init({
+    tocSelector: '.toc',
+    contentSelector: '.post-article"',
+    headingSelector:'h1, h2, h3',
+    hasInnerContainers: false
+  });
+
+  $(document).ready(function(){
+   // $('.toc').addClass('toc-absolute');
+   // $('.toc').addClass('toc-fixed');
+    var toc_top = $('.toc').offset().top + 250;
+    $(window).scroll(function() {
+      if ($(this).scrollTop() >= toc_top) {
+        //$('.toc').addClass('toc-fixed');
+        //$('.toc').removeClass('toc-absolute');
+      } else {
+        //$('.toc').addClass('toc-absolute');
+        //$('.toc').removeClass('toc-fixed');
+      }
+    });
+  });
+
+</script>
 <script>
     function getTOCNodes(master) {
       var nodes = Array.prototype.slice.call(master.getElementsByTagName("*"), 0);

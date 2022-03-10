@@ -73,3 +73,9 @@ theme_settings:
   str_previous_page: "Prev"
   post_navigation: true
 
+analytics:
+  provider               : "google-gtag" 
+                          # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          : "UA-120077195-2"
+    anonymize_ip         : # true, false (default)
