@@ -83,7 +83,7 @@ flex 레이아웃 중 부모 요소에 해당하며 flex item이라는 복수의
 |column|item을 위에서 아래로 표시| |
 |column-reverse|item을 아래에서 위로 표시| |
 
-- row  
+#### row  
 : 왼쪽에서 오른쪽으로 수평 배치된다.(기본값)
 
 ```css
