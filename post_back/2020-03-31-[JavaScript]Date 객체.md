@@ -1,21 +1,26 @@
 
-# Date 객체
----
+## Date 객체
+
 Date 객체는 날짜와 시간을 위한 메소드를 제공하는 객체이면서 생성자 함수이다.
 
-## 생성자
+<br>
+
+### 생성자
 ---
 
-### new Date()
----
+#### new Date()
+
 인수를 전달하지 않으면 현재 날짜와 시간을 가지는 인스턴스를 반환한다.
+
 ```javascript
 var date = new Date();
 console.log(date);   // Mon Feb 17 2020 19:23:38 GMT+0900 (한국 표준시)
 ```
 
-### new Date(ms)
----
+<br>
+
+#### new Date(ms)
+
 1970년 1월 1일 00:00(UTC)을 기점으로 `ms`만큼 경과한 날짜와 시간을 가지는 인스턴스를 반환한다.
 
 ```javascript
@@ -25,8 +30,11 @@ console.log(date);   // Thu Jan 01 1970 09:00:00 GMT+0900 (한국 표준시)
 date = new Date(86400000);
 console.log(date);   // Fri Jan 02 1970 09:00:00 GMT+0900 (한국 표준시)
 ```
-### new Date(dateString)
----
+
+<br>
+
+#### new Date(dateString)
+
 날짜와 시간을 가지는 인스턴스를 반환한다.
 
 ```javascript
@@ -37,8 +45,10 @@ date = new Date('2020/02/17/18:18:18');
 console.log(date);   // Mon Feb 17 2020 18:18:18 GMT+0900 (한국 표준시)
 ```
 
-### new Date(year, month[, day, hour, minute, second, millisecond])
----
+<br>
+
+#### new Date(year, month[, day, hour, minute, second, millisecond])
+
 지정된 날짜와 시간을 가지는 인스턴스를 반환한다. 
 
 ```javascript
@@ -49,19 +59,23 @@ date = new Date(2020, 1, 17, 20, 20, 20);
 console.log(date);   // Mon Feb 17 2020 20:20:20 GMT+0900 (한국 표준시)
 ```
 
-## 함수
+<br>
+
+### 함수
 ---
 
-### now()
----
+#### now()
+
 1970년 1월 1일 00:00:00(UTC)을 기점으로 현재 시간까지 경과한 밀리초를 숫자로 반환한다.
 
 ```javascript
 Date.now();   // 1581849549752
 ```
 
-### getFullYear()
----
+<br>
+
+#### getFullYear()
+
 년도를 나타내는 4자리 숫자를 반환한다.
 
 ```javascript
@@ -72,8 +86,10 @@ console.log(today);   // Sun Feb 16 2020 19:45:43 GMT+0900 (한국 표준시)
 console.log(year);   // 2020
 ```
 
-### setFullYear(year[, moth[, day]])
----
+<br>
+
+#### setFullYear(year[, moth[, day]])
+
 년도를 나타내는 4자리 숫자를 설정한다. 
 
 ```javascript
@@ -94,8 +110,10 @@ console.log(today);   // Sat Mar 16 2030 19:53:28 GMT+0900 (한국 표준시)
 console.log(year);   // 2030
 ```
 
-### getMonth()
----
+<br>
+
+#### getMonth()
+
 월을 나타내는 정수를 반환한다.(0 ~ 11) 1월은 0, 12월은 11을 의미힌다.
 
 ```javascript
@@ -106,8 +124,10 @@ console.log(today);   // Sun Feb 16 2020 19:57:45 GMT+0900 (한국 표준시)
 console.log(month);   // 1
 ```
 
-### setMonth(month[, day])
----
+<br>
+
+#### setMonth(month[, day])
+
 월을 나타내는 정수를 설정한다.(0 ~ 11)
 
 ```javascript
@@ -127,8 +147,10 @@ console.log(today);   // Sat Nov 07 2020 20:02:43 GMT+0900 (한국 표준시)
 console.log(month);   // 10
 ```
 
-### getDate()
----
+<br>
+
+#### getDate()
+
 날짜를 나타내는 정수를 반환한다.(1 ~ 31)
 
 ```javascript
@@ -139,8 +161,10 @@ console.log(today);   // Sun Feb 16 2020 20:09:46 GMT+0900 (한국 표준시)
 console.log(date);   // 16
 ```
 
-### setDate()
----
+<br>
+
+#### setDate()
+
 날짜를 나타내는 정수를 설정한다.(1 ~ 31)
 
 ```javascript
@@ -153,8 +177,10 @@ console.log(today);   // Sat Feb 08 2020 20:14:12 GMT+0900 (한국 표준시)
 console.log(date);   // 8
 ```
 
-### getDay()
----
+<br>
+
+#### getDay()
+
 요일을 나타내는 정수를 반환한다.(0 ~ 6) 0은 일요일, 6은 토요일을 의미한다.
 
 ```javascript
@@ -165,8 +191,10 @@ console.log(today);   // Sun Feb 16 2020 20:16:33 GMT+0900 (한국 표준시)
 console.log(day);   // 0
 ```
 
-### getHours()
----
+<br>
+
+#### getHours()
+
 시간을 나타내는 정수를 반환한다.(0 ~ 23)
 
 ```javascript
@@ -177,8 +205,10 @@ console.log(today);   // Sun Feb 16 2020 20:18:13 GMT+0900 (한국 표준시)
 console.log(hour);   // 20
 ```
 
-### setHours(hour[, minute[, second[, ms]]])
----
+<br>
+
+#### setHours(hour[, minute[, second[, ms]]])
+
 시간을 나타내는 정수를 설정한다.(0 ~ 23)
 
 ```javascript
@@ -197,8 +227,10 @@ console.log(today);   // Mon Feb 17 2020 18:00:00 GMT+0900 (한국 표준시)
 console.log(hour);   // 18
 ```
 
-### getMinutes()
----
+<br>
+
+#### getMinutes()
+
 분을 나타내는 정수를 반환한다.(0 ~ 59)
 
 ```javascript
@@ -209,8 +241,10 @@ console.log(today);   // Mon Feb 17 2020 18:47:57 GMT+0900 (한국 표준시)
 console.log(minutes);   // 47
 ```
 
-### setMinutes(minutes[, seconde[, ms]])
----
+<br>
+
+#### setMinutes(minutes[, seconde[, ms]])
+
 분을 나타내는 정수를 설정한다.(0 ~ 59)
 
 ```javascript
@@ -228,8 +262,11 @@ minutes = today.getMinutes();
 console.log(today);   // Mon Feb 17 2020 18:10:30 GMT+0900 (한국 표준시)
 console.log(minutes);   // 10
 ```
-### getSeconds()
----
+
+<br>
+
+#### getSeconds()
+
 초를 나타내는 정수를 반환한다.(0 ~ 59)
 
 ```javascript
@@ -240,8 +277,10 @@ console.log(today);   // Mon Feb 17 2020 18:55:53 GMT+0900 (한국 표준시)
 console.log(seconds);   // 53
 ```
 
-### setSeconds(second[, ms])
----
+<br>
+
+#### setSeconds(second[, ms])
+
 초를 나타내는 정수를 설정한다.(0 ~ 59)
 
 ```javascript
@@ -260,8 +299,10 @@ console.log(today);   // Mon Feb 17 2020 18:58:30 GMT+0900 (한국 표준시)
 console.log(seconds);   // 30
 ```
 
-### getMilliseconds()
----
+<br>
+
+#### getMilliseconds()
+
 밀리초를 나타내는 정수를 반환한다.(0 ~ 999)
 
 ```javascript
@@ -272,8 +313,10 @@ console.log(today);   // Mon Feb 17 2020 19:01:23 GMT+0900 (한국 표준시)
 console.log(ms);   // 696
 ```
 
-### setMilliseconds(ms);
----
+<br>
+
+#### setMilliseconds(ms);
+
 밀리초를 나타내는 정수를 설정한다.(0 ~ 999)
 
 ```javascript
@@ -286,8 +329,10 @@ console.log(today);   // Mon Feb 17 2020 19:04:20 GMT+0900 (한국 표준시)
 console.log(ms);   // 458
 ```
 
-### getTime()
----
+<br>
+
+#### getTime()
+
 1970년 1월 1일 00:00:00(UTC)를 기점으로 현재 시간까지 경과된 밀리초를 반환한다.
 
 ```javascript
@@ -298,8 +343,10 @@ console.log(today);   // Mon Feb 17 2020 19:05:51 GMT+0900 (한국 표준시)
 console.log(time);   // 1581933951843
 ```
 
-### setTime(time)
----
+<br>
+
+#### setTime(time)
+
 1970년 1월 1일 00:00:00(UTC)를 기점으로 현재 시간까지 경과된 밀리초를 설정한다.
 
 ```javascript
