@@ -1,11 +1,29 @@
+## 문서 객체 모델(Document Object Model, DOM)
 
+브라우저의 렌더링 엔진은 웹 문서를 로드한 후, 파싱하여 웹 문서를 브라우저가 이해할 수 있는 구조로 구성하여 메모리에 적재하는데 이를 `DOM` 이라 한다. 즉 모든 요소와 요소의 어트리뷰트, 텍스트를 각각의 객체로 만들고 이들 객체를 부자 관계를 표현할 수 있는 트리 구조로 구성한 것이 `DOM` 이다
 
-# 문서 객체 모델(Document Object Model, DOM)
+<br>
+
+### DOM tree
 ---
 
-getElementById(id)
-: id 속성 값으로 요소 노드를 한 개 선택한다. 복수 개인 경우, 첫 번째 요소만 반환한다.
-```html
+`DOM tree` 는 브라우저가 HTML 문서를 로드한 후 파싱하여 생성하는 모델을 의미하며 다음과 같이 네 종류로 구성된다.
+
+- 문서 노드(Document Node)
+- 요소 노드(Element Node)
+- 어트리뷰트 노드(Attribute Node)
+- 텍스트 노드(Text Node)
+
+<br>
+
+### DOM Query / Traversing
+---
+
+#### getElementById(id)
+
+id 속성 값으로 요소 노드를 한 개 선택한다. 복수 개인 경우, 첫 번째 요소만 반환한다.
+
+```css
 <html>
 <head>
 </head>
@@ -24,9 +42,13 @@ getElementById(id)
 </html>
 ```
 
-querySelector(selector)
-: CSS 선택자를 사용하여 요소 노드를 한 개 선택한다. 복수 개인 경우, 첫 번째 요소만 반환한다.
-```html
+<br>
+
+#### querySelector(selector)
+
+CSS 선택자를 사용하여 요소 노드를 한 개 선택한다. 복수 개인 경우, 첫 번째 요소만 반환한다.
+
+```css
 <html>
 <head>
 </head>
@@ -44,9 +66,13 @@ querySelector(selector)
 </html>
 ```
 
-querySelectorAll(selector)
-: 지정된 CSS 선택자를 이용하여 요소 노드를 모두 선택한다.
-```html
+<br>
+
+#### querySelectorAll(selector)
+
+지정된 CSS 선택자를 이용하여 요소 노드를 모두 선택한다.
+
+```css
 <html>
 <head>
 </head>
@@ -62,7 +88,10 @@ querySelectorAll(selector)
 </body>
 </html>
 ```
-```html
+
+<br>
+
+```css
 <html>
 <head>
 </head>
@@ -80,7 +109,10 @@ querySelectorAll(selector)
 </body>
 </html>
 ```
-```html
+
+<br>
+
+```css
 <html>
 <head>
 </head>
@@ -99,9 +131,13 @@ querySelectorAll(selector)
 </html>
 ```
 
-getElementsByTagName
-: 지정된 태그를 가진 모든 요소를 선택한다.
-```html
+<br>
+
+#### getElementsByTagName
+
+지정된 태그를 가진 모든 요소를 선택한다.
+
+```css
 <html>
 <head>
 </head>
@@ -124,9 +160,13 @@ getElementsByTagName
 </html>
 ```
 
-getElementsByName
-: 지정된 name 값에 해당하는 모든 요소를 탐색한다.
-```html
+<br>
+
+#### getElementsByName
+
+지정된 name 값에 해당하는 모든 요소를 탐색한다.
+
+```css
 <html>
 <head>
 </head>
@@ -146,9 +186,13 @@ getElementsByName
 </html>
 ```
 
-getElementsByClassName
-: 지정된 class 명에 해당하는 모든 요소를 탐색한다.
-```html
+<br>
+
+#### getElementsByClassName
+
+지정된 class 명에 해당하는 모든 요소를 탐색한다.
+
+```css
 <html>
 <head>
 </head>
@@ -170,17 +214,20 @@ getElementsByClassName
 </html>
 ```
 
-createElement/createTextNode/appendChild
----
-createElement(tagName)
-: 태그 이름을 인자로 전달하여 요소를 생성한다.
+<br>
 
-createTextNode(text)
-: 텍스트를 인자로 전달하여 텍스트 노드를 생성한다.
+#### createElement/createTextNode/appendChild
 
-appendChild(Node)
-: 인자로 전달한 노드를 DOM 트리에 마지막 자식 요소로 추가한다.
-```html
+- createElement(tagName)
+태그 이름을 인자로 전달하여 요소를 생성한다.
+
+- createTextNode(text)
+텍스트를 인자로 전달하여 텍스트 노드를 생성한다.
+
+- appendChild(Node)
+인자로 전달한 노드를 DOM 트리에 마지막 자식 요소로 추가한다.
+
+```css
 <html>
 <head>
 </head>
@@ -199,21 +246,24 @@ appendChild(Node)
 </html>
 ```
 
-hasAttribute/setAttribute/getAttribute/removeAttribute
+<br>
+
+### hasAttribute/setAttribute/getAttribute/removeAttribute
 ---
-hasAttribute(attribute)
-: 지정한 속성을 가지고 있는지 검사한다.
 
-getAttribute(attribute)
-: 속성의 값을 취득한다.
+- hasAttribute(attribute)
+지정한 속성을 가지고 있는지 검사한다.
 
-setAttribute(attribute, value)
-: 속성과 속성 값을 설정한다.
+- getAttribute(attribute)
+속성의 값을 취득한다.
 
-removeAttribute(attribute)
-: 지정한 속성을 제거한다.
+- setAttribute(attribute, value)
+속성과 속성 값을 설정한다.
 
-```html
+- removeAttribute(attribute)
+지정한 속성을 제거한다.
+
+```css
 <html>
 <head>
 </head>
@@ -235,9 +285,13 @@ removeAttribute(attribute)
 </html>
 ```
 
-innerHTML
-: 해당 요소의 모든 자식 요소를 포함하는 모든 콘텐츠를 하나의 문자열로 취득한다.
-```html
+<br>
+
+#### innerHTML
+
+해당 요소의 모든 자식 요소를 포함하는 모든 콘텐츠를 하나의 문자열로 취득한다.
+
+```css
 <html>
 <head>
 </head>
@@ -262,38 +316,42 @@ innerHTML
 </html>
 ```
 
-parentNode/firstChild/lastChild/next
----
-firstChild/lastChild
-: 텍스트 요소를 포함한 첫 번째/마지막 자식 노드를 탐색한다.
+<br>
 
-firstElementChild/lastElementChild
-: Element 요소만을 가진 첫 번째/마지막 자식 노드를 탐색한다.
+#### parentNode/firstChild/lastChild/next
 
-nextSibling/previousSibling
-: 텍스트 요소를 포함한 이전/이후 형제 노드를 탐색한다.
+- firstChild/lastChild
+텍스트 요소를 포함한 첫 번째/마지막 자식 노드를 탐색한다.
 
-nextElementSibling/previousElementSibling
-: Element 요소만을 가진 이전/이후 형제 노드를 탐색한다.
+- firstElementChild/lastElementChild
+Element 요소만을 가진 첫 번째/마지막 자식 노드를 탐색한다.
 
-parentNode
-: 텍스트 요소를 포함한 부모 요소를 탐색한다.
+- nextSibling/previousSibling
+텍스트 요소를 포함한 이전/이후 형제 노드를 탐색한다.
 
-parentElement
-: Element 요소만을 가진 부모 요소를 탐색한다.
+- nextElementSibling/previousElementSibling
+Element 요소만을 가진 이전/이후 형제 노드를 탐색한다.
 
-hasChildNodes/childNodes/children
----
-hasChildNodes
-: 자식 노드가 있는지 확인하고 Boolean을 반환한다.
+- parentNode
+텍스트 요소를 포함한 부모 요소를 탐색한다.
 
-childNodes
-: 텍스트 요소를 포함한 모든 자식 요소를 탐색한다.
+- parentElement
+Element 요소만을 가진 부모 요소를 탐색한다.
 
-children
-: Element 요소만을 가진 모든 자식 요소를 탐색한다.
+<br>
 
-```html
+#### hasChildNodes/childNodes/children
+
+- hasChildNodes
+자식 노드가 있는지 확인하고 Boolean을 반환한다.
+
+- childNodes
+텍스트 요소를 포함한 모든 자식 요소를 탐색한다.
+
+- children
+Element 요소만을 가진 모든 자식 요소를 탐색한다.
+
+```css
 <html>
 <head>
 </head>
