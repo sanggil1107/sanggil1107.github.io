@@ -1,6 +1,6 @@
 ## 문자열 추출
 
-MySql에서 문자열을 추출하는 함수로는 `SUBSTRING`, `LEFT`, `MID`, `RIGHT` 가 있다.
+MySql에서 문자열을 추출하는 경우 `SUBSTRING`, `LEFT`, `MID`, `RIGHT` 함수를 사용한다.
 
 <br>
 
