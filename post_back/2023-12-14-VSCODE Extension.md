@@ -1,6 +1,8 @@
 ## 개발자를 위한 VS Code Extension  추천
 
-Visual Studio Code를 사용하는 개발자들에게 유용한 Extendsion 몇가지를 알아보자
+Visual Studio Code를 사용하는 개발자들에게 유용한 Extendsion 몇가지를 알아보자.
+
+<br>
 
 ### Auto Rename Tag
 ---
@@ -75,19 +77,47 @@ https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 <br>
 
 
-## HTML Snippets
+### HTML Snippets
+---
+
+HTML 코드 자동완성을 도와준다.
+
 https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets
 
-## JavaScript (ES6) code snippets
+<br>
+
+### JavaScript (ES6) code snippets
+---
+
+ES6를 포함한 자바스크립트 코드 자동완성을 도와준다.
+
 https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets
 
-## JS JSX Snippets
+<br>
+
+### JS JSX Snippets
+---
+
+JSX 코드 자동완성을 도와준다.
+
 https://marketplace.visualstudio.com/items?itemName=skyran.js-jsx-snippets
 
-## Markdown All in One
+<br>
+
+### Markdown All in One
+---
+
+마크다운을 편리하게 사용할 수 있도록 도와준다.
+
 https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one
 
-## Markdown Preview Enhanced
+<br>
+
+### Markdown Preview Enhanced
+---
+
+마크다운을 편리하게 사용할 수 있도록 도와준다.
+
 https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced
 
 <br>
@@ -101,32 +131,78 @@ https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
 
 <br>
 
-## vscode-icons
+### vscode-icons
+---
+
+Visual Studio code의 Explorer 아이콘 테마이다.
+
 https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons
 
-## open in browser
-https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser
+<br>
 
-## Prettier
+### Prettier
+---
+
+개발자가 작성한 코드를 정해진 코딩 스타일을 따르도록 변환해준다.
+
 https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 
-## Reactjs code snippets
+<br>
+
+### Reactjs code snippets
+---
+
+react 코드 자동완성을 도와준다.
+
 https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets
 
-## Extension Pack for Java
+<br>
+
+
+### Extension Pack for Java
+---
+
+Java 개발을 위해 필요한 extension이다.
+
 https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
 
-## Spring Boot Dashboard
+<br>
+
+### Spring Boot Dashboard
+---
+
+Java 개발을 위해 필요한 extension이다.
+
 https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-boot-dashboard
 
-## Spring Boot Extension Pack
+<br>
+
+### Spring Boot Extension Pack
+---
+
+Spring 개발을 위해 필요한 extension이다.
+
 https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack
 
-## Spring Boots Tools
+<br>
+
+### Spring Boots Tools
+---
+
+Java 개발을 위해 필요한 extension이다.
+
 https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-spring-boot
 
-## vscode-styled-components
+<br>
+
+### vscode-styled-components
+---
+
+해당 스타일 코드를 직접 보여준다.
+
 https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components
+
+<br>
 
 ### Live Server
 ---
@@ -144,8 +220,20 @@ git 이력을 확인하고 관리할 수있다.
 
 https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
 
-## ES7+ React/Redux/React-Native snippets
+<br>
+
+### ES7+ React/Redux/React-Native snippets
+---
+
+react/redux 개발을 위한 통합 extension이다.
+
 https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
 
-## Debugger for Chrome
+<br>
+
+### Debugger for Chrome
+---
+
+Chrome에서 디버깅을 할 수 있도록 도와준다.
+
 https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome
