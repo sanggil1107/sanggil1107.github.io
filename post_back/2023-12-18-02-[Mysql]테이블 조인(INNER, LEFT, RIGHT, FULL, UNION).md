@@ -1,3 +1,15 @@
+https://namu.wiki/w/%EC%82%BC%EA%B5%AD%EC%A7%80/%EC%A7%80%EB%AA%85
+https://namu.wiki/w/%EC%B2%AD%EB%91%90%EC%8B%9C
+충칭시 청두시 주나라
+
+
+https://cocoelda.tistory.com/entry/%ED%8B%B0%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%B6%81%ED%81%B4%EB%9F%BD-%EB%89%B4%EB%B6%81-%EB%B6%81%EB%A6%AC%EB%B7%B0-%EC%8D%B8%EB%84%A4%EC%9D%BC-%EC%82%AC%EC%9D%B4%EC%A6%88-%EC%A1%B0%EC%A0%88%ED%95%98%EA%B8%B0
+
+
+https://melonmilk.tistory.com/?page=2
+
+https://roadtofree.tistory.com/entry/%ED%8B%B0%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%B6%81%ED%81%B4%EB%9F%BD-%EC%8A%A4%ED%82%A8-%EC%84%A0%ED%83%9D-%ED%9B%84-%ED%95%B4%EC%95%BC%ED%95%A0-13%EA%B0%80%EC%A7%80-2
+
 ## 뷰(View)
 
 `뷰(View)` 란 데이터베이스에 존재하는 일종의 가상 테이블을 의미하며 실제 테이블처럼 행과 열을 가지고 있지만 실제로 데이터를 저장하고 있지는 않다.
