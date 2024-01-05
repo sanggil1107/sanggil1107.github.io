@@ -1,7 +1,7 @@
 
 ## 트랜잭션(Transaction)
 
-Mysql에서 `트랜잭션(Trnasaction)` 이란 데이터베이스의 상태를 바꾸는 일종의 작업 단위이다.
+MySql에서 `트랜잭션(Trnasaction)` 이란 데이터베이스의 상태를 바꾸는 일종의 작업 단위이다.
 
 
 <br>
