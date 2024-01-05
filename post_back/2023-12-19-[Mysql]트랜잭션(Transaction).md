@@ -1,124 +1,91 @@
 
 ## 트랜잭션(Transaction)
 
-`JOIN` 은 데이터베이스 내의 여러 테이블에서 가져온 레코드를 조합하여 하나의 테이블이나 결과 집합으로 표현할 수 있게 도와준다.
+Mysql에서 `트랜잭션(Trnasaction)` 이란 데이터베이스의 상태를 바꾸는 일종의 작업 단위이다.
 
 
 <br>
 
-### (INNER) JOIN
+### 트랜잭션특징
 ---
 
-- 조인하는 테이블의 ON 절의 조건이 일치하는 결과만 출력한다.
+트랜잭션의 특징은 크게 4가지로 구분된다.
 
-```sql
-SELECT A.USERID, NAME 
-FROM USERTBL AS A
-INNER JOIN BUYTBL AS B 
-ON A.USERID=B.USERID 
-WHERE A.USERID="YANG";
-```
+- 원자성(Atomicity)
+트랜잭션이 데이터베이스에 모두 반영되던가, 아니면 전혀 반영되지 않아야 한다.
 
-<br>
+- 일관성(Consistency)
+트랜잭션의 작업 처리 결과가 항상 일관성이 있어야 한다.
+트랜잭션이 진행되는 동안에 데이터베이스가 변경 되더라도 업데이트된 데이터베이스로 트랜잭션이 진행되는것이 아니라, 처음에 트랜잭션을 진행 하기 위해 참조한 데이터베이스로 진행된다.
 
-다음과 같이 `INNER JOIN` 을 생략해서 사용할 수 있다.
+- 독립성(Isolation)
+둘 이상의 트랜잭션이 동시에 실행되고 있는 경우, 어떤 하나의 트랜잭션이라도 다른 트랜잭션의 연산에 끼어들 수 없다.
 
-```sql
-SELECT A.USERID, NAME 
-FROM USERTBL A, BUYTBL B 
-ON A.USERID=B.USERID 
-WHERE A.USERID="YANG";
-```
+- 영구성(Durability)
+트랜잭션이 성공적으로 완료되었을 경우, 결과는 영구적으로 반영되어야 한다.
 
 <br>
 
-### LEFT OUTER JOIN
+### 트랜잭션 상태
 ---
 
-- 두 테이블을 조인할 때 왼쪽을 기준으로 왼쪽 테이블의 데이터는 모두 출력이 된다.
-- 왼쪽 테이블을 기준으로 오른쪽 테이블을 조합해서 출력한다.
+그림
 
-```sql
-SELECT STUDENT.NAME, PROFESSOR.NAME 
-FROM STUDENT LEFT OUTER JOIN PROFESSOR 
-ON STUDENT.PID = PROFESSOR.ID 
-WHERE GRADE = 1
-```
+트랜잭션의 각 개별 상태에 대한 설명은 다음과 같다.
+
+- 1. 활성(Active)
+트랜잭션이 정상적으로 실행중인 상태를 의미
+
+- 2-1. 부분 완료(Partially Committed)
+트랜잭션의 마지막까지 실행되었지만, Commit 연산이 실행되기 전 상태
+
+- 2-2. 완료(Committed)
+트랜잭션이 성공적으로 종료되어 Commit 연산을 실행한 후의 상태
+
+- 3-1. 실패(Failed)
+트랜잭션 실행에 오류가 발생하여 중단된 상태
+
+- 3-2. 철회(Aborted)
+트랜잭션이 비정상적으로 종료되어 Rollback(수행 이전의 상태로 되돌림) 연산을 수행한 상태
 
 <br>
 
-위의 쿼리문의 경우 STUDENT 테이블의 데이터는 ON 조건을 만족하지 않는 데이터라도 전부 출력된다.
-
-<br>
-
-### RIGHT OUTER JOIN
+### 트랜잭션 문법
 ---
 
-- 두 테이블을 조인할 때 오른쪽을 기준으로 오른쪽 테이블의 데이터는 모두 출력이 된다.
-- 오른쪽 테이블을 기준으로 왼쪽 테이블을 조합해서 출력한다.
+기본적으로 따로 명시하지 않아도 명령어들은 자동으로 Commit 처리 된다.
+아래와 같이 수동으로 명시할 수 있다.
 
 ```sql
-SELECT STUDENT.NAME, PROFESSOR.NAME 
-FROM STUDENT RIGHT OUTER JOIN PROFESSOR 
-ON STUDENT.PID = PROFESSOR.ID 
-WHERE GRADE = 1
+START TRANSACTION  -- 트랜잭션 시작
+
+SELECT * FROM USER;
+INSERT INTO USER VALUES(1, '상길');
+SELECT * FROM USER;
+
+COMMIT  -- 트랜잭션 적용
+
+SELECT * FROM USER;  -- 적용된 결과 조회
 ```
 
 <br>
 
-위의 쿼리문의 경우 PROFESSOR 테이블의 데이터는 ON 조건을 만족하지 않는 데이터라도 전부 출력된다.
+다음은 롤백의 경우이다.
+
+```sql
+START TRANSACTION  -- 트랜잭션 시작
+
+INSERT INTO USER VALUES(1, '상길');
+SELECT * FROM USER;
+
+ROLLBACK  -- 트랜잭션을 취소하고 INSERT 전 상태로 롤백
+
+SELECT * FROM USER;  -- 조회
+```
 
 <br>
 
-### UNION
+### 예외
 ---
 
-- `UNION` 은 여러 개의 SELECT 문의 결과를 하나의 테이블이나 집합으로 표현할 때 사용한다.
-- 이 때 각 SELECT 문의 컬럼 개수와 타입은 모두 같아야 하며, 컬럼 순서 또한 동일해야 한다.
-- 중복제거(DISTINCT)가 자동 포함되어 수행된다.
-
-```sql
-SELECT S1.NAME, S1.GRADE FROM STUDENT S1
-UNION
-SELECT S2.NAME, S2.GRADE FROM STUDENT S2
-```
-
-<br>
-
-### UNION ALL
----
-
-- `UNION` 과 마찬가지로 여러 개의 SELECT 문의 결과를 하나의 테이블이나 집합으로 표현할 때 사용한다.
-- 각 SELECT 문의 컬럼 개수와 타입은 모두 같아야 하며, 컬럼 순서 또한 동일해야 한다.
-- `UNION` 과 달리 <strong>중복되는 행까지 모두 출력한다.</strong>
-  
-```sql
-SELECT S1.NAME, S1.GRADE FROM STUDENT S1
-UNION ALL
-SELECT S2.NAME, S2.GRADE FROM STUDENT S2
-```
-
-<br>
-
-### DISTINCT
----
-
-- `DISTINCT` 는 중복되는 행을 제거하고 출력한다.
-- 행의 수가 많을 수록 성능이 느리다.
-
-```sql
-SELECT DISTINCT P.ID, P.NAME, J.JOB_NAME 
-FROM PERSON P, JOB J
-ON P.NAME = J.PERSON_NAME;
-```
-
-<br>
-
-JOIN 문에 사용할 테이블의 중복을 제거하거자 하는 경우 JOIN 수행 전에 미리 중복을 제거하는 것이 성능상 좋다.
-
-```sql
-SELECT P.ID, P.NAME
-FROM PERSON P
-LEFT JOIN (SELECT DISTINCT J.JOM_NAME, J.PERSON_NAME FROM JOB J) AS A
-ON P.NAME = A.PERSON_NAME;
-```
+모든 명령어에 대해 트랜잭션 롤백이 적용되지 않으며 DDL문(CREATE, DROP, RENAME, TRUNCATE)은 롤백 대상이 아니다.
