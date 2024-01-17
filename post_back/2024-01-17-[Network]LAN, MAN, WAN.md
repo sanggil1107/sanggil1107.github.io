@@ -1,68 +1,41 @@
-## URI, URL, URN
+## LAN, MAN, WAN
 
-`URI`, `URL`, `URN` 에 대해 알아보자
-
-[이미지]
+네트워크는 분산되어 있는 컴퓨터들이 자원을 공유할 수 있게 통신망으로 연결한 것이다. 네트워크의 규모(반경, 속도 등)를 기반으로 `LAN`, `MAN`, `WAN` 으로 구분할 수 있다.
 
 <br>
 
-### URI(Uniform Resource Identifier)
+### LAN(Local Area Network)
 ---
 
-- 통합 자원 식별자를 의미한다.
-- 인터넷에 있는 자원을 나타내는 유일한 주소를 말한다.
-- URI의 존재는 인터넷에서 요구되는 기본조건으로 인터넷 프로토콜에 항상 붙어 다닌다.
+- 근거리 영역 네트워크
+- 학교, 사무실과 같은 가까운 지역을 묶은 네트워크
+- 전송 속도가 빠르고 혼잡하지 않음
+- MAN, WAN 보다 높은 안정성과 속도
+- 전송매체 : Ethernet 케이블
+- 망 구성 형태로는 Ring형, 버스형, 스타형이 존재
+  - Ring형 : 링을 따라 순환하며 데이터 통신을 위해 토큰을 사용
+  - 버스형 : 하나의 통신 회선에 장치들을 연결
+  - 스타형 : 여러 장치들이 하나의 중앙 장치를 통해 통신
 
 <br>
 
-### URL(Uniform Resource Locator)
+### MAN(Metropolitan Area Network)
 ---
 
-- 프로토콜(스키마)을 포함한 개념이다.
-- 네트워크 상에서 자원이 어디에 있는지 알려주기 위한 규약을 말한다.
-- 일반적으로 사이트 도메인을 의미한다.
-- 웹 상 뿐만 아니라 컴퓨터 네트워크 상의 자원을 모두 나타낼 수 있다.
+
+- 대도시 영역 네트워크
+- LAN과 LAN이 모여서 만든 통신망
+- 전송 속도는 평균이며 LAN보다는 더 많이 혼잡
+- 라우터, 브리지 등으로 연결
+- 여러 지역 사이에서 데이터 및 자원 공유
+- 전송매체 : 광섬유, 동축 케이블
 
 <br>
 
-### URN(Uniform Resource Name)
+### WAN(Wide Area Network)
 ---
 
-- 프로토콜(스키마)을 포함하지 않는 개념이다.
-- 해당 자원의 이름을 의미한다.
-- 자원에 대하여 영속적으로 유일하다.
-- 위치에 독립적인 이름을 제공하기 위하여 존재한다.
-
-<br>
-
-### URI, URL, URN 구조
----
-
-```text
-scheme://[userinfo@]host[:port][/path][?query][#fragment]
-```
-
-`https://www.google.com:443/search?q=hello&hl=ko` 를 통해 구조를 확인해보자.
-
-- <strong>scheme</strong> : `https`
-  - 프로토콜을 의미
-  - 어떤 방식으로 자원에 접근할지에 대한 규약(https, http, ftp)
-
-- <strong>[userinfo@]</strong> : `해당 없음`
-  - 사용자 정보를 의미
-  - 거의 사용하지 않음
-
-- <strong>host</strong> : `www.google.com`
-  - 호스트명
-  - 도메인명 또는 ip 주소 사용 가능
-
-- <strong>[:port]</strong> : `:443`
-  - 접속 포트이며 일반적으로 생략
-
-- <strong>[/path]</strong> : `search`
-  - 리소스 경로
-
-- <strong>[?query]</strong> : `?q=hello&hl=ko`
-  - key = value 형태
-  - ?로 시작하며 &로 추가 가능
-  - Query Parameter, Query String 으로 불림
+- 광대역 네트워크
+- 국가 또는 대륙 같은 더 넓은 지역에서 운영
+- 전송 속도는 낮으며 MAN 보다 더 혼잡
+- Link Layer Protocol 이용
