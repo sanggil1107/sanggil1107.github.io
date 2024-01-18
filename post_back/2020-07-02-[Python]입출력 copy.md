@@ -1,33 +1,37 @@
----
-layout: post
-title: "[Python] 입출력"
-category: [Python]
 
----
+
+## 입출력 함수
+
+파이썬 입출력 함수로는 `input` 과 `print` 함수가 있다.
+
 <br>
 
-`입출력`에 대해 알아보자
-<!-- more -->
-
-<hr>
-
-
-# 입출력
+### input()
 ---
+
 `input(text)`
 - 사용자 입력을 받으며 입력되는 모든 것을 문자열로 취급
 
 ```python
->>> a = input()
+a = input()
 Sanggil Yang
->>> a
-'Sanggil Yang'
+a
 
->>> number = input('숫자를 입력하세요: ')
+number = input('숫자를 입력하세요: ')
 숫자를 입력하세요: 3
->>> number
-'3'
+number
 ```
+
+```text
+Sanggil Yang
+
+3
+```
+
+<br>
+
+### print()
+---
 
 `print(x)`
 - 입력한 자료형을 출력
@@ -35,38 +39,51 @@ Sanggil Yang
 - 콤마(,)를 사용하여 띄어쓰기를 한다.
 
 ```python
->>> print("sanggil" "is" "man")
-sanggilisman
->>> print("sanggil" + "is" + "man")
-sanggilisman
->>> print("sanggil", "is", "man")
-sanggil is man
+print("sanggil" "is" "man")
+print("sanggil" + "is" + "man")
+print("sanggil", "is", "man")
+print(1); print(2)
 ```
-- `end` 인수를 사용하여 마지막 개행(기본값)에 대해 처리할 수 있다.
-```python
->>> print(1); print(2)
+```text
+sanggilisman
+sanggilisman
+sanggil is man
 1
 2
+```
 
->>> print("Print end", end=', '); print("test", end='. ')
+<br>
+
+#### end
+
+`end` 인수를 사용하여 마지막 개행(기본값)에 대해 처리할 수 있다.
+  
+```python
+print("Print end", end=', '); print("test", end='. ')
+
+for i in range(10):
+    print(i, end= ' ')
+```
+```text
 Print end, test.
 
->>> for i in range(10):
-...     print(i, end= ' ')
-...
 0 1 2 3 4 5 6 7 8 9
 ```
 
+<br>
 
-- `sep` 인수를 사용하여 문장과 문장 사이의 공백에 대해 처리할 수 있다.
+#### sep
+
+`sep` 인수를 사용하여 문장과 문장 사이의 공백에 대해 처리할 수 있다.
+
 ```python
->>> print("Print" + "sep test", sep='%')
-Printsep test
-
->>> print("Print","sep test", sep='%')
+print("a", "b", sep='%')
+print("Print", "sep test", sep='%')
+print(1, 2, 3, 4, sep='.')
+```
+```text
+a%b
 Print%sep test
-
->>> print(1, 2, 3, 4, sep='.')
 1.2.3.4
 ```
 
@@ -75,8 +92,8 @@ Print%sep test
 ## 파일 생성
 ---
 ```python
->>> f = open("D:/기타/new.txt", 'w')
->>> f.close
+f = open("D:/기타/new.txt", 'w')
+f.close
 ```
 |파일열기모드|설명|
 |:---:|:---:|
@@ -197,57 +214,4 @@ f.close()
 with open("foo.txt". 'w') as f:
     f.write("Oh My got")
 ```
-
-
-### 연습문제
----
-def is_odd(a):
-    if a % 2 == 0:
-        return "짝수"
-    else:
-        return "홀수"
-
-a = is_odd(4)
-print(a)
-
-def multi(*args):
-    total = 0
-    for data in args:
-        total += data
-
-    return total / len(args)
-
-a = multi(1,2,3,4,5)
-print(a)
-b = multi(1,2,3,4,5,6,7)
-print(b)
-
-
-def filedef(a):
-    f = open("D:/기타/nnn.txt", 'a')
-    f.write(a)
-    f.write("\n")
-    f.close
-
-text = input("내용을 입력하세요 : ")
-filedef(text)
-
-f=open("D:/기타/text.txt",'r')
-data = f.read()
-data = data.replace("java", "python")
-
-f=open("D:/기타/text.txt", 'w')
-f.write(data)
-f.close
-
-f=open("D:/기타/text.txt",'r')
-data = f.read()
-data = data.replace("java", "python")
-f.write(data)
-f.close
-
-Traceback (most recent call last):
-  File "python.py", line 4, in <module>
-    f.write(data)
-io.UnsupportedOperation: not writable
 
