@@ -8,108 +8,97 @@
 round(number [, ndigits])
 ```
 
-- function : 필터링을 적용시킬 함수
-- iterable : 반복 가능한 자료(리스트, 튜플 등)
+- function : 반올림하고자 하는 숫자 자료형
+- ndigits : 정밀도(자릿수)
 
-filter 함수의 반환 값은 filter 객체이기 때문에 해당 자료형을 list나 tuple로 형 변환해야 한다.
-filter 함수는 iterator에 들어온 값들을 하나하나 function에 넣어서 반환이 true인 값을 필터링해서 다시 리스트로 만들어준다.
-
-<br>
-
-filter 함수를 사용하지 않을 때와 사용할 때의 소스를 확인해보자.
-
-- for 문 이용
-  
-```python
-def is_even(x):
-    if x % 2 == 0:
-        return True
-    return False
-
-arr = []
-for val in range(1, 11): 
-    if is_even(val):
-        arr.append(val)
-    
-print(arr)
-```
-```text
-[2, 4, 6, 8, 10]
-```
+파이썬의 반올림은 반올림 하려는 수가 올림, 내림했을 때 동일하게 차이가 나는 경우에는 짝수 값으로 반올림한다.
 
 <br>
 
-- filter 함수 이용
-
-```python
-def is_even(x):
-    if x % 2 == 0:
-        return True
-    return False
-
-arr = list(filter(is_even, range(1,11)))
-print(arr)
-```
-```text
-[2, 4, 6, 8, 10]
-```
-
-<br>
-
-### filter 함수 예제
+### round 함수 예제
 ---
 
 
 ```python
-arr = [1, 10.2, 100.3, 2.3, 20.2, 200.3, 3, 30, 300]
-
-def func1(n):
-    if n < 10: 
-        return True
-    return False
-
-def func2(n):
-    if isinstance(n , int):
-        return True
-    return False
-
-result1 = list(filter(func1 ,arr))
-result2 = list(filter(func2 ,arr))
-
-print(result1)
-print(result2)
+print('round(0.5) : {0}'.format(round(0.5)))
+print('round(1.5) : {0}'.format(round(1.5)))
+print('round(2.5) : {0}'.format(round(2.5)))
+print('round(3.5) : {0}'.format(round(3.5)))
+print('round(4.5) : {0}'.format(round(4.5)))
+print('round(5.5) : {0}'.format(round(5.5)))
+print('round(6.5) : {0}'.format(round(6.5)))
 ```
 ```text
-[1, 2.3, 3]
-[1, 3, 30, 300]
+round(0.5) : 0 
+round(1.5) : 2
+round(2.5) : 2 
+round(3.5) : 4    
+round(4.5) : 4 
+round(5.5) : 6
+round(6.5) : 6 
 ```
 
 <br>
 
 ```python
-def Fillterfunc(num):
-  return num > 40
-
-numlist = [10, 20, 30, 40, 50, 60, 70, 80, 90]
-
-result = list(filter(Fillterfunc, numlist))
-
-print(result)
+print('round(-6.5) : {0}'.format(round(-6.5)))
+print('round(-5.5) : {0}'.format(round(-5.5)))
+print('round(-4.5) : {0}'.format(round(-4.5)))
+print('round(-3.5) : {0}'.format(round(-3.5)))
+print('round(-2.5) : {0}'.format(round(-2.5)))
+print('round(-1.5) : {0}'.format(round(-1.5)))
+print('round(-0.5) : {0}'.format(round(-0.5)))
 ```
 ```text
-[50, 60, 70, 80, 90]
+round(-6.5) : -6
+round(-5.5) : -6
+round(-4.5) : -4
+round(-3.5) : -4
+round(-2.5) : -2
+round(-1.5) : -2
+round(-0.5) : 0
 ```
-
 
 <br>
 
-일반적인 함수뿐만 아니라 람다함수와 함께 사용할 수 있다.
 
 ```python
-numlist = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-result = list(map(lambda x : x % 2 == 0, numlist))
-print(result2)
+a = 0.0
+while a < 2.1:
+    result = round(a)
+    print('round({0}) => {1}'.format(a, result))
+    a += 0.1
 ```
 ```text
-[2, 4, 6, 8]
+round(0.0) => 0
+round(0.1) => 0
+round(0.2) => 0
+round(0.30000000000000004) => 0
+round(0.4) => 0
+round(0.5) => 0 
+round(0.6) => 1
+round(0.7) => 1
+round(0.7999999999999999) => 1
+round(0.8999999999999999) => 1
+round(0.9999999999999999) => 1
+round(1.0999999999999999) => 1
+round(1.2) => 1
+round(1.3) => 1
+round(1.4000000000000001) => 1
+round(1.5000000000000002) => 2 
+round(1.6000000000000003) => 2
+round(1.7000000000000004) => 2
+round(1.8000000000000005) => 2
+round(1.9000000000000006) => 2
+round(2.0000000000000004) => 2
+round(2.1000000000000005) => 2
+round(2.2000000000000006) => 2
+round(2.3000000000000007) => 2
+round(2.400000000000001) => 2
+round(2.500000000000001) => 3 
+round(2.600000000000001) => 3
+round(2.700000000000001) => 3
+round(2.800000000000001) => 3
+round(2.9000000000000012) => 3
+round(3.0000000000000013) => 3
 ```

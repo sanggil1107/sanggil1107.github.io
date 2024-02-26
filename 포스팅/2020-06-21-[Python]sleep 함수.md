@@ -1,149 +1,63 @@
 
-## gcd, lcm 함수
+## sleep 함수
 
-### gcd 함수
----
 
-`gcd 함수` 는 인자로 들어온 숫자들의 최대 공약수(정수)를 반환하는 함수이다.
+`sleep 함수` 는 인자로 들어온 시간 동안 일시정지하는 함수이다.
 
 ```text
-gcd(x)
+time.sleep(x)
 ```
 
-- x : 숫자, 인자는 0개부터 N개까지 가능
+- x : 숫자 자료형
 
-gcd 함수는 math 라이브러리를 import 해야한다. 
+sleep 함수는 time 모듈을 import 해야한다. 
 
 <br>
 
-#### gcd 함수 예제
+#### sleep 함수 예제
 
 ```python
-import math
+import time
+import datetime
  
-a = math.gcd()
-b = math.gcd(0, 2, 4)
-c = math.gcd(10, 5, 100)
+print('-' * 10)
+now = datetime.datetime.now()
+print(now.strftime('%H:%M:%S'))  # 현재 시간 출력
 
-print(a)
-print(b)
-print(c)
+time.sleep(5)  # 5 초 딜레이
+
+now = datetime.datetime.now()
+print(now.strftime('%H:%M:%S'))
+
+time.sleep(10)  # 10 초 딜레이
+
+print(datetime.datetime.now().strftime('%H:%M:%S'))
+
+
+print('-' * 10)
+print(datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3])
+
+time.sleep(0.5)  # 0.5 초 딜레이
+
+print(datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3])  # 밀리초 3자리까지만 출력
+
+time.sleep(0.06)  # 0.06 초 딜레이
+
+now = datetime.datetime.now()
+print(now.strftime('%H:%M:%S.%f')[:-3])
 ```
 ```text
-0
-2
-5
-```
+----------
+10:13:20
 
-<br>
+10:13:25
 
-```python
-import math
+10:13:35
 
-a = math.gcd(0)
-b = math.gcd(0, 0)
-c = math.gcd(0, 0, 0, 0)
+----------
+10:14:835
 
-print(a)
-print(b)
-print(c)
-```
-```text
-0
-0
-0
-```
+10:15:350
 
-<br>
-
-```python
-import math
-
-a = math.gcd(3)
-b = math.gcd(3, 6, 3, 3, 3, 3)
-c = math.gcd(66, 22, 11, 33, 44)
-
-print(a)
-print(b)
-print(c)
-```
-```text
-3
-3
-11
-```
-
-<br>
-
-### lcm 함수
----
-
-`lcm 함수` 는 인자로 들어온 숫자들의 최소 공배수를 반환하는 함수이다.
-
-```text
-lcm(x)
-```
-
-- x : 숫자, 인자는 0개부터 N개까지 가능
-
-lcm 함수는 math 라이브러리를 import 해야한다.
-
-<br>
-
-#### lcm 함수 예제
-
-
-```python
-import math
- 
-a = math.lcm()
-b = math.lcm(0, 2, 4)
-c = math.lcm(10, 5, 100)
-
-print(a)
-print(b)
-print(c)
-```
-```text
-1
-0
-100
-```
-
-<br>
-
-```python
-import math
-
-a = math.lcm(0)
-b = math.lcm(0, 0)
-c = math.lcm(0, 0, 0, 0)
-
-print(a)
-print(b)
-print(c)
-```
-```text
-0
-0
-0
-```
-
-<br>
-
-```python
-import math
-
-a = math.lcm(0)
-b = math.lcm(3, 6, 1, 3, 3, 3)
-c = math.lcm(66, 22, 11, 33, 44)
-
-print(a)
-print(b)
-print(c)
-```
-```text
-0
-6
-132
+10:15:425
 ```
