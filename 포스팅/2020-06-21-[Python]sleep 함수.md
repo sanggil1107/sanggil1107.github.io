@@ -14,7 +14,8 @@ sleep 함수는 time 모듈을 import 해야한다.
 
 <br>
 
-#### sleep 함수 예제
+### sleep 함수 예제
+---
 
 ```python
 import time
