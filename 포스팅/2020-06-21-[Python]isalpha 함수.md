@@ -1,85 +1,45 @@
 
-## isdigit 함수
+## isalpha 함수
 
 
-`isdigit 함수` 는 문자열이 숫자로만 이루어져있는지 확인하는 함수이다.
+`isalpha 함수` 는 문자열이 모두 알파벳으로만 이루어져 있는지 확인하는 함수이다.
 
 ```text
-str.isdigit("문자열")
-"문자열".isdigit()
+"문자열".isalpha()
 ```
 
-
-문자가 단 하나라도 있다면 False를 반환하고 모든 문자가 숫자로만 이루어져 있으면 True를 반환한다. 또한, 음수를 뜻하는 '-'와 소수점을 뜻하는 '.'는 문자로 판단한다.
+문자열이 모두 알파벳으로 이루어져 있으면 True를 반환, 그렇지 않으면 False를 반환한다.
 
 <br>
 
-### isdigit 함수 예제
+### isalpha 함수 예제
 ---
 
 
 ```python
-a = "BlockDMask"  
-print(f"str.isdigit('{a}') : {str.isdigit(a)}")
-print(f"'{a}'.isdigit() : {a.isdigit()}")
+a = "1"  
+print(f"'{a}'.isalpha() : {a.isalpha()}")
 
-b = "1234Blog"    
-print(f"str.isdigit('{b}') : {str.isdigit(b)}")
-print(f"'{b}'.isdigit() : {b.isdigit()}")
+b = "1.2"    
+print(f"'{b}'.isalpha() : {b.isalpha()}")
 
-c = "131231"    
-print(f"str.isdigit('{c}') : {str.isdigit(c)}")
-print(f"'{c}'.isdigit() : {c.isdigit()}")
+c = "BlockDMask"    
+print(f"'{c}'.isalpha() : {c.isalpha()}")
 
-d = "-234"     
-print(f"str.isdigit('{d}') : {str.isdigit(d)}")
-print(f"'{d}'.isdigit() : {d.isdigit()}")
+d = "12ab"     
+print(f"'{d}'.isalpha() : {d.isalpha()}")
 
-e = "1.23"        
-print(f"str.isdigit('{e}') : {str.isdigit(e)}")
-print(f"'{e}'.isdigit() : {e.isdigit()}")
-
-f = "3²"          
-print(f"str.isdigit('{f}') : {str.isdigit(f)}")
-print(f"'{f}'.isdigit() : {f.isdigit()}")
-
-g = "⅔"           
-print(f"str.isdigit('{g}') : {str.isdigit(g)}")
-print(f"'{g}'.isdigit() : {g.isdigit()}")
-
-h = "0"           
-print(f"str.isdigit('{h}') : {str.isdigit(h)}")
-print(f"'{h}'.isdigit() : {h.isdigit()}")
-
-i = "0123"        
-print(f"str.isdigit('{i}') : {str.isdigit(i)}")
-print(f"'{i}'.isdigit() : {i.isdigit()}")
+e = "abc123"     
+print(f"'{e}'.isalpha() : {d.isalpha()}")
 ```
 ```text
-str.isdigit('BlockDMask') : False
-'BlockDMask'.isdigit() : False
+'BlockDMask'.isalpha() : False
 
-str.isdigit('1234Blog') : False
-'1234Blog'.isdigit() : False
+'1.2'.isalpha() : False
 
-str.isdigit('131231') : True
-'131231'.isdigit() : true
+'BlockDMask'.isalpha() : True
 
-str.isdigit('-234') : False
-'-234'.isdigit() : False
+'12ab'.isalpha() : False
 
-str.isdigit('1.23') : False
-'1.23'.isdigit() : False
-
-str.isdigit('3²') : True
-'3²'.isdigit() : True
-
-str.isdigit('⅔') : False
-'⅔'.isdigit() : False
-
-str.isdigit('0') : True
-'0'.isdigit() : True
-
-str.isdigit('0123') : True
-'0123'.isdigit() : True
+'abc123'.isalpha() : False
 ```
