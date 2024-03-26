@@ -1,104 +1,91 @@
 
-## round 함수
+## print 함수
 
 
-`round 함수` 는 소수점 다음에 정밀도로 반올림한 값을 돌려주는 함수이다.
+`print 함수` 는 출력하고 싶은 문자열을 출력하는 함수이다.
 
 ```text
-round(number [, ndigits])
+print('문자열')
+print('문자열', seq, end)
 ```
 
-- function : 반올림하고자 하는 숫자 자료형
-- ndigits : 정밀도(자릿수)
+- seq : 기본값은 공백(띄어쓰기)이며 출력 시 출력 값들 사이에 넣어줄 구분자
+- end : 기본값은 개행(중바꿈)이며 마지막 문자열을 출력하고 그 다음에 출력할 문자
 
-파이썬의 반올림은 반올림 하려는 수가 올림, 내림했을 때 동일하게 차이가 나는 경우에는 짝수 값으로 반올림한다.
 
 <br>
 
-### round 함수 예제
+### print 함수 예제
 ---
 
 
 ```python
-print('round(0.5) : {0}'.format(round(0.5)))
-print('round(1.5) : {0}'.format(round(1.5)))
-print('round(2.5) : {0}'.format(round(2.5)))
-print('round(3.5) : {0}'.format(round(3.5)))
-print('round(4.5) : {0}'.format(round(4.5)))
-print('round(5.5) : {0}'.format(round(5.5)))
-print('round(6.5) : {0}'.format(round(6.5)))
+a = 2
+b = 10
+ 
+print("a + b : ", a + b)
+print(123)
+print("Yang")
+print("Sanggil")
+
+arr = [1, 2, "yangpang", 3, 4, 'z']
+for v in arr:
+    print(f"value : {v}")
 ```
 ```text
-round(0.5) : 0 
-round(1.5) : 2
-round(2.5) : 2 
-round(3.5) : 4    
-round(4.5) : 4 
-round(5.5) : 6
-round(6.5) : 6 
+a + b : 12
+123
+Yang
+Sanggil
+
+value : 1
+value : 2
+value : yangpang
+value : 3
+value : 4
+value : z
 ```
 
 <br>
 
 ```python
-print('round(-6.5) : {0}'.format(round(-6.5)))
-print('round(-5.5) : {0}'.format(round(-5.5)))
-print('round(-4.5) : {0}'.format(round(-4.5)))
-print('round(-3.5) : {0}'.format(round(-3.5)))
-print('round(-2.5) : {0}'.format(round(-2.5)))
-print('round(-1.5) : {0}'.format(round(-1.5)))
-print('round(-0.5) : {0}'.format(round(-0.5)))
+s1 = "Fisrt"
+s2 = "Second"
+
+print(s1, s2)
 ```
 ```text
-round(-6.5) : -6
-round(-5.5) : -6
-round(-4.5) : -4
-round(-3.5) : -4
-round(-2.5) : -2
-round(-1.5) : -2
-round(-0.5) : 0
+Fisrt Second
 ```
 
 <br>
 
+#### end 옵션 예제
 
 ```python
-a = 0.0
-while a < 2.1:
-    result = round(a)
-    print('round({0}) => {1}'.format(a, result))
-    a += 0.1
+print('', end="_")
+print('Yang', end="_")
+print('Sang', end="%")
+print('Gil', end="*")
 ```
 ```text
-round(0.0) => 0
-round(0.1) => 0
-round(0.2) => 0
-round(0.30000000000000004) => 0
-round(0.4) => 0
-round(0.5) => 0 
-round(0.6) => 1
-round(0.7) => 1
-round(0.7999999999999999) => 1
-round(0.8999999999999999) => 1
-round(0.9999999999999999) => 1
-round(1.0999999999999999) => 1
-round(1.2) => 1
-round(1.3) => 1
-round(1.4000000000000001) => 1
-round(1.5000000000000002) => 2 
-round(1.6000000000000003) => 2
-round(1.7000000000000004) => 2
-round(1.8000000000000005) => 2
-round(1.9000000000000006) => 2
-round(2.0000000000000004) => 2
-round(2.1000000000000005) => 2
-round(2.2000000000000006) => 2
-round(2.3000000000000007) => 2
-round(2.400000000000001) => 2
-round(2.500000000000001) => 3 
-round(2.600000000000001) => 3
-round(2.700000000000001) => 3
-round(2.800000000000001) => 3
-round(2.9000000000000012) => 3
-round(3.0000000000000013) => 3
+_Yang_Sang%Gil*
+```
+
+<br>
+
+#### seq 옵션 예제
+
+
+```python
+print("a", "b", "c", "d")
+print("a", "b", "c", "d", sep="*")
+print("a", "b", "c", "d", sep="_")
+print("a", "b", "c", "d", sep="____")
+```
+```text
+a b c d
+a*b*c*d
+a_b_c_d
+a___b___c___D
 ```
