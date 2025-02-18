@@ -1,14 +1,21 @@
 
 
 
-# 파일 읽고 쓰기
+## 파일 읽기, 파일쓰기
+
+### 파일 생성(open, close)
 ---
-## 파일 생성
----
+
+`open` 함수는 파일을 생성할 때 사용하는 함수이며 `close` 함수는 오픈한 파일을 닫을 때 사용하는 함수이다.
+
 ```python
-f = open("D:/기타/new.txt", 'w')
-f.close
+open(file, mode)
+close()
 ```
+
+- file : 생성할 파일 경로
+- mode : 파일이 열리는 옵션, 모드
+
 |파일열기모드|설명|
 |:---:|:---:|
 |r|읽기모드 - 파일을 읽기만 할 때 사용|
@@ -17,16 +24,80 @@ f.close
 
 `w` 쓰기모드의 경우 해당 파일이 이미 존재할 경우 기존 내용은 사라지고, 해당 파일이 존재하지 않으면 새로 생성된다.
 
-```python
-# file_write.py
-f = open("D:/기타/new.txt", 'w')
-for i in range(1, 11):
-    data = "%d번째 줄입니다.\n" % i
-    f.write(data)
+<br>
 
-f.close
+#### 파일 생성 예제
+
+```python
+f = open('D:/기타/new.txt', 'w')
+
+f.write('yangpang')
+f.write('\npython open func') 
+
+f.close()
 ```
-`readline()`
+```text
+yangpang
+python open func
+```
+
+<br>
+
+### 파일 쓰기(write, writelines)
+---
+
+`write`, `writelines` 함수는 파일에 내용을 쓸 때 사용하는 함수이다.
+
+```python
+write('문자열')
+writelines(리스트)
+```
+
+<br>
+
+#### 파일 쓰기 예제
+
+```python
+f = open('D:/기타/new.txt', 'w')
+
+f.write('write write write\n')
+f.write('파이썬 파일 입출력 포스팅\n') 
+
+f.close()
+```
+```text
+write write write
+파이썬 파일 입출력 포스팅
+```
+
+<br>
+
+```python
+f = open('D:/기타/new.txt', 'a')
+
+f.writelines(['a', 'b', '123', '456', 'abcdefg', '\n'])
+f.writelines('\n'.join(['yangapng', 'python', 'blog'])) 
+f.close() 
+```
+```text
+write write write
+파이썬 파일 입출력 포스팅
+ab123456abcdefg
+yangpang
+python
+blog
+```
+
+<br>
+
+### 파일 읽기(read, readline, readlines)
+---
+
+`read`, `readline`, `readlines` 함수는 파일 내용을 읽을 때 사용하는 함수이다.
+
+```python
+read
+```
 
 ```python
 # readline.py
